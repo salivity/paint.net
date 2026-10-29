@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saving Multi-Layer Images as JPEG in Paint.NET - paint.net</title>
+    <meta name="description" content="When you save a multi-layer project as a JPEG in Paint.NET, all individual layer data is permanently flattened into a single base layer, resulting in the total loss of your layer hierarchy, independent layer adjustments, and transparency. Because the JPEG">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/saving-multi-layer-images-as-jpeg-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Saving Multi-Layer Images as JPEG in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/saving-multi-layer-images-as-jpeg-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="When you save a multi-layer project as a JPEG in Paint.NET, all individual layer data is permanently flattened into a single base layer, resulting in the total loss of your layer hierarchy, independent layer adjustments, and transparency. Because the JPEG" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="saving-multi-layer-images-as-jpeg-in-paintnet">Saving
+Multi-Layer Images as JPEG in Paint.NET</h1>
+<p>When you save a multi-layer project as a JPEG in Paint.NET, all
+individual layer data is permanently flattened into a single base layer,
+resulting in the total loss of your layer hierarchy, independent layer
+adjustments, and transparency. Because the JPEG format does not support
+layers, Paint.NET requires the image to be consolidated into a single
+flat graphic before saving. Understanding this process ensures you do
+not inadvertently destroy your working files or lose the ability to edit
+distinct elements of your design later.</p>
+<h3 id="the-automatic-flattening-process">The Automatic Flattening
+Process</h3>
+<p>Before Paint.NET writes a file to disk as a JPEG, it displays a
+prompt stating that the image must be flattened. If you proceed, the
+application merges all visible layers from top to bottom into one
+unified background layer.</p>
+<p>Any hidden layers are completely discarded during this process. Once
+flattened, individual elements such as text boxes, shapes, cutouts, or
+isolated brush strokes become permanently fused together and can no
+longer be moved, scaled, or edited independently.</p>
+<h3 id="complete-loss-of-transparency">Complete Loss of
+Transparency</h3>
+<p>The JPEG specification lacks an alpha channel, meaning it cannot
+store transparent or semi-transparent pixels. When Paint.NET flattens a
+multi-layer canvas containing transparent areas into a JPEG, it
+automatically fills any empty or transparent space with solid white. If
+your design relies on a transparent background or transparent cutouts,
+those areas will become opaque.</p>
+<h3 id="loss-of-blending-modes-and-layer-properties">Loss of Blending
+Modes and Layer Properties</h3>
+<p>In a multi-layer Paint.NET project, layers often utilize specific
+opacity percentages and blending modes (such as Multiply, Overlay, or
+Screen) to interact dynamically with the layers beneath them. During the
+JPEG export:</p>
+<ul>
+<li>The visual result of these blend modes is rendered permanently into
+the final pixel array.</li>
+<li>The original mathematical blend calculations and opacity settings
+are stripped.</li>
+<li>You lose the ability to tweak or reverse these blending effects in
+the future.</li>
+</ul>
+<h3 id="lossy-compression-artifacts">Lossy Compression Artifacts</h3>
+<p>Beyond losing layer independence, saving as a JPEG applies lossy
+compression to your merged image data. Even at high quality settings,
+subtle compression artifacts and color shifts are introduced. If you
+reopen the JPEG to make edits and save it as a JPEG again, the image
+will undergo generation loss, degrading visual clarity each time.</p>
+<h3 id="how-to-preserve-your-layer-data">How to Preserve Your Layer
+Data</h3>
+<p>To avoid losing your editable layers while still generating a JPEG
+for web or sharing purposes, follow this workflow:</p>
+<ol type="1">
+<li><strong>Save as PDN first:</strong> Always save your project in
+Paint.NET's native format (<code>.pdn</code>) by selecting <strong>File
+&gt; Save As</strong> and choosing **Paint.NET (*.pdn)**. This retains
+all layers, transparency, and blend modes.</li>
+<li><strong>Export to JPEG:</strong> With your master <code>.pdn</code>
+file safely saved, go to <strong>File &gt; Save As</strong>, select
+<strong>JPEG (<em>.jpg, </em>.jpeg)</strong>, and confirm the flattening
+prompt.</li>
+<li><strong>Avoid overwriting the PDN:</strong> If you continue working,
+use the <strong>Edit &gt; Undo</strong> command immediately after saving
+to un-flatten your working canvas, or simply close the file and reopen
+the <code>.pdn</code> version.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/saving-multi-layer-images-as-jpeg-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

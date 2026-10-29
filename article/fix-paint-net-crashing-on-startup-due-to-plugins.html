@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix Paint.NET Crashing on Startup Due to Plugins - paint.net</title>
+    <meta name="description" content="When Paint.NET crashes immediately upon opening, an incompatible, outdated, or corrupted plugin is usually the culprit. Because plugins are loaded into memory during the boot sequence, a single bad file can cause the entire application to terminate. This">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/fix-paint-net-crashing-on-startup-due-to-plugins">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Fix Paint.NET Crashing on Startup Due to Plugins - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/fix-paint-net-crashing-on-startup-due-to-plugins" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="When Paint.NET crashes immediately upon opening, an incompatible, outdated, or corrupted plugin is usually the culprit. Because plugins are loaded into memory during the boot sequence, a single bad file can cause the entire application to terminate. This" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="fix-paintnet-crashing-on-startup-due-to-plugins">Fix Paint.NET
+Crashing on Startup Due to Plugins</h1>
+<p>When Paint.NET crashes immediately upon opening, an incompatible,
+outdated, or corrupted plugin is usually the culprit. Because plugins
+are loaded into memory during the boot sequence, a single bad file can
+cause the entire application to terminate. This guide explains how to
+read Paint.NET crash logs, locate the offending plugin files, and safely
+remove them to restore the application to working order.</p>
+<h2 id="check-the-crash-log">Check the Crash Log</h2>
+<p>Paint.NET automatically generates a crash log when an unhandled
+exception forces the program to close. Identifying the specific plugin
+from this log saves you from having to guess which file caused the
+issue.</p>
+<ol type="1">
+<li>Press <code>Windows Key + R</code> to open the Run dialog.</li>
+<li>Type <code>%LOCALAPPDATA%\paint.net\CrashLogs</code> and press
+<strong>Enter</strong>. (If no logs are there, check your Desktop, as
+older versions sometimes place logs there).</li>
+<li>Open the most recent text file (named something like
+<code>crashlog.txt</code>).</li>
+<li>Look at the top section labeled <strong>Exception details</strong>
+or scan down the stack trace for any mention of a specific
+<code>.dll</code> file or plugin author name.</li>
+</ol>
+<h2 id="manually-remove-the-problematic-plugin">Manually Remove the
+Problematic Plugin</h2>
+<p>Once you know the name of the file—or if you simply want to remove
+the files you installed most recently—you must delete or move them from
+the Paint.NET plugin folders.</p>
+<h3 id="for-the-standard-classic-installer-version">For the Standard
+(Classic) Installer Version:</h3>
+<ol type="1">
+<li>Open File Explorer and navigate to the Paint.NET installation
+directory, typically located at:
+<code>C:\Program Files\paint.net\</code></li>
+<li>Open the <strong>Effects</strong> folder if the plugin added a
+visual effect or adjustment.</li>
+<li>Open the <strong>FileTypes</strong> folder if the plugin added
+support for a specific image format (like WebP, AVIF, or PSD).</li>
+<li>Locate the <code>.dll</code> file that corresponds to the crashing
+plugin. If you are unsure, sort the folder by <strong>Date
+modified</strong> to find the most recently added files.</li>
+<li>Move the suspect <code>.dll</code> file out of the folder and onto
+your Desktop. Do not keep it inside the folder with a renamed extension,
+as Paint.NET may still attempt to read it.</li>
+</ol>
+<h3 id="for-the-microsoft-store-version">For the Microsoft Store
+Version:</h3>
+<p>If you installed Paint.NET through the Microsoft Store, plugins are
+stored in your user documents rather than the <code>Program Files</code>
+directory:</p>
+<ol type="1">
+<li>Open File Explorer and navigate to:
+<code>Documents\paint.net App Files\</code></li>
+<li>Check both the <strong>Effects</strong> and
+<strong>FileTypes</strong> subfolders.</li>
+<li>Move the recently added <code>.dll</code> files to a different
+location outside this directory.</li>
+</ol>
+<h2 id="verify-and-relaunch">Verify and Relaunch</h2>
+<p>After removing the files:</p>
+<ol type="1">
+<li>Launch Paint.NET again. The application should now start normally
+without crashing.</li>
+<li>If it continues to crash, repeat the process and temporarily empty
+the entire <strong>Effects</strong> and <strong>FileTypes</strong>
+folders to determine if multiple conflicting plugins exist.</li>
+</ol>
+<h2 id="prevent-future-startup-crashes">Prevent Future Startup
+Crashes</h2>
+<p>To avoid plugin-related crashes moving forward, ensure compatibility
+before installing add-ons:</p>
+<ul>
+<li><strong>Check Version Compatibility:</strong> Modern versions of
+Paint.NET (version 5.0 and newer) require plugins compiled for newer
+versions of .NET. Legacy plugins designed for Paint.NET 3.x or 4.x often
+fail to load properly.</li>
+<li><strong>Unblock Downloaded DLLs:</strong> Windows often blocks
+<code>.dll</code> files downloaded from the internet. Before installing
+a plugin, right-click the <code>.zip</code> or <code>.dll</code> file,
+select <strong>Properties</strong>, check the <strong>Unblock</strong>
+box at the bottom of the General tab, and click
+<strong>Apply</strong>.</li>
+<li><strong>Use Official Sources:</strong> Download plugins exclusively
+from the official Paint.NET forums to ensure you receive updated, tested
+versions that match your release of the software.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/fix-paint-net-crashing-on-startup-due-to-plugins';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

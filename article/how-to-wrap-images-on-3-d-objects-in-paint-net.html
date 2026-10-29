@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Wrap Images on 3D Objects in Paint.NET - paint.net</title>
+    <meta name="description" content="The Shape3D plugin is one of the most powerful rendering extensions available for Paint.NET, enabling users to transform flat, two-dimensional canvas artwork into fully textured three-dimensional objects. This article explains the underlying mechanisms of">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/how-to-wrap-images-on-3-d-objects-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Wrap Images on 3D Objects in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/how-to-wrap-images-on-3-d-objects-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="The Shape3D plugin is one of the most powerful rendering extensions available for Paint.NET, enabling users to transform flat, two-dimensional canvas artwork into fully textured three-dimensional objects. This article explains the underlying mechanisms of" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-wrap-images-on-3d-objects-in-paintnet">How to Wrap Images
+on 3D Objects in Paint.NET</h1>
+<p>The Shape3D plugin is one of the most powerful rendering extensions
+available for Paint.NET, enabling users to transform flat,
+two-dimensional canvas artwork into fully textured three-dimensional
+objects. This article explains the underlying mechanisms of the Shape3D
+plugin, detailing how it translates standard 2D pixel coordinates into
+3D geometric projections, handles lighting and perspective, and allows
+creators to wrap images seamlessly around spheres, cylinders, boxes, and
+planes without needing complex CAD or 3D modeling software.</p>
+<h3 id="uv-coordinate-mapping-and-projection">UV Coordinate Mapping and
+Projection</h3>
+<p>At its core, Shape3D operates using standard computer graphics
+texture mapping techniques, specifically UV mapping. When you run the
+plugin, it reads the active layer of your Paint.NET canvas as a flat
+texture map. The horizontal axis of your image represents the <span
+class="math inline">\(U\)</span> coordinate, and the vertical axis
+represents the <span class="math inline">\(V\)</span> coordinate.</p>
+<p>The plugin then mathematically projects these <span
+class="math inline">\((U, V)\)</span> coordinates onto a parametric 3D
+surface mesh. Depending on the geometry you select, the projection
+behavior changes:</p>
+<ul>
+<li><strong>Sphere:</strong> The plugin applies an equirectangular
+projection. The center of the canvas wraps around the equator of the
+sphere, while the top and bottom edges compress toward the poles.</li>
+<li><strong>Cylinder:</strong> The horizontal axis wraps seamlessly
+around the circular circumference of the tube, while the vertical axis
+maps along the cylinder's height. Users can choose whether the ends
+(caps) use the same texture or remain open.</li>
+<li><strong>Box:</strong> The plugin subdivides the flat image across
+the six rectangular faces of a cube, scaling the mapped segments to fit
+each face's dimensions.</li>
+<li><strong>Plane:</strong> The image is mapped directly onto a flat
+polygonal surface that can be rotated freely in 3D space.</li>
+</ul>
+<h3 id="spatial-transformation-and-camera-controls">Spatial
+Transformation and Camera Controls</h3>
+<p>Once the flat image is bound to a geometric mesh, Shape3D calculates
+how that mesh should appear from the viewer's perspective. It offers
+full three-axis rotation (<span class="math inline">\(X\)</span>, <span
+class="math inline">\(Y\)</span>, and <span
+class="math inline">\(Z\)</span>) along with translation controls to
+alter the object's position on the canvas.</p>
+<p>The plugin also incorporates camera perspective calculations. By
+simulating a virtual focal length and field of view, Shape3D creates
+foreshortening—meaning the parts of the 3D object closer to the virtual
+camera appear larger, while parts further away appear smaller. This
+perspective distortion is essential for creating the illusion of genuine
+physical depth on a flat canvas.</p>
+<h3 id="lighting-shading-and-surface-normals">Lighting, Shading, and
+Surface Normals</h3>
+<p>Wrapping a flat image onto a geometric outline is not enough to
+produce a realistic 3D appearance; surface shading is necessary. Shape3D
+achieves this by calculating surface normals—vectors perpendicular to
+the 3D surface at every pixel.</p>
+<p>The plugin provides adjustable virtual light sources. By comparing
+the angle between each surface normal and the light vector, it applies
+standard Phong or Lambertian reflection models to generate:</p>
+<ul>
+<li><strong>Diffuse Lighting:</strong> The realistic darkening of
+surfaces as they curve away from the light source.</li>
+<li><strong>Specular Highlights:</strong> Bright, focused reflections
+that mimic shiny or polished materials.</li>
+<li><strong>Ambient Light:</strong> Base-level illumination ensuring
+that unlit sides of the object do not render as pure, detail-free
+black.</li>
+</ul>
+<h3 id="anti-aliasing-and-pixel-filtering">Anti-Aliasing and Pixel
+Filtering</h3>
+<p>Curving and shrinking flat pixels across a 3D geometry causes
+geometric distortion that can result in jagged edges or pixelated
+artifacts (aliasing). Shape3D mitigates this through built-in
+supersampling and bilinear texture filtering. When pixels are mapped to
+curved areas—such as the compressed poles of a sphere—the plugin samples
+adjacent pixel values to interpolate smooth transitions, ensuring the
+wrapped texture remains crisp and visually coherent.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/how-to-wrap-images-on-3-d-objects-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

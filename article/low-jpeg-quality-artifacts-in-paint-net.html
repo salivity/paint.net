@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Low JPEG Quality Artifacts in Paint.NET - paint.net</title>
+    <meta name="description" content="Saving images at low JPEG quality settings in Paint.NET introduces visible visual degradations known as compression artifacts. Because JPEG uses a lossy compression algorithm reliant on the Discrete Cosine Transform (DCT) and chroma subsampling, reducing">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/low-jpeg-quality-artifacts-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Low JPEG Quality Artifacts in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/low-jpeg-quality-artifacts-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Saving images at low JPEG quality settings in Paint.NET introduces visible visual degradations known as compression artifacts. Because JPEG uses a lossy compression algorithm reliant on the Discrete Cosine Transform (DCT) and chroma subsampling, reducing" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="low-jpeg-quality-artifacts-in-paintnet">Low JPEG Quality
+Artifacts in Paint.NET</h1>
+<p>Saving images at low JPEG quality settings in Paint.NET introduces
+visible visual degradations known as compression artifacts. Because JPEG
+uses a lossy compression algorithm reliant on the Discrete Cosine
+Transform (DCT) and chroma subsampling, reducing the quality slider
+discards visual data to minimize file size. This guide outlines the
+specific compression artifacts that appear when exporting low-quality
+JPEGs in Paint.NET and explains how they degrade the final image.</p>
+<h3 id="macroblocking-grid-pattern">Macroblocking (Grid Pattern)</h3>
+<p>JPEG divides an image into 8x8 pixel blocks to process luminance and
+chrominance data. At low quality levels in Paint.NET, coarse
+quantization simplifies each block independently, making the boundaries
+between these 8x8 grids starkly visible. This results in a tiled or
+checkerboard-like appearance across the entire image, most noticeably in
+smooth areas such as skies or skin tones.</p>
+<h3 id="ringing-artifacts-and-mosquito-noise">Ringing Artifacts and
+Mosquito Noise</h3>
+<p>When an image contains sharp transitions—such as black text on a
+white background or high-contrast silhouettes—the loss of high-frequency
+data creates "ringing." This manifests as ghost-like outlines or halos
+duplicating the edge. In complex areas, this effect creates "mosquito
+noise," which resembles a swarm of erratic, fuzzy pixels buzzing around
+sharp lines and borders.</p>
+<h3 id="color-banding-posterization">Color Banding (Posterization)</h3>
+<p>To achieve aggressive file reduction, Paint.NET's JPEG encoder
+truncates subtle tonal variations. Instead of a smooth transition
+between shades of a color, the gradient breaks down into harsh, distinct
+bands of solid color. This posterization effect is particularly severe
+in dark shadows, sunsets, and smooth lighting gradients.</p>
+<h3 id="chroma-bleeding">Chroma Bleeding</h3>
+<p>Paint.NET utilizes chroma subsampling to compress color data more
+aggressively than brightness data. At lower quality thresholds, color
+resolution drops significantly, causing vivid colors to spill or "bleed"
+outside their intended boundaries. Red and blue elements against neutral
+backgrounds are especially prone to appearing blurry or misaligned.</p>
+<h3 id="loss-of-high-frequency-detail-and-texture">Loss of
+High-Frequency Detail and Texture</h3>
+<p>Low-quality JPEG compression aggressively discards high-frequency
+mathematical data, treating subtle textures as dispensable noise. Fine
+details like foliage, fabric weave, hair, and distant scenery are
+smoothed over, leaving behind smudged, muddy patches devoid of original
+sharpness.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/low-jpeg-quality-artifacts-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

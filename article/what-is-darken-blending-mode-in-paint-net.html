@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Is Darken Blending Mode in Paint.NET? - paint.net</title>
+    <meta name="description" content="The Darken blending mode in Paint.NET is a layer compositing tool designed to compare pixel values between overlapping layers and display only the darker colors. By evaluating the RGB color channels of the blend layer and the base layer beneath it, Darken">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/what-is-darken-blending-mode-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="What Is Darken Blending Mode in Paint.NET? - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/what-is-darken-blending-mode-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="The Darken blending mode in Paint.NET is a layer compositing tool designed to compare pixel values between overlapping layers and display only the darker colors. By evaluating the RGB color channels of the blend layer and the base layer beneath it, Darken" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="what-is-darken-blending-mode-in-paintnet">What Is Darken
+Blending Mode in Paint.NET?</h1>
+<p>The Darken blending mode in Paint.NET is a layer compositing tool
+designed to compare pixel values between overlapping layers and display
+only the darker colors. By evaluating the RGB color channels of the
+blend layer and the base layer beneath it, Darken keeps whichever pixel
+is darker, effectively making pure white areas invisible while
+preserving darker elements. This article explains how the Darken
+blending mode works, its underlying logic, and the practical scenarios
+where it is most useful for image editing.</p>
+<h3 id="how-the-darken-mode-works">How the Darken Mode Works</h3>
+<p>When you assign the Darken mode to a layer in Paint.NET, the program
+inspects each individual color channel (Red, Green, and Blue) of every
+pixel on that layer and compares it to the corresponding pixel directly
+below it. The software performs a simple mathematical evaluation:</p>
+<ul>
+<li>Result = Minimum(Base Layer Pixel, Blend Layer Pixel)</li>
+</ul>
+<p>Whichever layer has the lower brightness value for each channel will
+be visible in the final image. Because 0 represents absolute black and
+255 represents pure white in standard 8-bit digital color channels:</p>
+<ul>
+<li><strong>Pure white pixels</strong> on the upper layer have no effect
+on the underlying image, acting completely transparent.</li>
+<li><strong>Pure black pixels</strong> on the upper layer completely
+replace any underlying pixels, remaining solid black.</li>
+<li><strong>Intermediate tones</strong> replace the underlying pixel
+only if their specific channel values are darker than the underlying
+layer's values.</li>
+</ul>
+<h3 id="practical-applications-in-paintnet">Practical Applications in
+Paint.NET</h3>
+<h4 id="1-seamlessly-overlaying-line-art-and-scanned-drawings">1.
+Seamlessly Overlaying Line Art and Scanned Drawings</h4>
+<p>A common use for Darken is placing traditional pencil drawings, pen
+sketches, or line art onto textured or colored backgrounds. If a sketch
+is drawn on white paper, placing it on top of a colored background using
+Darken mode will instantly hide the white paper background while keeping
+the dark linework completely intact, eliminating the need for tedious
+manual cutouts.</p>
+<h4 id="2-texture-and-grunge-compositing">2. Texture and Grunge
+Compositing</h4>
+<p>When you want to add scratches, dirt, or dark vignettes to a photo
+without changing the highlights, the Darken mode allows you to blend a
+dark texture map directly over the base image. Only the dark cracks and
+spots will transfer onto the lighter sections of the primary photo.</p>
+<h4 id="3-taming-overexposed-areas">3. Taming Overexposed Areas</h4>
+<p>You can duplicate an overexposed image onto a secondary layer, apply
+adjustments (such as lowering brightness or increasing contrast), and
+set that layer to Darken. This forces the software to pull down
+highlight clipping exclusively where the secondary layer offers a
+darker, richer tone.</p>
+<h3 id="darken-vs-multiply">Darken vs. Multiply</h3>
+<p>While both blend modes darken the final image, they work
+differently:</p>
+<ul>
+<li><strong>Multiply</strong> mathematically multiplies the color values
+of both layers, resulting in an overall darker composition across nearly
+all pixels (except pure white).</li>
+<li><strong>Darken</strong> acts as a conditional switch. It does not
+combine or deepen colors; it simply picks the darker pixel of the two
+layers and leaves it unaltered.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/what-is-darken-blending-mode-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

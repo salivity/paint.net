@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undoing and Performing New Actions in Paint.NET - paint.net</title>
+    <meta name="description" content="When working in Paint.NET, performing an undo operation steps backward through your project&#39;s edit history, allowing you to review or revert recent changes. However, if you perform a new action immediately after undoing, all subsequent &quot;future&quot; history st">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/undoing-and-performing-new-actions-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Undoing and Performing New Actions in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/undoing-and-performing-new-actions-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="When working in Paint.NET, performing an undo operation steps backward through your project&#39;s edit history, allowing you to review or revert recent changes. However, if you perform a new action immediately after undoing, all subsequent &quot;future&quot; history st" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="undoing-and-performing-new-actions-in-paintnet">Undoing and
+Performing New Actions in Paint.NET</h1>
+<p>When working in Paint.NET, performing an undo operation steps
+backward through your project's edit history, allowing you to review or
+revert recent changes. However, if you perform a new action immediately
+after undoing, all subsequent "future" history steps that were available
+to redo are permanently deleted. This article explains how Paint.NET
+processes this action, why those future states are removed, and how to
+avoid losing unwanted work.</p>
+<h3 id="the-linear-history-model">The Linear History Model</h3>
+<p>Paint.NET relies on a strictly linear history stack, which is visible
+in the History window (accessible via <code>F3</code> or the History
+icon in the top-right corner). Every stroke, adjustment, layer creation,
+and selection is logged sequentially from top to bottom.</p>
+<p>When you click <strong>Undo</strong> (or press
+<code>Ctrl + Z</code>), the active state moves up the list. The steps
+you reversed remain visible in the History window as grayed-out items.
+At this stage, you can still step forward using <strong>Redo</strong>
+(or <code>Ctrl + Y</code>) to restore those actions.</p>
+<h3 id="what-happens-when-you-perform-a-new-action">What Happens When
+You Perform a New Action</h3>
+<p>The moment you make a new edit on the canvas—such as drawing a line,
+applying a filter, adding a new layer, or pasting content—while
+positioned at an earlier point in the history:</p>
+<ol type="1">
+<li><strong>Immediate Truncation:</strong> Paint.NET considers the new
+edit as the start of an entirely new path. Everything located below the
+current step in the History window is instantly wiped out.</li>
+<li><strong>Permanent Loss of Redo States:</strong> The previously
+grayed-out "future" steps cease to exist. They are purged from
+application memory and cannot be recovered via the Redo command.</li>
+<li><strong>Continuation of the New Timeline:</strong> The new edit
+becomes the latest entry immediately following the step you reverted to,
+establishing a new linear timeline.</li>
+</ol>
+<h3 id="why-paintnet-handles-history-this-way">Why Paint.NET Handles
+History This Way</h3>
+<p>Paint.NET does not utilize non-linear history branching or snapshot
+trees. Maintaining alternative branches of image edits requires
+significant memory overhead, especially when working with
+high-resolution, multi-layered canvases. By truncating future steps, the
+application frees up RAM and keeps history tracking simple and
+predictable.</p>
+<h3 id="how-to-preserve-work-before-testing-changes">How to Preserve
+Work Before Testing Changes</h3>
+<p>If you want to step backward to try a different editing approach
+without losing your forward progress:</p>
+<ul>
+<li><strong>Save Multiple Iterations:</strong> Before undoing, save your
+work under a new filename using <strong>File &gt; Save As</strong>
+(<code>Ctrl + Shift + S</code>) in the native <code>.pdn</code> format.
+This preserves the current visual state in a separate file.</li>
+<li><strong>Duplicate Layers:</strong> Instead of undoing operations on
+a specific layer, duplicate the layer beforehand. You can hide the
+original layer to preserve your progress while experimenting on the
+duplicate.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/undoing-and-performing-new-actions-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

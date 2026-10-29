@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Configure Paint.NET DDS Settings for Games - paint.net</title>
+    <meta name="description" content="Configuring DirectDraw Surface (DDS) export settings in Paint.NET is a vital step in game modding and asset development to ensure textures balance visual fidelity with memory performance. This guide covers how to access the DDS save dialog, select the cor">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/how-to-configure-paint-net-dds-settings-for-games">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Configure Paint.NET DDS Settings for Games - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/how-to-configure-paint-net-dds-settings-for-games" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Configuring DirectDraw Surface (DDS) export settings in Paint.NET is a vital step in game modding and asset development to ensure textures balance visual fidelity with memory performance. This guide covers how to access the DDS save dialog, select the cor" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-configure-paintnet-dds-settings-for-games">How to
+Configure Paint.NET DDS Settings for Games</h1>
+<p>Configuring DirectDraw Surface (DDS) export settings in Paint.NET is
+a vital step in game modding and asset development to ensure textures
+balance visual fidelity with memory performance. This guide covers how
+to access the DDS save dialog, select the correct block compression (BC)
+format for your specific texture type, generate mipmaps, and configure
+error metrics properly.</p>
+<h3 id="accessing-the-dds-export-dialog">Accessing the DDS Export
+Dialog</h3>
+<ol type="1">
+<li>Open or finalize your texture project in Paint.NET.</li>
+<li>Navigate to <strong>File &gt; Save As...</strong> (or press
+<code>Ctrl + Shift + S</code>).</li>
+<li>In the <strong>Save as type</strong> dropdown menu, select
+**DirectDraw Surface (*.dds)**.</li>
+<li>Name your file and click <strong>Save</strong>.</li>
+<li>The DDS configuration dialog window will immediately appear with
+compression and mipmap options.</li>
+</ol>
+<h3 id="choosing-the-right-compression-format">Choosing the Right
+Compression Format</h3>
+<p>The dropdown at the top of the save dialog determines the compression
+algorithm. Select the format based on the texture's role in the game
+engine:</p>
+<ul>
+<li><strong>BC1 (DXT1):</strong> Use for opaque textures
+(diffuse/albedo) or textures with binary (1-bit, fully transparent or
+fully opaque) alpha channels. This format offers high compression (4
+bits per pixel) and saves significant memory.</li>
+<li><strong>BC3 (DXT5):</strong> Use for textures requiring smooth,
+complex transparency, such as glass, foliage, hair, or decals. It
+provides an interpolated 8-bit alpha channel alongside compressed color
+data.</li>
+<li><strong>BC4:</strong> A single-channel grayscale format ideal for
+height maps, roughness maps, or gloss maps.</li>
+<li><strong>BC5 (ATI2 / 3Dc):</strong> Specifically designed for
+two-channel data. Use this format for tangent-space normal maps (storing
+X and Y vectors) to eliminate blocky compression artifacts common to
+standard formats.</li>
+<li><strong>BC7:</strong> A modern format designed for DirectX 11 and
+newer engines. It offers the highest visual fidelity with support for
+both color and high-quality alpha channels, making it the preferred
+choice for modern titles if supported by the engine.</li>
+<li><strong>B8G8R8A8 / R8G8B8A8 (Uncompressed):</strong> Stores full
+uncompressed 32-bit color. Use this sparingly, typically only for UI
+elements or skyboxes where compression artifacts are immediately
+noticeable and memory limits are flexible.</li>
+</ul>
+<h3 id="configuring-mipmaps">Configuring Mipmaps</h3>
+<p>Mipmaps are pre-calculated, progressively lower-resolution copies of
+a texture used to improve rendering performance and eliminate texture
+shimmering at a distance.</p>
+<ol type="1">
+<li>Check the box labeled <strong>Generate Mipmaps</strong>.</li>
+<li>Select a <strong>Mipmap Generation</strong> filter from the
+dropdown:
+<ul>
+<li><strong>Bicubic or Lanczos:</strong> Recommended for most diffuse
+and color textures, as they maintain sharpness without creating
+excessive noise.</li>
+<li><strong>Box:</strong> A simple averaging filter that works well for
+downscaling flat, low-detail textures.</li>
+<li><strong>Nearest Neighbor:</strong> Only use this for pixel-art
+textures or specialized data masks where blending values breaks
+functionality.</li>
+</ul></li>
+</ol>
+<h3 id="setting-the-error-metric">Setting the Error Metric</h3>
+<p>Under the compression options, Paint.NET provides a choice for how
+the compression algorithm calculates color differences:</p>
+<ul>
+<li><strong>Perceptual:</strong> Weighs color channels according to
+human visual sensitivity (green is prioritized over blue). Use this
+setting for standard color, albedo, and diffuse textures.</li>
+<li><strong>Uniform:</strong> Treats all color channels with equal
+mathematical weight. Always select this option when compressing
+non-color data, such as normal maps, metallic/roughness packing, or mask
+maps.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/how-to-configure-paint-net-dds-settings-for-games';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

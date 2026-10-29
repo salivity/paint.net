@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closing Unsaved Multi-Layer Projects in Paint.NET - paint.net</title>
+    <meta name="description" content="Closing a multi-layer project in Paint.NET without saving triggers an immediate confirmation prompt, but bypassing or discarding this prompt results in the permanent loss of your work. Because Paint.NET lacks an automatic background recovery or auto-save">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/closing-unsaved-multi-layer-projects-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Closing Unsaved Multi-Layer Projects in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/closing-unsaved-multi-layer-projects-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Closing a multi-layer project in Paint.NET without saving triggers an immediate confirmation prompt, but bypassing or discarding this prompt results in the permanent loss of your work. Because Paint.NET lacks an automatic background recovery or auto-save" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="closing-unsaved-multi-layer-projects-in-paintnet">Closing
+Unsaved Multi-Layer Projects in Paint.NET</h1>
+<p>Closing a multi-layer project in Paint.NET without saving triggers an
+immediate confirmation prompt, but bypassing or discarding this prompt
+results in the permanent loss of your work. Because Paint.NET lacks an
+automatic background recovery or auto-save feature, exiting without
+saving permanently destroys the layer hierarchy, custom adjustments, and
+pixel data. This guide explains the exact mechanics of what happens
+during the shutdown process, why the data cannot be retrieved, and how
+to safeguard future projects.</p>
+<h2 id="the-confirmation-dialog">The Confirmation Dialog</h2>
+<p>When you attempt to close an image canvas or exit Paint.NET while
+working on an unsaved project, the application displays a warning prompt
+asking: <em>"Save changes to [Filename]?"</em> You are given three
+options:</p>
+<ul>
+<li><strong>Save:</strong> Opens the file directory to save your
+progress, allowing you to choose the native <code>.pdn</code> format to
+keep your layers intact.</li>
+<li><strong>Don't Save:</strong> Bypasses the save process and closes
+the canvas immediately.</li>
+<li><strong>Cancel:</strong> Aborts the close command and returns you to
+the active workspace with all layers and history untouched.</li>
+</ul>
+<p>If you click "Don't Save," Paint.NET assumes you intentionally want
+to discard the current session.</p>
+<h2 id="immediate-data-purging">Immediate Data Purging</h2>
+<p>Once "Don't Save" is selected, the application flushes the active
+project from your computer’s RAM. Paint.NET utilizes temporary scratch
+files on your hard drive to manage undo history and layer rendering
+during an active session. The moment the document is closed without
+saving, Paint.NET systematically deletes these temporary scratch files
+to free up disk space.</p>
+<p>As a result:</p>
+<ul>
+<li><strong>Layers Are Not Merged or Stored:</strong> The individual
+layers are not flattened into a background image; they are completely
+deleted.</li>
+<li><strong>History Is Erased:</strong> The entire history stack
+containing your previous actions and revisions is cleared.</li>
+<li><strong>No Auto-Recovery File Remains:</strong> Unlike software
+suites that create shadow copies or auto-recovery drafts (such as
+Microsoft Office or Adobe Photoshop), Paint.NET does not maintain a
+backup folder for closed sessions.</li>
+</ul>
+<h2 id="can-unsaved-files-be-recovered">Can Unsaved Files Be
+Recovered?</h2>
+<p>Once closed via "Don't Save," an unsaved Paint.NET project
+<strong>cannot be recovered</strong>.</p>
+<p>Because the temporary data stored in the
+<code>AppData\Local\Temp</code> directory is actively overwritten and
+deleted by the software upon closing, file carving and standard data
+recovery tools are ineffective. Even if fragmented raw data is recovered
+through deep disk scans, it will not assemble back into a functional,
+multi-layer Paint.NET (<code>.pdn</code>) file.</p>
+<p>If Paint.NET closes abruptly due to a power outage or system
+crash—rather than a user selecting "Don't Save"—the temporary scratch
+files may technically remain in your system's temp folder. However,
+these files are stored in proprietary, fragmented formats designed for
+active memory swapping rather than manual reconstruction, making project
+restoration practically impossible without third-party forensic
+reconstruction.</p>
+<h2 id="best-practices-to-prevent-data-loss">Best Practices to Prevent
+Data Loss</h2>
+<p>To ensure you never lose hours of multi-layer editing, implement the
+following habits:</p>
+<ol type="1">
+<li><strong>Save as <code>.pdn</code> Immediately:</strong> When
+starting a new project, save it immediately under the native
+<code>.pdn</code> (Paint.NET) format before adding complex layers. This
+format preserves all layer properties, blend modes, and
+transparency.</li>
+<li><strong>Use the Save Shortcut Frequently:</strong> Develop the habit
+of pressing <code>Ctrl + S</code> after every major edit or whenever
+adding a new layer.</li>
+<li><strong>Export Only as a Final Step:</strong> If your final output
+requires a flattened format like <code>.png</code> or <code>.jpg</code>,
+always keep the master <code>.pdn</code> file saved first. Saving over
+your working file as a flat format collapses all layers permanently upon
+closing.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/closing-unsaved-multi-layer-projects-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

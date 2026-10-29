@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Pixel Art Icons Efficiently in Paint.NET - paint.net</title>
+    <meta name="description" content="Paint.NET is a lightweight, free image editor that offers an ideal environment for low-resolution sprite creation when configured properly. This guide explains how to design clean pixel art icons quickly by optimizing canvas settings, setting up aliased t">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/make-pixel-art-icons-efficiently-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Make Pixel Art Icons Efficiently in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/make-pixel-art-icons-efficiently-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Paint.NET is a lightweight, free image editor that offers an ideal environment for low-resolution sprite creation when configured properly. This guide explains how to design clean pixel art icons quickly by optimizing canvas settings, setting up aliased t" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="make-pixel-art-icons-efficiently-in-paintnet">Make Pixel Art
+Icons Efficiently in Paint.NET</h1>
+<p>Paint.NET is a lightweight, free image editor that offers an ideal
+environment for low-resolution sprite creation when configured properly.
+This guide explains how to design clean pixel art icons quickly by
+optimizing canvas settings, setting up aliased tools, building
+silhouettes, applying simple shading, and upscaling the final product
+without losing crisp pixel edges.</p>
+<h3 id="1-set-up-the-canvas-and-grid">1. Set Up the Canvas and Grid</h3>
+<p>Begin by creating a canvas that matches your target icon
+size—typically 16x16, 24x24, or 32x32 pixels.</p>
+<ol type="1">
+<li>Go to <strong>File &gt; New</strong> and set both the Width and
+Height to your chosen dimensions (e.g., 32 x 32 pixels).</li>
+<li>Zoom in significantly (between 800% and 1600%) using
+<code>Ctrl + Mouse Wheel</code> to see individual pixels clearly.</li>
+<li>Enable the pixel boundary guide by navigating to <strong>View &gt;
+Pixel Grid</strong> (or press <code>Ctrl + Alt + G</code>). This
+displays visible cell lines over your zoomed-in workspace.</li>
+</ol>
+<h3 id="2-configure-tools-for-hard-edges">2. Configure Tools for Hard
+Edges</h3>
+<p>Pixel art relies on sharp, single-pixel placement without automatic
+blending. You must adjust default settings to disable smoothing.</p>
+<ul>
+<li><strong>Pencil Tool:</strong> Use this as your primary drawing
+instrument. It naturally draws without anti-aliasing.</li>
+<li><strong>Shape and Line Tools:</strong> If you use the Line/Curve or
+Rectangle tools, look at the top toolbar and switch the
+<strong>Antialiasing</strong> setting from "Smooth" to "Aliased."</li>
+<li><strong>Selection Tools:</strong> Ensure the Selection Mode is set
+to aliased edges to avoid semi-transparent borders when moving
+elements.</li>
+<li><strong>Paint Bucket:</strong> Set the <strong>Tolerance</strong>
+slider low (around 0% to 10%) and ensure the fill mode is aliased.</li>
+</ul>
+<h3 id="3-establish-the-silhouette">3. Establish the Silhouette</h3>
+<p>Design the basic shape first to ensure readability at small
+sizes.</p>
+<ol type="1">
+<li>Create a transparent layer above the background by clicking
+<strong>Layers &gt; Add New Layer</strong>.</li>
+<li>Select a dark, high-contrast color (such as dark navy or charcoal)
+with the <strong>Pencil Tool</strong>.</li>
+<li>Sketch the primary outline or silhouette of the icon.</li>
+<li>Check for "jaggies"—irregular pixel breaks on curves. Aim for
+consistent stepping (e.g., sequences like 3-2-1-2-3 pixels) rather than
+uneven gaps (e.g., 3-1-3).</li>
+</ol>
+<h3 id="4-apply-base-colors-and-shading">4. Apply Base Colors and
+Shading</h3>
+<p>Limiting your color palette speeds up production and keeps icons
+cohesive.</p>
+<ol type="1">
+<li>Fill the enclosed areas using the <strong>Paint Bucket</strong> or
+color them manually with the Pencil.</li>
+<li>Choose a consistent light source direction, such as the top-left
+corner.</li>
+<li>Pick a highlight tone and a shadow tone for each base color. Keep
+tones distinct enough to read clearly at 100% zoom.</li>
+<li>Apply shadows to the underside and opposite side of the light
+source, and place highlights along top and exposed edges.</li>
+</ol>
+<h3 id="5-scale-and-export-the-icon">5. Scale and Export the Icon</h3>
+<p>Pixel art must be preserved in lossless formats and resized correctly
+to avoid blurring.</p>
+<ol type="1">
+<li>Save the working file as a <code>.pdn</code> to preserve layer data
+for future edits.</li>
+<li>To export at original size, choose <strong>File &gt; Save
+As</strong>, select <strong>PNG</strong>, and save.</li>
+<li>To upscale for web or preview use, go to <strong>Image &gt;
+Resize</strong>. Change the Resampling method to <strong>Nearest
+Neighbor</strong> (crucial for keeping sharp edges), and increase the
+size by integer multiples (such as 400%, 800%, or 1600%). Save the
+enlarged version as a separate PNG.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/make-pixel-art-icons-efficiently-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

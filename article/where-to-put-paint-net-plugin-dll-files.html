@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where to Put Paint.NET Plugin DLL Files - paint.net</title>
+    <meta name="description" content="This guide explains the correct folder destinations for Paint.NET DLL plugin files, covering both standard and Microsoft Store installations. Depending on whether your plugin introduces a new visual effect or adds support for an alternative file format, i">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/where-to-put-paint-net-plugin-dll-files">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Where to Put Paint.NET Plugin DLL Files - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/where-to-put-paint-net-plugin-dll-files" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This guide explains the correct folder destinations for Paint.NET DLL plugin files, covering both standard and Microsoft Store installations. Depending on whether your plugin introduces a new visual effect or adds support for an alternative file format, i" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="where-to-put-paintnet-plugin-dll-files">Where to Put Paint.NET
+Plugin DLL Files</h1>
+<p>This guide explains the correct folder destinations for Paint.NET DLL
+plugin files, covering both standard and Microsoft Store installations.
+Depending on whether your plugin introduces a new visual effect or adds
+support for an alternative file format, it must be placed into a
+specific directory so the application can load it properly.</p>
+<h3 id="determining-the-plugin-type">Determining the Plugin Type</h3>
+<p>Paint.NET categorizes plugins into two main types:</p>
+<ul>
+<li><strong>Effect Plugins:</strong> DLLs that add filters, adjustments,
+or drawing tools. These belong in an <strong>Effects</strong>
+folder.</li>
+<li><strong>File Type Plugins:</strong> DLLs that allow Paint.NET to
+open or save custom image formats (such as WebP, DDS, or PSD). These
+belong in a <strong>FileTypes</strong> folder.</li>
+</ul>
+<hr />
+<h3 id="standard-installation-classic-installer">Standard Installation
+(Classic Installer)</h3>
+<p>If you installed Paint.NET using the standard installer downloaded
+from the official website, navigate to the main application directory
+located in your Program Files:</p>
+<ul>
+<li><strong>For Effect Plugins:</strong><br />
+<code>C:\Program Files\paint.net\Effects</code></li>
+<li><strong>For File Type Plugins:</strong><br />
+<code>C:\Program Files\paint.net\FileTypes</code></li>
+</ul>
+<p><em>Note: Modifying contents inside <code>C:\Program Files</code>
+requires administrative privileges.</em></p>
+<hr />
+<h3 id="microsoft-store-and-user-specific-installation">Microsoft Store
+and User-Specific Installation</h3>
+<p>If you purchased Paint.NET from the Microsoft Store, or if you do not
+have administrative rights on your machine, you cannot modify the
+installation folder directly. Instead, place your DLL files in your
+personal user directory:</p>
+<ul>
+<li><strong>For Effect Plugins:</strong><br />
+<code>Documents\paint.net User Files\Effects</code></li>
+<li><strong>For File Type Plugins:</strong><br />
+<code>Documents\paint.net User Files\FileTypes</code></li>
+</ul>
+<p>If these subfolders do not already exist inside the
+<code>Documents\paint.net User Files</code> directory, you can safely
+create them manually. This user-level path works on both the Microsoft
+Store edition and classic desktop installations.</p>
+<hr />
+<h3 id="how-to-install-the-dll-files">How to Install the DLL Files</h3>
+<ol type="1">
+<li><strong>Close Paint.NET:</strong> Ensure the program is not
+currently running.</li>
+<li><strong>Extract the Files:</strong> If the plugin downloaded as a
+<code>.zip</code> archive, extract it to access the <code>.dll</code>
+file.</li>
+<li><strong>Unblock the File (If Necessary):</strong> Right-click the
+<code>.dll</code> file, select <strong>Properties</strong>, check the
+<strong>Unblock</strong> box at the bottom of the <em>General</em> tab
+if present, and click <strong>OK</strong>. Windows often blocks DLLs
+downloaded from the internet.</li>
+<li><strong>Move the File:</strong> Copy and paste the <code>.dll</code>
+into either the <code>Effects</code> or <code>FileTypes</code> folder
+based on its function and your installation type.</li>
+<li><strong>Relaunch Paint.NET:</strong> Start the application. Effect
+plugins will appear under the <strong>Effects</strong> or
+<strong>Adjustments</strong> menus, while file type plugins will be
+visible in the <strong>Open</strong> and <strong>Save As</strong> format
+dropdown menus.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/where-to-put-paint-net-plugin-dll-files';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix Paint.NET Not Opening Due to Corrupted Config - paint.net</title>
+    <meta name="description" content="When Paint.NET fails to open or crashes immediately upon startup, the issue is frequently traced back to a corrupted configuration file, damaged registry entry, or invalid application state. This guide provides a straightforward, step-by-step method to tr">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/fix-paint-net-not-opening-due-to-corrupted-config">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Fix Paint.NET Not Opening Due to Corrupted Config - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/fix-paint-net-not-opening-due-to-corrupted-config" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="When Paint.NET fails to open or crashes immediately upon startup, the issue is frequently traced back to a corrupted configuration file, damaged registry entry, or invalid application state. This guide provides a straightforward, step-by-step method to tr" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="fix-paintnet-not-opening-due-to-corrupted-config">Fix Paint.NET
+Not Opening Due to Corrupted Config</h1>
+<p>When Paint.NET fails to open or crashes immediately upon startup, the
+issue is frequently traced back to a corrupted configuration file,
+damaged registry entry, or invalid application state. This guide
+provides a straightforward, step-by-step method to troubleshoot and
+repair corrupted configuration data so Paint.NET can launch normally
+again.</p>
+<h3 id="step-1-run-the-built-in-repair-tool">Step 1: Run the Built-In
+Repair Tool</h3>
+<p>Paint.NET includes an automated repair utility designed to restore
+missing, modified, or damaged application files, including default
+configuration binaries.</p>
+<ol type="1">
+<li>Close any hanging Paint.NET processes using Task Manager
+(<code>Ctrl</code> + <code>Shift</code> + <code>Esc</code>).</li>
+<li>Open File Explorer and navigate to the Paint.NET installation
+directory:
+<ul>
+<li><strong>Standard installation:</strong>
+<code>C:\Program Files\paint.net</code></li>
+<li><strong>Windows Store installation:</strong> Windows handles repairs
+automatically via <strong>Windows Settings &gt; Apps &gt; Installed apps
+&gt; Paint.NET &gt; Advanced options &gt; Repair</strong>.</li>
+</ul></li>
+<li>Locate and run <strong>PdnRepair.exe</strong> as an
+administrator.</li>
+<li>Follow the on-screen prompts to scan and repair the installation,
+then attempt to launch Paint.NET.</li>
+</ol>
+<h3 id="step-2-delete-corrupted-appdata-configuration-files">Step 2:
+Delete Corrupted AppData Configuration Files</h3>
+<p>Paint.NET stores temporary caches, session states, and plugin
+configurations within the user profile directory. If a file here is
+corrupted, it will prevent initialization.</p>
+<ol type="1">
+<li>Press <code>Windows Key + R</code> to open the Run dialog.</li>
+<li>Type <code>%LOCALAPPDATA%\paint.net</code> and press
+<strong>Enter</strong>.</li>
+<li>Select and delete the contents of this folder, or rename the
+<code>paint.net</code> folder to <code>paint.net.old</code> to generate
+a fresh profile upon the next launch.</li>
+<li>Try launching Paint.NET.</li>
+</ol>
+<h3 id="step-3-reset-corrupted-settings-in-the-windows-registry">Step 3:
+Reset Corrupted Settings in the Windows Registry</h3>
+<p>Paint.NET writes user preferences and state settings directly to the
+Windows Registry. An unexpected shutdown or system crash can corrupt
+these values.</p>
+<ol type="1">
+<li>Press <code>Windows Key + R</code>, type <code>regedit</code>, and
+press <strong>Enter</strong> to open the Registry Editor.</li>
+<li>In the address bar at the top, navigate to:
+<code>HKEY_CURRENT_USER\Software\paint.net</code></li>
+<li>Right-click the <code>paint.net</code> folder in the left sidebar
+and select <strong>Export</strong> to create a backup file on your
+desktop.</li>
+<li>Right-click the <code>paint.net</code> folder again and select
+<strong>Delete</strong>.</li>
+<li>Close the Registry Editor and open Paint.NET. The application will
+regenerate all configuration keys with default values.</li>
+</ol>
+<h3 id="step-4-perform-a-clean-reinstallation">Step 4: Perform a Clean
+Reinstallation</h3>
+<p>If corrupted settings persist or core configuration files like
+<code>paint.net.exe.config</code> are unreadable:</p>
+<ol type="1">
+<li>Open <strong>Windows Settings</strong>
+(<code>Windows Key + I</code>) and go to <strong>Apps &gt; Installed
+apps</strong>.</li>
+<li>Locate <strong>Paint.NET</strong>, click the three dots, and select
+<strong>Uninstall</strong>.</li>
+<li>Press <code>Windows Key + R</code>, type
+<code>%PROGRAMFILES%\paint.net</code>, and delete any remaining files in
+the directory.</li>
+<li>Download the latest installer from the official Paint.NET website
+and complete a fresh installation.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/fix-paint-net-not-opening-due-to-corrupted-config';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

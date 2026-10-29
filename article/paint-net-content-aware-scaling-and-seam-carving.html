@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint.NET Content-Aware Scaling and Seam Carving - paint.net</title>
+    <meta name="description" content="This article explores the purpose and functionality of seam-carving and content-aware scaling plugins within Paint.NET. It explains how these tools overcome the limitations of traditional image resizing by intelligently altering canvas proportions while p">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/paint-net-content-aware-scaling-and-seam-carving">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Paint.NET Content-Aware Scaling and Seam Carving - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/paint-net-content-aware-scaling-and-seam-carving" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This article explores the purpose and functionality of seam-carving and content-aware scaling plugins within Paint.NET. It explains how these tools overcome the limitations of traditional image resizing by intelligently altering canvas proportions while p" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="paintnet-content-aware-scaling-and-seam-carving">Paint.NET
+Content-Aware Scaling and Seam Carving</h1>
+<p>This article explores the purpose and functionality of seam-carving
+and content-aware scaling plugins within Paint.NET. It explains how
+these tools overcome the limitations of traditional image resizing by
+intelligently altering canvas proportions while preserving key visual
+subjects. Readers will learn the mechanics behind seam carving, why
+third-party plugins are essential for Paint.NET users, and the primary
+scenarios where this technique is most effective.</p>
+<p>Seam carving, also known as content-aware scaling or liquid resizing,
+is an image manipulation technique designed to resize images
+non-linearly. Unlike standard resizing, which stretches, squashes, or
+crops an image uniformly, seam carving alters the dimensions while
+keeping the most visually important elements intact and unwarped.</p>
+<p>The primary purpose of installing a seam-carving plugin in Paint.NET
+is to fill a feature gap in the base software. While native Paint.NET
+tools only allow standard linear scaling and traditional cropping,
+content-aware plugins (such as those based on the open-source CAIR
+library) grant users advanced contextual resizing capabilities commonly
+found in expensive graphic design suites.</p>
+<p>The underlying algorithm works by analyzing the "energy" of an image.
+In digital image processing, energy corresponds to areas of high
+contrast, sharp details, and noticeable edges, such as people, text, or
+primary objects. Conversely, low-energy areas consist of uniform
+textures, such as clear skies, calm water, plain walls, or empty
+backgrounds.</p>
+<p>When a user reduces the width or height of an image, the plugin
+identifies a "seam"—an unbroken, single-pixel-wide path traversing the
+image from top to bottom or left to right that contains the lowest
+amount of cumulative energy. The plugin removes these low-energy seams
+one by one, shrinking the background while leaving high-energy subjects
+untouched. When expanding an image, the algorithm duplicates these
+low-energy seams to stretch the background naturally without distorting
+the main subject.</p>
+<p>The most common applications of seam-carving plugins in Paint.NET
+include:</p>
+<ul>
+<li><strong>Aspect Ratio Conversion:</strong> Adapting horizontal images
+for vertical or square displays—such as mobile screens or social media
+feeds—without cropping out vital context or stretching the main
+subject.</li>
+<li><strong>Space Reduction:</strong> Bringing two separated subjects
+closer together by intelligently removing the empty space between
+them.</li>
+<li><strong>Background Expansion:</strong> Extending the canvas
+boundaries to create room for text or graphics while avoiding the
+pixelation caused by traditional stretching.</li>
+</ul>
+<p>By identifying and manipulating only the least important pixels,
+seam-carving plugins enable Paint.NET users to reframe and recompose
+images flexibly, preserving visual fidelity and natural proportions
+without requiring manual cut-and-paste reconstruction.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/paint-net-content-aware-scaling-and-seam-carving';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

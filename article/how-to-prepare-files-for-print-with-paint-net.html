@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Prepare Files for Print with Paint.NET - paint.net</title>
+    <meta name="description" content="Preparing digital artwork for professional printing in Paint.NET requires configuring the correct physical dimensions, setting a print-standard resolution of 300 DPI, adding necessary bleed margins, managing RGB-to-CMYK color conversion, and exporting to">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/how-to-prepare-files-for-print-with-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Prepare Files for Print with Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/how-to-prepare-files-for-print-with-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Preparing digital artwork for professional printing in Paint.NET requires configuring the correct physical dimensions, setting a print-standard resolution of 300 DPI, adding necessary bleed margins, managing RGB-to-CMYK color conversion, and exporting to" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-prepare-files-for-print-with-paintnet">How to Prepare
+Files for Print with Paint.NET</h1>
+<p>Preparing digital artwork for professional printing in Paint.NET
+requires configuring the correct physical dimensions, setting a
+print-standard resolution of 300 DPI, adding necessary bleed margins,
+managing RGB-to-CMYK color conversion, and exporting to a lossless
+format. While Paint.NET is a lightweight raster editor primarily built
+for RGB screen graphics, following these specific steps ensures your
+digital files translate into sharp, accurately sized, and color-faithful
+physical prints.</p>
+<h3 id="1-set-the-correct-resolution-and-dimensions">1. Set the Correct
+Resolution and Dimensions</h3>
+<p>Printers measure detail in dots per inch (DPI), with 300 DPI being
+the industry standard for high-quality prints. Screen graphics typically
+use 72 or 96 DPI, which will look blurry or pixelated when printed.</p>
+<ul>
+<li><strong>For new projects:</strong> Go to <strong>File &gt;
+New</strong>. In the dialog box, set the <strong>Resolution</strong> to
+<code>300.00</code> pixels/inch. Change the print size units to inches
+or centimeters and enter your desired target dimensions.</li>
+<li><strong>For existing artwork:</strong> Go to <strong>Image &gt;
+Resize</strong>. Ensure <strong>By absolute size</strong> is checked,
+change the <strong>Resolution</strong> to <code>300.00</code>
+pixels/inch, and verify that the print width and height match your
+desired physical output. Avoid scaling up low-resolution images
+significantly, as software interpolation causes loss of sharpness.</li>
+</ul>
+<h3 id="2-add-bleed-and-safety-margins">2. Add Bleed and Safety
+Margins</h3>
+<p>Professional print shops print on oversized sheets and trim them to
+size. To prevent thin white borders caused by slight cutting
+misalignments, you must include a "bleed" area (typically 0.125 inches
+or 3 mm on all sides).</p>
+<ol type="1">
+<li>Calculate the extra pixels: At 300 DPI, a 0.125-inch bleed adds 37.5
+(round up to 38) pixels per side, which is 75 pixels total to both width
+and height.</li>
+<li>Go to <strong>Image &gt; Canvas Size</strong>.</li>
+<li>Set the anchor to <strong>Middle</strong>.</li>
+<li>Increase the width and height by your total bleed amount (e.g., an
+8x10 inch print becomes 8.25x10.25 inches).</li>
+<li>Extend your background colors or imagery completely to the outer
+edge of this new canvas.</li>
+<li>Keep all critical elements, such as text and logos, at least 0.25
+inches inside the original trim line (the safe zone).</li>
+</ol>
+<h3 id="3-manage-the-color-profile-rgb-vs-cmyk">3. Manage the Color
+Profile (RGB vs. CMYK)</h3>
+<p>Paint.NET operates exclusively in the sRGB color space. Professional
+commercial printers use the four-color CMYK (Cyan, Magenta, Yellow,
+Key/Black) process.</p>
+<ul>
+<li><strong>Avoid Out-of-Gamut Colors:</strong> Highly saturated greens,
+bright neon pinks, and intense electric blues exist in RGB but cannot be
+reproduced with physical ink. Stick to slightly more subdued tones to
+avoid unexpected dulling during the print process.</li>
+<li><strong>Conversion:</strong> Ask your print provider if they accept
+high-resolution sRGB files directly; modern digital printers often
+perform automatic conversion accurately. If your commercial printer
+strictly requires a CMYK file, export your final artwork from Paint.NET
+and perform the CMYK conversion using a dedicated program like Krita,
+Scribus, or an online ICC profile converter.</li>
+</ul>
+<h3 id="4-check-for-compression-and-artifacts">4. Check for Compression
+and Artifacts</h3>
+<p>Before finalizing your file, zoom in to <strong>100%</strong> view
+(<code>Ctrl + Shift + A</code>) to inspect the artwork at its true
+scale. Check for digital noise, compression artifacts, or soft edges
+around line art. If the artwork appears slightly soft after resizing,
+apply a mild sharpening filter via <strong>Effects &gt; Photo &gt;
+Sharpen</strong> at a low setting (1–2).</p>
+<h3 id="5-save-and-export-the-print-ready-file">5. Save and Export the
+Print-Ready File</h3>
+<p>Always retain your unflattened work before creating the final
+delivery file.</p>
+<ol type="1">
+<li>Save your master editable project file by going to <strong>File &gt;
+Save As</strong> and choosing the native **Paint.NET (*.pdn)** format to
+preserve your layers.</li>
+<li>Go to <strong>Image &gt; Flatten</strong> to merge all visible
+layers into a single background layer.</li>
+<li>Go to <strong>File &gt; Save As</strong> and select a lossless
+format:
+<ul>
+<li>**TIFF (*.tif):** The preferred industry standard for raster prints.
+Choose 24-bit or 32-bit depth without compression.</li>
+<li>**PNG (*.png):** Fully acceptable for most modern online and local
+print services, offering lossless compression without quality
+degradation.</li>
+<li><strong>Avoid standard JPEG:</strong> JPEGs introduce lossy
+compression artifacts that become visible in physical prints, especially
+around sharp text and high-contrast edges.</li>
+</ul></li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/how-to-prepare-files-for-print-with-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

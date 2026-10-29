@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint.NET Bicubic vs Bilinear: Which Resampling to Use? - paint.net</title>
+    <meta name="description" content="Resampling in Paint.NET determines how the software calculates new pixel values when scaling, rotating, or transforming an image. Choosing between Bicubic and Bilinear resampling comes down to the balance between edge sharpness and smooth transitions: Bic">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/paint-net-bicubic-vs-bilinear-which-resampling-to-use">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Paint.NET Bicubic vs Bilinear: Which Resampling to Use? - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/paint-net-bicubic-vs-bilinear-which-resampling-to-use" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Resampling in Paint.NET determines how the software calculates new pixel values when scaling, rotating, or transforming an image. Choosing between Bicubic and Bilinear resampling comes down to the balance between edge sharpness and smooth transitions: Bic" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="paintnet-bicubic-vs-bilinear-which-resampling-to-use">Paint.NET
+Bicubic vs Bilinear: Which Resampling to Use?</h1>
+<p>Resampling in Paint.NET determines how the software calculates new
+pixel values when scaling, rotating, or transforming an image. Choosing
+between Bicubic and Bilinear resampling comes down to the balance
+between edge sharpness and smooth transitions: Bicubic evaluates a
+larger grid of neighboring pixels to maintain fine detail and sharpness,
+making it ideal for upscaling and complex photography, while Bilinear
+interpolates across a smaller grid to produce softer transitions, making
+it better for modest downscaling, continuous gradients, and preventing
+edge artifacts.</p>
+<h3 id="understanding-the-technical-difference">Understanding the
+Technical Difference</h3>
+<ul>
+<li><strong>Bilinear Resampling:</strong> Calculates the color value of
+a new pixel by taking the weighted average of the <strong>4 nearest
+pixels</strong> (a 2x2 grid). Because it analyzes fewer pixels, it tends
+to blur sharp contrasts and smooth out transitions.</li>
+<li><strong>Bicubic Resampling:</strong> Calculates the color value
+using the weighted average of the <strong>16 nearest pixels</strong> (a
+4x4 grid) using cubic splines. This creates a sharper output with higher
+contrast retention along boundaries.</li>
+</ul>
+<h3 id="when-to-use-bicubic-resampling">When to Use Bicubic
+Resampling</h3>
+<p>Choose <strong>Bicubic</strong> when image sharpness, texture
+retention, and clarity are your primary objectives:</p>
+<ul>
+<li><strong>Upscaling Images:</strong> When enlarging an image, Bicubic
+invents missing pixels with higher precision, resulting in less visible
+blurriness than Bilinear.</li>
+<li><strong>High-Detail Photography:</strong> For landscapes, portraits,
+or pictures containing distinct textures (such as fabric, hair, or
+foliage), Bicubic preserves fine lines and depth.</li>
+<li><strong>Complex Transformations:</strong> When rotating an element
+by non-standard angles or applying free-form perspective adjustments,
+Bicubic keeps structural edges defined.</li>
+</ul>
+<p><em>Note:</em> Because Bicubic enhances contrast at boundaries, it
+can occasionally produce faint "halos" or ringing artifacts around very
+high-contrast edges (such as black text on a pure white background).</p>
+<h3 id="when-to-use-bilinear-resampling">When to Use Bilinear
+Resampling</h3>
+<p>Choose <strong>Bilinear</strong> when you need softer results, smooth
+gradients, or want to prevent unwanted sharpening artifacts:</p>
+<ul>
+<li><strong>Downscaling Images:</strong> When reducing the physical
+dimensions of an image, Bilinear naturally blends pixels, which
+minimizes moiré patterns and prevents the harsh over-sharpening that can
+occur with Bicubic.</li>
+<li><strong>Smooth Gradients and Soft Graphics:</strong> If your graphic
+contains subtle color ramps, sky backgrounds, or soft glows, Bilinear
+handles the color transitions smoothly without introducing banding or
+overshoot rings.</li>
+<li><strong>Low-Contrast or Blurry Originals:</strong> If the source
+image is already soft or out of focus, Bicubic may amplify the
+underlying noise; Bilinear maintains the intended softness.</li>
+<li><strong>System Performance:</strong> Bilinear requires significantly
+fewer mathematical calculations than Bicubic, making it noticeably
+faster when transforming extremely large, multi-megapixel layers on
+budget hardware.</li>
+</ul>
+<h3 id="quick-decision-guide">Quick Decision Guide</h3>
+<ul>
+<li><strong>Default to Bicubic</strong> for standard photo editing,
+enlarging elements, and any task where maintaining sharp visual detail
+is crucial.</li>
+<li><strong>Switch to Bilinear</strong> when shrinking graphics, working
+with subtle color gradients, or fixing excessive ringing artifacts
+caused by sharper resampling methods.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/paint-net-bicubic-vs-bilinear-which-resampling-to-use';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Fix Missing Plugin Menus in Paint.NET - paint.net</title>
+    <meta name="description" content="Plugins expand Paint.NET&#39;s functionality with custom effects and file format support, but they may fail to appear in the program&#39;s menus after installation. This issue is typically caused by installing files to the incorrect directory, Windows security bl">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/how-to-fix-missing-plugin-menus-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Fix Missing Plugin Menus in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/how-to-fix-missing-plugin-menus-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Plugins expand Paint.NET&#39;s functionality with custom effects and file format support, but they may fail to appear in the program&#39;s menus after installation. This issue is typically caused by installing files to the incorrect directory, Windows security bl" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-fix-missing-plugin-menus-in-paintnet">How to Fix Missing
+Plugin Menus in Paint.NET</h1>
+<p>Plugins expand Paint.NET's functionality with custom effects and file
+format support, but they may fail to appear in the program's menus after
+installation. This issue is typically caused by installing files to the
+incorrect directory, Windows security blocks on downloaded
+<code>.dll</code> files, failing to extract compressed archives, or
+running incompatible versions. Following these troubleshooting steps
+will help you identify the cause and restore your missing plugin menus
+quickly.</p>
+<h3 id="1-restart-paintnet">1. Restart Paint.NET</h3>
+<p>Paint.NET only scans its plugin directories when it launches. If you
+copied files into the plugin folder while the software was running, the
+new menus will not appear. Save your current work, close Paint.NET
+completely, and reopen it.</p>
+<h3 id="2-verify-the-installation-directory">2. Verify the Installation
+Directory</h3>
+<p>Plugins must be placed in the exact directory corresponding to your
+version of Paint.NET (Classic desktop installer vs. Microsoft Store
+version) and plugin type:</p>
+<ul>
+<li><strong>Classic Installer (Default):</strong>
+<ul>
+<li>Effect plugins: <code>C:\Program Files\paint.net\Effects</code></li>
+<li>File type plugins:
+<code>C:\Program Files\paint.net\FileTypes</code></li>
+</ul></li>
+<li><strong>Microsoft Store Version:</strong>
+<ul>
+<li>Effect plugins:
+<code>Documents\paint.net App Files\Effects</code></li>
+<li>File type plugins:
+<code>Documents\paint.net App Files\FileTypes</code></li>
+</ul></li>
+</ul>
+<p>Ensure effect plugins are not mistakenly placed in the
+<code>FileTypes</code> folder or the root Paint.NET directory.</p>
+<h3 id="3-unblock-downloaded-dll-files">3. Unblock Downloaded DLL
+Files</h3>
+<p>Windows often blocks <code>.dll</code> files downloaded from the
+internet as a security precaution, preventing Paint.NET from loading
+them.</p>
+<ol type="1">
+<li>Navigate to the folder where you installed the plugin.</li>
+<li>Right-click the plugin's <code>.dll</code> file and select
+<strong>Properties</strong>.</li>
+<li>Look at the bottom of the <strong>General</strong> tab for a
+security notice that says: <em>"This file came from another computer and
+might be blocked to help protect this computer."</em></li>
+<li>Check the <strong>Unblock</strong> box (or click the
+<strong>Unblock</strong> button), then click <strong>Apply</strong> and
+<strong>OK</strong>.</li>
+<li>Restart Paint.NET.</li>
+</ol>
+<h3 id="4-ensure-files-are-fully-extracted">4. Ensure Files Are Fully
+Extracted</h3>
+<p>Paint.NET cannot read plugins directly from <code>.zip</code>,
+<code>.rar</code>, or <code>.7z</code> archives. If you downloaded a
+compressed folder, extract its contents before moving them to the
+<code>Effects</code> directory. Only <code>.dll</code> files (and any
+accompanying dependency files specified by the creator) should reside
+directly inside the <code>Effects</code> folder. Avoid leaving plugins
+inside nested subfolders within <code>Effects</code>.</p>
+<h3 id="5-check-plugin-compatibility-and-dependencies">5. Check Plugin
+Compatibility and Dependencies</h3>
+<ul>
+<li><strong>Architecture and Paint.NET Version:</strong> Newer versions
+of Paint.NET run on modern .NET runtimes (such as .NET 7 or .NET 8) and
+are 64-bit only. Outdated plugins that rely on legacy .NET Framework
+versions or 32-bit architecture may fail to load silently.</li>
+<li><strong>Additional DLLs:</strong> Some complex plugins require
+secondary dependency files (such as
+<code>OptionBasedLibrary.dll</code>). Check the plugin creator's
+installation instructions to confirm whether auxiliary files must be
+copied alongside the primary plugin.</li>
+<li><strong>Load Errors Dialog:</strong> In Paint.NET, open
+<strong>Settings</strong> (gear icon in the top right), navigate to the
+<strong>Plugin Errors</strong> tab. If a plugin failed to load due to
+code errors or missing dependencies, Paint.NET will list the specific
+error details here.</li>
+</ul>
+<h3 id="6-look-under-alternative-menus">6. Look Under Alternative
+Menus</h3>
+<p>Plugins do not always appear under the specific menu you expect.
+While most register under <strong>Effects</strong>, creators can
+categorize them under submenus like <strong>Stylize</strong>,
+<strong>Render</strong>, <strong>Photo</strong>, or even their own
+custom-named submenu. Some tools appear under the
+<strong>Adjustments</strong> menu instead of <strong>Effects</strong>.
+Use the search function within the <strong>Effects</strong> menu
+(available in modern Paint.NET releases) to search for the plugin by
+name.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/how-to-fix-missing-plugin-menus-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint.NET Median Noise Reduction Filter Explained - paint.net</title>
+    <meta name="description" content="The Median noise reduction filter in Paint.NET is a specialized image processing tool designed to eliminate digital noise, grain, and visual artifacts while preserving critical edge details. Unlike standard blur algorithms that average pixel colors togeth">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/paint-net-median-noise-reduction-filter-explained">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Paint.NET Median Noise Reduction Filter Explained - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/paint-net-median-noise-reduction-filter-explained" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="The Median noise reduction filter in Paint.NET is a specialized image processing tool designed to eliminate digital noise, grain, and visual artifacts while preserving critical edge details. Unlike standard blur algorithms that average pixel colors togeth" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="paintnet-median-noise-reduction-filter-explained">Paint.NET
+Median Noise Reduction Filter Explained</h1>
+<p>The Median noise reduction filter in Paint.NET is a specialized image
+processing tool designed to eliminate digital noise, grain, and visual
+artifacts while preserving critical edge details. Unlike standard blur
+algorithms that average pixel colors together, this filter calculates
+the statistical median value of neighboring pixels to discard anomalous
+outliers. This article explains how the Median filter works, its primary
+applications in image editing, and how to effectively adjust its
+settings for optimal results.</p>
+<h3 id="how-the-median-filter-works">How the Median Filter Works</h3>
+<p>The Median filter operates by evaluating each pixel within an image
+relative to its surrounding area. For every pixel, Paint.NET examines a
+circular region defined by a set radius, sorts the brightness and color
+values of all pixels inside that boundary, and replaces the target pixel
+with the median value.</p>
+<p>Because outliers—such as rogue bright pixels, dust specs, or digital
+noise spikes—fall at the extreme ends of this sorted list rather than in
+the middle, they are completely replaced by typical surrounding colors.
+This allows the filter to eliminate harsh blemishes without causing the
+widespread color bleeding associated with standard Gaussian blurs.</p>
+<h3 id="primary-uses-in-paintnet">Primary Uses in Paint.NET</h3>
+<ul>
+<li><strong>Removing Salt-and-Pepper Noise:</strong> Digital sensors
+often introduce isolated bright or dark pixels in low-light photography.
+The Median filter efficiently targets and neutralizes these single-pixel
+defects without degrading the overall structure of the image.</li>
+<li><strong>Cleaning Scanned Documents and Photos:</strong> Physical
+media scans frequently capture dust particles, hairline scratches, and
+print-screen patterns (moiré). The Median filter smooths out these paper
+imperfections and halftone artifacts while keeping text and dominant
+line work legible.</li>
+<li><strong>Skin Smoothing and Blemish Retouching:</strong> In portrait
+editing, subtle application of the filter evens out skin blotchiness,
+minor blemishes, and pore texture without destroying facial
+contours.</li>
+<li><strong>Creating Artistic and Painterly Effects:</strong> When
+applied with higher radius values, the filter strips away fine
+micro-textures and clumps colors together, transforming realistic photos
+into smooth, stylized digital paintings or comic-style flat
+graphics.</li>
+</ul>
+<h3 id="filter-settings-radius-and-percentile">Filter Settings: Radius
+and Percentile</h3>
+<p>The Median tool is accessed under the <strong>Effects &gt; Noise &gt;
+Median</strong> menu. It features two primary controls:</p>
+<ol type="1">
+<li><strong>Radius (1 to 200):</strong> Determines the size of the
+neighborhood sample around each pixel. A lower radius (1–3 pixels) is
+best for subtle noise reduction and maintaining sharpness. Higher values
+produce aggressive smoothing and artistic flattening.</li>
+<li><strong>Percentile (0 to 100):</strong> Adjusts which point in the
+sorted list is selected instead of the strict 50% median. Shifting the
+percentile lower biases the output toward darker pixel values, while
+shifting it higher biases the result toward lighter tones. The default
+50% provides balanced, neutral noise removal.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/paint-net-median-noise-reduction-filter-explained';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

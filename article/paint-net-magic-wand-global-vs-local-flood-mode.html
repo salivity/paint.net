@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint.NET Magic Wand: Global vs Local Flood Mode - paint.net</title>
+    <meta name="description" content="This article explains the core differences between the Global and Local Flood Modes in Paint.NET&#39;s Magic Wand tool. Understanding these two modes will help you control how pixel selections spread across an image, allowing you to select isolated objects or">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/paint-net-magic-wand-global-vs-local-flood-mode">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Paint.NET Magic Wand: Global vs Local Flood Mode - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/paint-net-magic-wand-global-vs-local-flood-mode" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This article explains the core differences between the Global and Local Flood Modes in Paint.NET&#39;s Magic Wand tool. Understanding these two modes will help you control how pixel selections spread across an image, allowing you to select isolated objects or" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="paintnet-magic-wand-global-vs-local-flood-mode">Paint.NET Magic
+Wand: Global vs Local Flood Mode</h1>
+<p>This article explains the core differences between the Global and
+Local Flood Modes in Paint.NET's Magic Wand tool. Understanding these
+two modes will help you control how pixel selections spread across an
+image, allowing you to select isolated objects or target specific colors
+across an entire canvas with precision.</p>
+<h3 id="what-is-flood-mode">What Is Flood Mode?</h3>
+<p>When using the Magic Wand (or Paint Bucket) in Paint.NET, Flood Mode
+determines how far the selection extends from the point you click. Based
+on the active Tolerance level, Paint.NET identifies pixels that match
+the color of the target pixel. Flood Mode then decides whether the
+selection should be restricted to connected areas or applied across the
+entire active layer.</p>
+<h3 id="local-flood-mode-contiguous-selection">Local Flood Mode
+(Contiguous Selection)</h3>
+<p>Local mode is the default setting for the Magic Wand. It functions as
+a contiguous selection tool.</p>
+<ul>
+<li><strong>How It Works:</strong> When you click a pixel, the selection
+expands outward, only including adjacent pixels that fall within the
+chosen tolerance. If the expansion encounters a boundary—such as an
+outline or a different color outside the tolerance limit—the selection
+stops.</li>
+<li><strong>Key Characteristic:</strong> Selected pixels must be
+physically connected to the point of origin. Disconnected regions of the
+exact same color will remain unselected.</li>
+<li><strong>Best Used For:</strong>
+<ul>
+<li>Isolating a single object from its background.</li>
+<li>Selecting a specific, enclosed shape or section of an
+illustration.</li>
+<li>Editing an area without affecting identical colors elsewhere in the
+image.</li>
+</ul></li>
+</ul>
+<h3 id="global-flood-mode-non-contiguous-selection">Global Flood Mode
+(Non-Contiguous Selection)</h3>
+<p>Global mode removes the requirement for pixels to be touching,
+functioning as a color-wide selection tool.</p>
+<ul>
+<li><strong>How It Works:</strong> When you click a pixel, Paint.NET
+scans the entire active layer (or current active selection) and selects
+<em>every</em> pixel that matches the targeted color within the chosen
+tolerance, regardless of its location on the canvas.</li>
+<li><strong>Key Characteristic:</strong> Pixels do not need to be
+connected to the clicked area. Islands of matching color separated by
+different colors will all be selected simultaneously.</li>
+<li><strong>Best Used For:</strong>
+<ul>
+<li>Removing a solid background that appears in multiple disconnected
+areas (such as the spaces inside letters or between limbs).</li>
+<li>Replacing a specific color throughout an entire image or
+design.</li>
+<li>Selecting line art or complex patterns across the entire
+canvas.</li>
+</ul></li>
+</ul>
+<h3 id="quick-comparison">Quick Comparison</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">Local Mode</th>
+<th style="text-align: left;">Global Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Pixel Connectivity</strong></td>
+<td style="text-align: left;">Must be touching (contiguous)</td>
+<td style="text-align: left;">Does not need to be touching
+(non-contiguous)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Boundaries</strong></td>
+<td style="text-align: left;">Blocked by non-matching colors</td>
+<td style="text-align: left;">Ignores boundaries</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Scope</strong></td>
+<td style="text-align: left;">Confined to the clicked region</td>
+<td style="text-align: left;">Affects the entire active layer</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Primary Use</strong></td>
+<td style="text-align: left;">Isolating single objects</td>
+<td style="text-align: left;">Canvas-wide color targeting</td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-to-switch-between-modes">How to Switch Between Modes</h3>
+<p>You can switch the Flood Mode via the tool options bar at the top of
+the Paint.NET window whenever the Magic Wand is active:</p>
+<ol type="1">
+<li>Click the <strong>Flood Mode</strong> dropdown in the toolbar.</li>
+<li>Select either <strong>Contiguous</strong> (Local) or
+<strong>Global</strong>.</li>
+</ol>
+<p>Alternatively, you can temporarily invoke Global mode while the tool
+is set to Local by holding down the <strong>Shift</strong> key when you
+click on the image.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/paint-net-magic-wand-global-vs-local-flood-mode';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

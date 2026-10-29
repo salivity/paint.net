@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Do a Perspective Transform in Paint.NET - paint.net</title>
+    <meta name="description" content="This guide explains how to apply a perspective transformation to an image or layer in Paint.NET. Because Paint.NET handles perspective differently depending on the tools available, you will learn how to simulate perspective using the built-in 3D transform">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/how-to-do-a-perspective-transform-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Do a Perspective Transform in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/how-to-do-a-perspective-transform-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This guide explains how to apply a perspective transformation to an image or layer in Paint.NET. Because Paint.NET handles perspective differently depending on the tools available, you will learn how to simulate perspective using the built-in 3D transform" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-do-a-perspective-transform-in-paintnet">How to Do a
+Perspective Transform in Paint.NET</h1>
+<p>This guide explains how to apply a perspective transformation to an
+image or layer in Paint.NET. Because Paint.NET handles perspective
+differently depending on the tools available, you will learn how to
+simulate perspective using the built-in 3D transformation tool and how
+to achieve true corner-pin perspective using popular Distort effects
+plugins.</p>
+<h3 id="method-1-built-in-3d-perspective-rotate--zoom">Method 1:
+Built-in 3D Perspective (Rotate / Zoom)</h3>
+<p>Paint.NET includes a native feature that rotates a layer along a
+three-dimensional axis to create perspective depth.</p>
+<ol type="1">
+<li><strong>Isolate Your Subject:</strong> Place the image or element
+you want to transform onto its own transparent layer. If it is currently
+part of the background, select it using the <strong>Lasso</strong> or
+<strong>Rectangle Select</strong> tool, cut it (<code>Ctrl + X</code>),
+add a new layer (<code>Ctrl + Shift + N</code>), and paste it
+(<code>Ctrl + V</code>).</li>
+<li><strong>Open the Tool:</strong> Click on <strong>Layers</strong> in
+the top menu and select <strong>Rotate / Zoom</strong> (or press
+<code>Ctrl + Shift + Z</code>).</li>
+<li><strong>Adjust the 3D Ball:</strong> In the settings window, look at
+the 3D globe control on the left. Click and drag the globe to rotate
+your layer in 3D space. Tilting it backward or forward narrows the top
+or bottom, producing an automatic perspective foreshortening
+effect.</li>
+<li><strong>Fine-Tune with Sliders:</strong>
+<ul>
+<li>Adjust the <strong>Angle</strong> and <strong>Twist</strong> sliders
+for precise angle control.</li>
+<li>Use the <strong>Zoom</strong> slider if the transformation causes
+parts of your image to clip outside the canvas boundaries.</li>
+<li>Adjust the <strong>Pan</strong> controls to reposition the object on
+the canvas.</li>
+</ul></li>
+<li><strong>Apply:</strong> Click <strong>OK</strong> to commit the
+perspective change.</li>
+</ol>
+<h3 id="method-2-corner-pinning-perspective-using-effect-plugins">Method
+2: Corner-Pinning Perspective (Using Effect Plugins)</h3>
+<p>For true four-corner perspective adjustments (such as fitting an
+image onto a tilted billboard or smartphone screen), Paint.NET requires
+a perspective plugin, such as Evan Olds’ <em>Perspective</em> plugin or
+the <em>Quadrilateral Reshape</em> effect.</p>
+<ol type="1">
+<li><strong>Install the Plugin:</strong> Download a trusted perspective
+plugin from the official Paint.NET forums and place the
+<code>.dll</code> file into your Paint.NET <code>Effects</code> folder
+(typically <code>C:\Program Files\paint.net\Effects</code>), then
+restart Paint.NET.</li>
+<li><strong>Make a Selection:</strong> Select the layer containing your
+image. If you only want to transform a specific area, make an active
+selection around it.</li>
+<li><strong>Open the Effect:</strong> Navigate to
+<strong>Effects</strong> &gt; <strong>Distort</strong> &gt;
+<strong>Perspective</strong> (or <strong>Quadrilateral Reshape</strong>
+depending on the installed plugin).</li>
+<li><strong>Move the Control Points:</strong> The plugin interface
+displays four interactive control handles corresponding to the four
+corners of your image:
+<ul>
+<li>Click and drag the <strong>Top-Left</strong>,
+<strong>Top-Right</strong>, <strong>Bottom-Left</strong>, and
+<strong>Bottom-Right</strong> control points independently.</li>
+<li>Align each point with the target perspective plane.</li>
+</ul></li>
+<li><strong>Adjust Quality Settings:</strong> If the plugin provides an
+antialiasing or interpolation dropdown (such as Bilinear or Bicubic),
+set it to the highest setting for smoother edges.</li>
+<li><strong>Apply:</strong> Click <strong>OK</strong> to render the
+perspective transformation onto your layer.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/how-to-do-a-perspective-transform-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

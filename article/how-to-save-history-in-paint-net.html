@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Save History in Paint.NET - paint.net</title>
+    <meta name="description" content="This guide explains the limitations of saving edit history in Paint.NET and provides the best practical workarounds to preserve your work states. While users frequently seek a way to store their full Undo/History panel to reopen later, Paint.NET handles s">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/how-to-save-history-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Save History in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/how-to-save-history-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This guide explains the limitations of saving edit history in Paint.NET and provides the best practical workarounds to preserve your work states. While users frequently seek a way to store their full Undo/History panel to reopen later, Paint.NET handles s" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-save-history-in-paintnet">How to Save History in
+Paint.NET</h1>
+<p>This guide explains the limitations of saving edit history in
+Paint.NET and provides the best practical workarounds to preserve your
+work states. While users frequently seek a way to store their full
+Undo/History panel to reopen later, Paint.NET handles session data
+differently than software like Adobe Photoshop. Below is a direct
+breakdown of how the software manages history and the exact steps you
+can take to retain your previous edit states across editing
+sessions.</p>
+<h3 id="can-you-save-the-history-state-session">Can You Save the History
+State Session?</h3>
+<p>Directly saving the Undo/Redo history stack in Paint.NET is not
+possible. Paint.NET does not include a feature to export, save, or embed
+the contents of the History window into a file.</p>
+<p>Even when saving in Paint.NET’s native <code>.pdn</code> format, the
+program only preserves:</p>
+<ul>
+<li>Image dimensions and canvas settings</li>
+<li>Individual layers and their visibility</li>
+<li>Layer opacity and blend modes</li>
+</ul>
+<p>Once you close an image or exit Paint.NET, the temporary cache that
+holds your undo steps is permanently deleted from your system memory and
+temporary scratch disk.</p>
+<hr />
+<h3 id="why-paintnet-does-not-save-history">Why Paint.NET Does Not Save
+History</h3>
+<p>Paint.NET stores history states as full or partial bitmap snapshots
+in your system's RAM and temporary disk space. Because raster image
+editing records large amounts of raw pixel data for every brush stroke,
+blur, and adjustment, writing this data permanently to a file would
+cause project files to reach several gigabytes in size. Consequently,
+the native <code>.pdn</code> file format is strictly designed to store
+the final image data and layer configuration, not the chronological
+steps taken to produce them.</p>
+<hr />
+<h3 id="workarounds-to-preserve-edit-states">Workarounds to Preserve
+Edit States</h3>
+<p>Because the history panel cannot be saved directly, you must use
+alternative strategies to safeguard previous stages of your project.</p>
+<h4 id="1-layer-based-checkpoints">1. Layer-Based Checkpoints</h4>
+<p>Instead of relying on the Undo panel, create manual checkpoints
+within the same file using layers:</p>
+<ol type="1">
+<li>Open the <strong>Layers</strong> panel (<code>F7</code>).</li>
+<li>Before applying a major effect or destructive edit, click
+<strong>Duplicate Layer</strong> (<code>Ctrl + Shift + D</code>).</li>
+<li>Hide the original layer by unchecking its visibility box.</li>
+<li>Rename the original layer to something descriptive, such as "Base
+Before Color Grade".</li>
+<li>Perform your edits on the duplicate layer.</li>
+</ol>
+<p>Saving the file as a <code>.pdn</code> will ensure these historical
+states remain accessible every time you open the document.</p>
+<h4 id="2-incremental-saving-versioning">2. Incremental Saving
+(Versioning)</h4>
+<p>Save sequential copies of your project file at critical
+milestones:</p>
+<ol type="1">
+<li>Go to <strong>File</strong> &gt; <strong>Save As</strong>
+(<code>Ctrl + Shift + S</code>).</li>
+<li>Append a version number to the file name (e.g.,
+<code>Project_v01.pdn</code>, <code>Project_v02.pdn</code>).</li>
+<li>Continue working and repeat the process before making substantial
+changes.</li>
+</ol>
+<p>This method allows you to revert to an earlier phase of the design
+without bloating a single file with dozens of duplicate layers.</p>
+<h4 id="3-keep-the-session-open">3. Keep the Session Open</h4>
+<p>If you temporarily need your exact undo history intact:</p>
+<ul>
+<li>Avoid closing the document tab or the program.</li>
+<li>Save your current progress as a <code>.pdn</code> file to prevent
+data loss.</li>
+<li>Put your computer to Sleep or Hibernate instead of shutting it down.
+Paint.NET will retain its active memory state and undo history as long
+as the process remains running.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/how-to-save-history-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

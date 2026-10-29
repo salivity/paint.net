@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Batch Process Images in Paint.NET - paint.net</title>
+    <meta name="description" content="This guide explains how to batch-process multiple images simultaneously in Paint.NET using community-developed tools. While Paint.NET does not include a native batch-processing feature, you can automate repetitive edits—such as resizing, file format conve">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/how-to-batch-process-images-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Batch Process Images in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/how-to-batch-process-images-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This guide explains how to batch-process multiple images simultaneously in Paint.NET using community-developed tools. While Paint.NET does not include a native batch-processing feature, you can automate repetitive edits—such as resizing, file format conve" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-batch-process-images-in-paintnet">How to Batch Process
+Images in Paint.NET</h1>
+<p>This guide explains how to batch-process multiple images
+simultaneously in Paint.NET using community-developed tools. While
+Paint.NET does not include a native batch-processing feature, you can
+automate repetitive edits—such as resizing, file format conversion,
+color adjustments, and effect rendering—by installing specialized
+community plugins like the Bulk Processor.</p>
+<h3 id="step-1-download-and-install-the-bulk-processor-plugin">Step 1:
+Download and Install the Bulk Processor Plugin</h3>
+<ol type="1">
+<li>Visit the official Paint.NET Community Forums and locate the
+<strong>Bulk Processor</strong> plugin thread in the "Plugins -
+Publishing ONLY!" section.</li>
+<li>Download the compressed <code>.zip</code> archive containing the
+plugin files.</li>
+<li>Close Paint.NET if it is currently running.</li>
+<li>Extract the downloaded <code>.zip</code> file to locate the
+<code>.dll</code> file (typically named
+<code>BulkProcessor.dll</code>).</li>
+<li>Move the <code>.dll</code> file into your Paint.NET installation
+directory:
+<ul>
+<li><strong>Standard Installation:</strong>
+<code>C:\Program Files\paint.net\Effects</code></li>
+<li><strong>Microsoft Store Version:</strong>
+<code>Documents\paint.net App Files\Effects</code></li>
+</ul></li>
+<li>Restart Paint.NET to load the new plugin.</li>
+</ol>
+<h3 id="step-2-prepare-your-image-folders">Step 2: Prepare Your Image
+Folders</h3>
+<p>To avoid accidentally overwriting original images, prepare two
+separate folders on your computer:</p>
+<ul>
+<li><strong>Source Folder:</strong> Place all the images you intend to
+edit in bulk into this directory.</li>
+<li><strong>Output Folder:</strong> Create an empty directory where
+Paint.NET will save the processed results.</li>
+</ul>
+<h3 id="step-3-configure-and-run-the-batch-process">Step 3: Configure
+and Run the Batch Process</h3>
+<ol type="1">
+<li>Open Paint.NET.</li>
+<li>Navigate to the top menu bar, click <strong>Effects</strong>, and
+select <strong>Tools</strong> (or the specific sub-menu where the plugin
+appears) to open <strong>Bulk Processor</strong>.</li>
+<li>In the plugin window, set your <strong>Source Directory</strong> by
+browsing to the folder containing your original images.</li>
+<li>Set your <strong>Destination Directory</strong> by browsing to your
+output folder.</li>
+<li>Choose your target output format (e.g., PNG, JPEG, BMP) and
+configure image quality or compression sliders if applicable.</li>
+<li>Define your processing operations. Depending on your needs, select
+actions such as:
+<ul>
+<li><strong>Dimensions:</strong> Define a fixed width and height, or
+scale by percentage while maintaining the aspect ratio.</li>
+<li><strong>Effects and Adjustments:</strong> Select specific Paint.NET
+filters, brightness/contrast modifications, or color corrections to
+apply to every image.</li>
+<li><strong>File Renaming:</strong> Specify prefixes, suffixes, or
+numbering patterns for the exported files.</li>
+</ul></li>
+<li>Click <strong>Start</strong> or <strong>Process</strong> to initiate
+the bulk operation.</li>
+</ol>
+<p>A progress bar will indicate the status of the queue. Once finished,
+navigate to your destination folder to review the processed images.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/how-to-batch-process-images-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

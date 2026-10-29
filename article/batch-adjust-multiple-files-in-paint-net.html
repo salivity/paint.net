@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batch Adjust Multiple Files in Paint.NET - paint.net</title>
+    <meta name="description" content="Paint.NET is a versatile, lightweight image editor, but it lacks a built-in, native batch-processing feature for editing multiple images at once. To apply adjustments like resizing, color correction, or filters across multiple files, you must rely on comm">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/batch-adjust-multiple-files-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Batch Adjust Multiple Files in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/batch-adjust-multiple-files-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Paint.NET is a versatile, lightweight image editor, but it lacks a built-in, native batch-processing feature for editing multiple images at once. To apply adjustments like resizing, color correction, or filters across multiple files, you must rely on comm" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="batch-adjust-multiple-files-in-paintnet">Batch Adjust Multiple
+Files in Paint.NET</h1>
+<p>Paint.NET is a versatile, lightweight image editor, but it lacks a
+built-in, native batch-processing feature for editing multiple images at
+once. To apply adjustments like resizing, color correction, or filters
+across multiple files, you must rely on community-created plugins,
+workflow automation, or dedicated batch-processing utilities designed to
+complement Paint.NET. This guide covers the most efficient methods to
+automate adjustments across your image library.</p>
+<h3 id="understanding-paintnets-native-limitations">Understanding
+Paint.NET's Native Limitations</h3>
+<p>By default, Paint.NET opens each image in a separate tab and applies
+adjustments only to the active canvas. If you need to process dozens or
+hundreds of images identically, performing adjustments manually
+tab-by-tab is inefficient. To solve this, you can use specialized tools
+alongside Paint.NET to achieve automated batch adjustments.</p>
+<hr />
+<h3 id="method-1-use-the-paintnet-bulk-image-processor">Method 1: Use
+the Paint.NET Bulk Image Processor</h3>
+<p>The Paint.NET community developed external tools like the Bulk Image
+Processor (or batch automation scripts) to apply Paint.NET effects to
+folders of images.</p>
+<ol type="1">
+<li><strong>Download a Compatible Batch Tool:</strong> Search the
+official Paint.NET forums for bulk processing utilities (such as <em>PDN
+Bulk Processor</em> or AutoHotkey/AutoIt automation scripts created for
+Paint.NET).</li>
+<li><strong>Install or Extract the Tool:</strong> Place the processor
+executable in your Paint.NET directory or a dedicated workspace
+folder.</li>
+<li><strong>Configure the Input and Output:</strong> Launch the tool,
+set the source directory containing the images you want to edit, and
+define an output destination.</li>
+<li><strong>Select Adjustments:</strong> Choose the adjustment
+parameters you wish to apply (such as brightness/contrast, level
+adjustments, or conversion).</li>
+<li><strong>Run the Process:</strong> Start the batch queue and wait for
+the utility to cycle through the files.</li>
+</ol>
+<hr />
+<h3 id="method-2-combine-paintnet-with-xnconvert">Method 2: Combine
+Paint.NET with XnConvert</h3>
+<p>For standard image adjustments (color grading, sharpening, resizing,
+format conversion, and watermarking), the standard recommendation among
+Paint.NET power users is pairing the program with
+<strong>XnConvert</strong>, a free, dedicated batch image processor.</p>
+<ol type="1">
+<li><strong>Install XnConvert:</strong> Download and launch the
+application alongside Paint.NET.</li>
+<li><strong>Add Files:</strong> Click the <strong>Input</strong> tab,
+choose <strong>Add files</strong> or <strong>Add folder</strong>, and
+load all the images you intend to edit.</li>
+<li><strong>Add Adjustments (Actions):</strong>
+<ul>
+<li>Navigate to the <strong>Actions</strong> tab.</li>
+<li>Click <strong>Add action</strong> and select your adjustment
+category (e.g., <strong>Map</strong> for Equalize/Levels,
+<strong>Image</strong> for Resize/Rotate, or <strong>Adjust</strong> for
+Brightness/Contrast/Hue).</li>
+<li>Adjust the sliders to match the visual result you want to achieve
+across the batch.</li>
+</ul></li>
+<li><strong>Set Output Destination:</strong> Go to the
+<strong>Output</strong> tab to specify the destination directory, file
+naming format, and image type (e.g., PNG, JPEG, or TIFF).</li>
+<li><strong>Convert:</strong> Click <strong>Convert</strong> in the
+bottom-right corner to apply the settings to all images instantly.</li>
+</ol>
+<hr />
+<h3
+id="method-3-automate-adjustments-via-paintnet-and-autohotkey">Method 3:
+Automate Adjustments via Paint.NET and AutoHotkey</h3>
+<p>If you specifically require Paint.NET's proprietary adjustments or
+custom effect plugins, you can create a lightweight macro script using
+AutoHotkey to automate repetitive tasks:</p>
+<ol type="1">
+<li><strong>Define Your Adjustment Sequence:</strong> Note the exact
+keyboard shortcuts for the adjustments you want in Paint.NET (e.g.,
+<code>Ctrl+Shift+U</code> for Invert Colors, <code>Ctrl+Shift+L</code>
+for Auto-Level).</li>
+<li><strong>Write an Automation Script:</strong> Use AutoHotkey to
+script a loop that focuses on Paint.NET, applies your keyboard
+shortcuts, saves the file (<code>Ctrl+S</code>), closes the current tab
+(<code>Ctrl+W</code>), and moves to the next open image.</li>
+<li><strong>Execute the Script:</strong> Open all target images in
+Paint.NET simultaneously and trigger your hotkey to process each open
+tab sequentially.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/batch-adjust-multiple-files-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

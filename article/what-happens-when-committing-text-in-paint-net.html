@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Happens When Committing Text in Paint.NET - paint.net</title>
+    <meta name="description" content="In Paint.NET, using the Text tool allows you to type and format text dynamically, but committing the action permanently rasterizes the characters directly into the active layer. This means the text transforms from editable typography into flat pixels, eli">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/what-happens-when-committing-text-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="What Happens When Committing Text in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/what-happens-when-committing-text-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="In Paint.NET, using the Text tool allows you to type and format text dynamically, but committing the action permanently rasterizes the characters directly into the active layer. This means the text transforms from editable typography into flat pixels, eli" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="what-happens-when-committing-text-in-paintnet">What Happens When
+Committing Text in Paint.NET</h1>
+<p>In Paint.NET, using the Text tool allows you to type and format text
+dynamically, but committing the action permanently rasterizes the
+characters directly into the active layer. This means the text
+transforms from editable typography into flat pixels, eliminating the
+ability to change the font, fix typos, or adjust text properties later.
+This article explains the technical reality of committing text in
+Paint.NET, how it impacts your workflow, and the essential steps to keep
+your designs manageable.</p>
+<h3 id="the-rasterization-process">The Rasterization Process</h3>
+<p>While you are actively typing with the Text tool, Paint.NET holds the
+characters in a temporary, editable buffer. During this stage, you can
+backspace, alter the font family, change font size, toggle bold or
+italic styles, and change text alignment.</p>
+<p>The moment you commit the text—by switching to another tool, pressing
+the <code>Finish</code> button on the toolbar, pressing
+<code>Esc</code>, or clicking elsewhere on the canvas—Paint.NET
+rasterizes the text. Rasterization converts the vector-based font
+outlines into a fixed grid of colored pixels.</p>
+<h3 id="permanent-loss-of-text-properties">Permanent Loss of Text
+Properties</h3>
+<p>Once committed, Paint.NET no longer recognizes the text as written
+language. Instead, it treats the letters identically to strokes made
+with the Paintbrush or Pencil tools.</p>
+<p>Because Paint.NET does not feature dedicated, persistent text layers
+like Adobe Photoshop or GIMP:</p>
+<ul>
+<li>You cannot double-click the text to place a cursor back into
+it.</li>
+<li>You cannot highlight words to change spelling, font sizes, or
+typefaces.</li>
+<li>You cannot dynamically adjust line spacing or alignment after the
+fact.</li>
+</ul>
+<p>The only way to modify committed text within the current session is
+to use the <code>Undo</code> command (<code>Ctrl + Z</code>)
+immediately, which reverts the rasterization and allows you to re-enter
+text mode. Once your edit history is cleared or the project is closed,
+the text cannot be reverted to an editable state.</p>
+<h3 id="layer-impact">Layer Impact</h3>
+<p>Text is stamped directly onto whichever layer is currently active in
+the Layers window.</p>
+<ul>
+<li><strong>On an Image Layer:</strong> If an image or background layer
+is selected when you commit, the text merges directly into those
+background pixels. Erasing a typo afterward will erase the underlying
+image beneath the text as well.</li>
+<li><strong>On a Blank Layer:</strong> If a transparent layer is
+selected, the text pixels exist independently of other visual
+elements.</li>
+</ul>
+<h3 id="best-practices-for-working-with-text-in-paintnet">Best Practices
+for Working with Text in Paint.NET</h3>
+<p>Because committing text is irreversible, you should adapt your
+workflow to avoid losing work:</p>
+<ol type="1">
+<li><strong>Always Create a New Layer:</strong> Before selecting the
+Text tool, click the <strong>Add New Layer</strong> button in the Layers
+window. Keeping text on its own transparent layer ensures that you can
+move, rotate, adjust opacity, or delete the text without damaging the
+background image.</li>
+<li><strong>Move with the Pixel Tool:</strong> Once text is committed on
+an isolated layer, switch to the <strong>Move Selected Pixels</strong>
+tool (<code>M</code>) to reposition or scale it.</li>
+<li><strong>Save as <code>.PDN</code>:</strong> Always save a master
+copy of your work in the native Paint.NET format (<code>.pdN</code>).
+While this does not make rasterized text editable, it preserves your
+separate layers so you can easily delete a text layer and retype it if
+changes are necessary.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/what-happens-when-committing-text-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

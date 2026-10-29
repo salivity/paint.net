@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default File Format for Save As in Paint.NET - paint.net</title>
+    <meta name="description" content="When you click &quot;Save As&quot; in Paint.NET, the default suggested file format is the native .pdn (Paint.NET Document) format. This article explains how Paint.NET determines its default save format, why the application prioritizes .pdn, and how the program beha">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/default-file-format-for-save-as-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Default File Format for Save As in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/default-file-format-for-save-as-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="When you click &quot;Save As&quot; in Paint.NET, the default suggested file format is the native .pdn (Paint.NET Document) format. This article explains how Paint.NET determines its default save format, why the application prioritizes .pdn, and how the program beha" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="default-file-format-for-save-as-in-paintnet">Default File Format
+for Save As in Paint.NET</h1>
+<p>When you click "Save As" in Paint.NET, the default suggested file
+format is the native <strong>.pdn</strong> (Paint.NET Document) format.
+This article explains how Paint.NET determines its default save format,
+why the application prioritizes .pdn, and how the program behaves when
+dealing with different image conditions like multiple layers or
+pre-existing files.</p>
+<h3 id="the-native-pdn-format">The Native .pdn Format</h3>
+<p>For any new, untitled canvas created from scratch, Paint.NET
+automatically sets the file type in the "Save As" dialog to
+<strong>.pdn</strong>.</p>
+<p>The .pdn format is proprietary to Paint.NET and is designed to
+preserve project-specific data that standard formats cannot hold. This
+includes:</p>
+<ul>
+<li>Multiple separate image layers</li>
+<li>Layer visibility and opacity settings</li>
+<li>Layer blend modes</li>
+</ul>
+<h3 id="how-image-layers-affect-the-default-format">How Image Layers
+Affect the Default Format</h3>
+<p>Paint.NET dynamically adjusts its save recommendation based on the
+composition of your project:</p>
+<ol type="1">
+<li><strong>Multi-Layer Projects:</strong> If your project contains two
+or more layers, Paint.NET will always suggest <strong>.pdn</strong> as
+the default format. This safety mechanism prevents you from accidentally
+flattening your work and losing individual layers.</li>
+<li><strong>Existing Single-Layer Images:</strong> If you open an
+existing file (such as a <code>.png</code> or <code>.jpg</code>) and
+leave it as a single layer, clicking "Save As" will default to that
+file's original format rather than .pdn.</li>
+<li><strong>Modified Existing Images:</strong> If you open a standard
+image like a <code>.jpg</code> and add a second layer, the default "Save
+As" behavior will immediately switch to <strong>.pdn</strong> to protect
+the new layer structure.</li>
+</ol>
+<h3 id="exporting-to-standard-formats">Exporting to Standard
+Formats</h3>
+<p>While <code>.pdn</code> is the default for new or layered work, it is
+not viewable by standard web browsers or most external photo viewers. To
+save a project for sharing or online use:</p>
+<ol type="1">
+<li>Click <strong>File</strong> &gt; <strong>Save As</strong>.</li>
+<li>Click the <strong>Save as type</strong> dropdown menu beneath the
+file name.</li>
+<li>Select a standard format such as <strong>PNG</strong>,
+<strong>JPEG</strong>, or <strong>BMP</strong>.</li>
+<li>If your project contains multiple layers, Paint.NET will prompt you
+to <strong>Flatten</strong> the image before saving the export.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/default-file-format-for-save-as-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

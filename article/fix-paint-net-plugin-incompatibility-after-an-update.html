@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix Paint.NET Plugin Incompatibility After an Update - paint.net</title>
+    <meta name="description" content="Upgrading Paint.NET introduces performance improvements, newer .NET runtimes, and modern APIs, but it can frequently cause older plugins to stop working or crash the application. This guide outlines how to identify failing plugins, update them to compatib">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/fix-paint-net-plugin-incompatibility-after-an-update">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Fix Paint.NET Plugin Incompatibility After an Update - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/fix-paint-net-plugin-incompatibility-after-an-update" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Upgrading Paint.NET introduces performance improvements, newer .NET runtimes, and modern APIs, but it can frequently cause older plugins to stop working or crash the application. This guide outlines how to identify failing plugins, update them to compatib" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="fix-paintnet-plugin-incompatibility-after-an-update">Fix
+Paint.NET Plugin Incompatibility After an Update</h1>
+<p>Upgrading Paint.NET introduces performance improvements, newer .NET
+runtimes, and modern APIs, but it can frequently cause older plugins to
+stop working or crash the application. This guide outlines how to
+identify failing plugins, update them to compatible versions, remove
+obsolete dynamic link libraries (DLLs), and restore functionality to
+your effects and file type tools.</p>
+<h3 id="1-identify-the-broken-plugins">1. Identify the Broken
+Plugins</h3>
+<p>When Paint.NET encounters an unusable plugin during startup, it
+automatically disables it to prevent system crashes. To see which
+plugins are failing:</p>
+<ol type="1">
+<li>Open Paint.NET.</li>
+<li>Click the <strong>Gear icon</strong> in the top-right corner to open
+the <strong>Settings</strong> menu.</li>
+<li>Select the <strong>Plugin Errors</strong> tab from the left
+sidebar.</li>
+<li>Review the list of failed <code>.dll</code> files and note their
+names along with the specific error messages (such as missing
+dependencies or architecture mismatches).</li>
+</ol>
+<h3 id="2-remove-deprecated-dll-files">2. Remove Deprecated DLL
+Files</h3>
+<p>If an incompatible plugin prevents the application from launching
+altogether or produces persistent error dialogues, manually delete the
+affected files:</p>
+<ol type="1">
+<li>Close Paint.NET completely.</li>
+<li>Navigate to your installation's plugin directory:
+<ul>
+<li><strong>Standard Installer:</strong>
+<code>C:\Program Files\paint.net\Effects</code> (or
+<code>FileTypes</code> for custom formats).</li>
+<li><strong>Microsoft Store Version:</strong>
+<code>Documents\paint.net App Files\Effects</code></li>
+</ul></li>
+<li>Locate the <code>.dll</code> files identified in the error report
+and delete them or move them to a temporary backup folder outside the
+Paint.NET directory.</li>
+</ol>
+<h3 id="3-download-updated-plugin-versions">3. Download Updated Plugin
+Versions</h3>
+<p>Older plugins built for 32-bit architectures or legacy .NET Framework
+versions are not compatible with modern versions of Paint.NET, which run
+on 64-bit modern .NET runtimes (such as .NET 7, 8, or newer).</p>
+<ol type="1">
+<li>Visit the official Paint.NET forum's "Plugin Publishing
+Center."</li>
+<li>Search for the specific plugin or author pack (such as BoltBait's
+Plugin Pack or Pyrochild's plugins).</li>
+<li>Download the newest version explicitly designated for your current
+Paint.NET release.</li>
+<li>If a plugin has been abandoned by its author, check the forum thread
+for community-maintained forks or alternative tools that provide the
+same functionality.</li>
+</ol>
+<h3 id="4-unblock-downloaded-dll-files">4. Unblock Downloaded DLL
+Files</h3>
+<p>Windows often blocks files downloaded from the internet, preventing
+Paint.NET from executing them.</p>
+<ol type="1">
+<li>Locate the downloaded <code>.zip</code> or <code>.dll</code>
+file.</li>
+<li>Right-click the file and select <strong>Properties</strong>.</li>
+<li>In the <strong>General</strong> tab, look at the bottom for a
+security notice that says "This file came from another computer and
+might be blocked..."</li>
+<li>Check the <strong>Unblock</strong> box and click
+<strong>Apply</strong>, then <strong>OK</strong>.</li>
+<li>Extract and place the unblocked <code>.dll</code> files back into
+the appropriate <code>Effects</code> or <code>FileTypes</code>
+folder.</li>
+</ol>
+<h3 id="5-restart-paintnet">5. Restart Paint.NET</h3>
+<p>Relaunch Paint.NET once the files are updated. Open the
+<strong>Effects</strong> menu to confirm that the tools appear and
+function properly, and verify that the <strong>Plugin Errors</strong>
+tab in Settings is now empty.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/fix-paint-net-plugin-incompatibility-after-an-update';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

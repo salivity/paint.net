@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lighten vs Screen Blending Mode in Paint.NET - paint.net</title>
+    <meta name="description" content="In Paint.NET, both the Lighten and Screen blending modes brighten an image, but they achieve this through fundamentally different mathematical operations. While the Lighten mode acts conditionally by comparing individual pixel channels and selecting which">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/lighten-vs-screen-blending-mode-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lighten vs Screen Blending Mode in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/lighten-vs-screen-blending-mode-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="In Paint.NET, both the Lighten and Screen blending modes brighten an image, but they achieve this through fundamentally different mathematical operations. While the Lighten mode acts conditionally by comparing individual pixel channels and selecting which" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="lighten-vs-screen-blending-mode-in-paintnet">Lighten vs Screen
+Blending Mode in Paint.NET</h1>
+<p>In Paint.NET, both the Lighten and Screen blending modes brighten an
+image, but they achieve this through fundamentally different
+mathematical operations. While the Lighten mode acts conditionally by
+comparing individual pixel channels and selecting whichever is brighter,
+the Screen mode mathematically multiplies the inverse of the layers to
+produce a cumulative, soft-brightening effect. Understanding these
+differences allows digital artists and photo editors to choose the
+correct tool for combining textures, adding highlights, or managing
+exposure.</p>
+<h3 id="how-the-lighten-mode-works">How the Lighten Mode Works</h3>
+<p>The Lighten blending mode compares the color information in each RGB
+channel of the base layer and the blend layer. It evaluates which pixel
+has a higher brightness value and retains only the lighter one.</p>
+<p>Mathematically, it uses the formula: <em>Result = Max(Base,
+Blend)</em></p>
+<p>Because it only chooses between existing values, Lighten does not
+create intermediate color blends or new color values. If a pixel on the
+upper layer is darker than the corresponding pixel on the lower layer,
+the upper pixel simply becomes invisible. This conditional replacement
+often creates distinct, sharp edges where the brightness of the two
+layers crosses thresholds.</p>
+<h3 id="how-the-screen-mode-works">How the Screen Mode Works</h3>
+<p>The Screen blending mode simulates the physical effect of projecting
+multiple photographic slides simultaneously onto a single white screen.
+Instead of choosing one pixel over another, it combines the values of
+both layers to produce an overall lighter result.</p>
+<p>Mathematically, it operates on inverted color values: <em>Result = 1
+- [(1 - Base) × (1 - Blend)]</em></p>
+<p>In Screen mode, pure black (a value of 0) has no effect on the
+underlying layer, acting as completely transparent. Pure white always
+results in pure white. Any intermediate shades lighten the base image
+progressively, resulting in smooth transitions, preserved mid-tones, and
+photographic illumination without harsh boundaries.</p>
+<h3 id="key-differences-between-lighten-and-screen">Key Differences
+Between Lighten and Screen</h3>
+<ul>
+<li><strong>Transition Softness:</strong> Lighten creates abrupt
+transitions because pixels switch completely from one layer to the other
+based on a strict mathematical comparison. Screen produces smooth,
+natural gradients by blending the pixel values together.</li>
+<li><strong>New Color Generation:</strong> Lighten never creates a color
+that is not already present on one of the two layers for that specific
+channel. Screen creates brand-new, brighter color values through its
+multiplication formula.</li>
+<li><strong>Behavior with Pure Black:</strong> While both modes leave
+pixels unchanged when blended with black (since black is darker than any
+other tone), Screen integrates black areas seamlessly into gradients,
+whereas Lighten produces a hard cutoff wherever the blend layer drops
+below the base layer's brightness.</li>
+</ul>
+<h3 id="when-to-use-each-mode">When to Use Each Mode</h3>
+<p>Use <strong>Lighten</strong> when:</p>
+<ul>
+<li>You need to replace dark backgrounds while strictly keeping existing
+highlights untouched.</li>
+<li>You are blending high-contrast graphics, text, or line art where
+anti-aliasing edges should remain crisp.</li>
+<li>You want to selectively overlay textures onto shadows without
+washing out the lighter areas of your subject.</li>
+</ul>
+<p>Use <strong>Screen</strong> when:</p>
+<ul>
+<li>You are adding light phenomena, such as lens flares, light leaks,
+fire, or glowing magic effects.</li>
+<li>You need to correct underexposed images naturally without
+introducing clipping or posterization.</li>
+<li>You want to composite an asset with a black background onto an image
+with smooth, photographic blending.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/lighten-vs-screen-blending-mode-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

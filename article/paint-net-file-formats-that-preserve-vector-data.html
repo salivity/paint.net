@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint.NET File Formats That Preserve Vector Data - paint.net</title>
+    <meta name="description" content="Paint.NET is fundamentally a raster-based image editor, which means it does not natively preserve vector data in any file format, including its proprietary PDN format. While you can draw vector-like elements such as lines, curves, geometric shapes, and te">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/paint-net-file-formats-that-preserve-vector-data">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Paint.NET File Formats That Preserve Vector Data - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/paint-net-file-formats-that-preserve-vector-data" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Paint.NET is fundamentally a raster-based image editor, which means it does not natively preserve vector data in any file format, including its proprietary PDN format. While you can draw vector-like elements such as lines, curves, geometric shapes, and te" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="paintnet-file-formats-that-preserve-vector-data">Paint.NET File
+Formats That Preserve Vector Data</h1>
+<p>Paint.NET is fundamentally a raster-based image editor, which means
+it does not natively preserve vector data in any file format, including
+its proprietary PDN format. While you can draw vector-like elements such
+as lines, curves, geometric shapes, and text, Paint.NET instantly
+rasterizes these elements into pixels the moment you finish drawing or
+switch tools. Consequently, no native file format in Paint.NET will
+maintain scalable, non-destructive vector paths.</p>
+<h3 id="paintnet-and-rasterization">Paint.NET and Rasterization</h3>
+<p>In computer graphics, vector data consists of mathematical formulas
+that define points, lines, curves, and shapes, allowing graphics to
+scale infinitely without losing quality. Paint.NET does not operate on
+an underlying vector engine.</p>
+<p>When you use the Shape tool or the Text tool in Paint.NET:</p>
+<ul>
+<li>The vector controls are active only during the active creation
+phase.</li>
+<li>Once you commit the shape or deselect the tool, the software renders
+the shape directly into the layer’s pixel grid.</li>
+<li>After this rasterization occurs, the mathematical definition of the
+shape is discarded, leaving behind only colored pixels.</li>
+</ul>
+<h3 id="does-the-native-pdn-format-save-vectors">Does the Native PDN
+Format Save Vectors?</h3>
+<p>Paint.NET’s native file format is <code>.pdn</code>. While the
+<code>.pdn</code> format is crucial for preserving your project’s
+working state, it only saves:</p>
+<ul>
+<li>Separate layers</li>
+<li>Layer visibility and opacity</li>
+<li>Blend modes</li>
+<li>Raw pixel data for each layer</li>
+</ul>
+<p>It does not save text layers as editable typography, nor does it
+retain editable shape outlines. If you close and reopen a
+<code>.pdn</code> file, your shapes and text are permanent parts of the
+raster layer bitmap and cannot be edited as vector objects.</p>
+<h3 id="vector-file-formats-svg-eps-and-pdf">Vector File Formats (SVG,
+EPS, and PDF)</h3>
+<p>Paint.NET does not include native support for exporting to standard
+vector formats like Scalable Vector Graphics (SVG), Encapsulated
+PostScript (EPS), or vector-based PDFs.</p>
+<ul>
+<li><strong>Importing Vectors:</strong> If you use third-party file-type
+plugins to open formats like SVG in Paint.NET, the plugin rasterizes the
+file upon import at a fixed resolution.</li>
+<li><strong>Exporting Vectors:</strong> Plugins that claim to export
+SVGs generally trace pixel boundaries to generate an approximation of
+vector paths or simply embed the raster image inside an SVG container.
+They do not convert flat pixel layers back into clean, original vector
+data.</li>
+</ul>
+<h3 id="recommended-alternatives-for-vector-graphics">Recommended
+Alternatives for Vector Graphics</h3>
+<p>If your project requires creating and preserving true vector
+graphics, you should use dedicated vector graphic design software
+instead of Paint.NET:</p>
+<ul>
+<li><strong>Inkscape:</strong> A free, open-source vector graphics
+editor that natively creates and saves editable SVG files.</li>
+<li><strong>Adobe Illustrator:</strong> The industry-standard commercial
+vector design tool using the AI and EPS formats.</li>
+<li><strong>Affinity Designer:</strong> A professional hybrid vector and
+raster software suite that retains full vector scalability across
+sessions.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/paint-net-file-formats-that-preserve-vector-data';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

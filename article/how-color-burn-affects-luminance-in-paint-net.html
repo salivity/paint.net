@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Color Burn Affects Luminance in Paint.NET - paint.net</title>
+    <meta name="description" content="In Paint.NET, the Color Burn blending mode drastically decreases the overall luminance of an image by darkening the base layer while significantly increasing midtone contrast relative to the blend layer. This mode evaluates the brightness values of both t">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/how-color-burn-affects-luminance-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How Color Burn Affects Luminance in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/how-color-burn-affects-luminance-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="In Paint.NET, the Color Burn blending mode drastically decreases the overall luminance of an image by darkening the base layer while significantly increasing midtone contrast relative to the blend layer. This mode evaluates the brightness values of both t" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-color-burn-affects-luminance-in-paintnet">How Color Burn
+Affects Luminance in Paint.NET</h1>
+<p>In Paint.NET, the Color Burn blending mode drastically decreases the
+overall luminance of an image by darkening the base layer while
+significantly increasing midtone contrast relative to the blend layer.
+This mode evaluates the brightness values of both the top and bottom
+layers, aggressively suppressing lighter values and pushing darker tones
+toward black. This article explains the mechanics behind Color Burn, how
+it recalculates luminance across tonal ranges, and why it differs from
+other darkening modes.</p>
+<h3 id="the-mathematical-reduction-of-luminance">The Mathematical
+Reduction of Luminance</h3>
+<p>Color Burn operates using an inverted division formula applied to the
+normalized RGB channels:</p>
+<p><code>Result = 1 - (1 - Base) / Blend</code></p>
+<p>Because luminance in digital imaging is a weighted sum of RGB channel
+values, reducing these channel values directly reduces perceived
+brightness. Color Burn divides the inverted base pixel by the blend
+pixel, which sharply scales down the output values. Unless the blend
+pixel is pure white, the calculation invariably yields a lower luminance
+value than the original base image, resulting in a distinctly darker
+composite.</p>
+<h3 id="non-linear-darkening-and-midtone-compression">Non-Linear
+Darkening and Midtone Compression</h3>
+<p>Unlike the Multiply blend mode, which reduces luminance in a smooth,
+linear fashion, Color Burn reduces luminance non-linearly. It preserves
+the brightest highlight areas far more than deep shadows, but it
+aggressively compresses the midtones.</p>
+<p>As midtones lose their brightness under Color Burn, their contrast
+increases rapidly. This causes the perceived luminance to drop
+precipitously in the mid-to-dark range, frequently resulting in clipped
+shadows where dark values drop straight to absolute black (a luminance
+value of 0). At the same time, because values darken non-linearly
+without losing color purity, saturation appears substantially higher in
+the remaining visible tones.</p>
+<h3 id="behavior-across-brightness-ranges">Behavior Across Brightness
+Ranges</h3>
+<p>The impact of Color Burn on luminance depends directly on the tone of
+the blend layer:</p>
+<ul>
+<li><strong>White (Luminance = 255):</strong> A pure white blend pixel
+causes zero change in the base layer's luminance. Dividing the inverted
+base value by 1 leaves the original brightness intact.</li>
+<li><strong>Black (Luminance = 0):</strong> A pure black blend pixel
+forces the resulting luminance to absolute zero, rendering the base
+pixel completely black regardless of its original value.</li>
+<li><strong>Mid-Greens, Grays, and Colors:</strong> Any blend tone
+darker than white pulls down base luminance. Darker blend tones
+accelerate this darkening process, eliminating subtle shadow details and
+producing harsh, high-contrast falloffs.</li>
+</ul>
+<p>Through this behavior, Color Burn serves in Paint.NET as a targeted
+tool for reducing image luminance while creating intense, moody shadows
+and rich, deep color contrasts.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/how-color-burn-affects-luminance-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

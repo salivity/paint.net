@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Check Image Color Depth in Paint.NET - paint.net</title>
+    <meta name="description" content="This article explains how to determine the color depth and bits-per-channel (BPC) of an image using Paint.NET, alongside the application&#39;s internal color handling rules. Because Paint.NET standardizes all loaded images into a specific working color space">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/how-to-check-image-color-depth-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Check Image Color Depth in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/how-to-check-image-color-depth-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This article explains how to determine the color depth and bits-per-channel (BPC) of an image using Paint.NET, alongside the application&#39;s internal color handling rules. Because Paint.NET standardizes all loaded images into a specific working color space" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-check-image-color-depth-in-paintnet">How to Check Image
+Color Depth in Paint.NET</h1>
+<p>This article explains how to determine the color depth and
+bits-per-channel (BPC) of an image using Paint.NET, alongside the
+application's internal color handling rules. Because Paint.NET
+standardizes all loaded images into a specific working color space
+without a traditional image properties window, identifying an image's
+original and export bit depth requires checking the save settings or the
+underlying file properties.</p>
+<h3 id="understanding-paintnets-working-color-depth">Understanding
+Paint.NET’s Working Color Depth</h3>
+<p>Paint.NET natively operates entirely in a <strong>32-bit color
+space</strong>, which translates to <strong>8 bits per channel
+(bpc)</strong>:</p>
+<ul>
+<li><strong>8 bits Red</strong></li>
+<li><strong>8 bits Green</strong></li>
+<li><strong>8 bits Blue</strong></li>
+<li><strong>8 bits Alpha (transparency)</strong></li>
+</ul>
+<p>Regardless of whether you open a 1-bit monochrome image, an 8-bit
+indexed image, or a 24-bit RGB photo, Paint.NET automatically promotes
+the canvas to 32-bit ARGB upon import. Paint.NET does not currently
+support high-bit-depth editing formats, such as 16-bit or 32-bit per
+channel (BPC) HDR images.</p>
+<hr />
+<h3
+id="method-1-check-color-depth-via-the-save-configuration-dialog">Method
+1: Check Color Depth via the Save Configuration Dialog</h3>
+<p>While Paint.NET lacks a dedicated image information panel, you can
+view and test the export bit depth through the Save Configuration
+screen:</p>
+<ol type="1">
+<li>Open the image in Paint.NET.</li>
+<li>Click <strong>File</strong> in the top menu and select <strong>Save
+As...</strong> (or press <code>Ctrl + Shift + S</code>).</li>
+<li>Choose a format that supports variable bit depths, such as
+<strong>PNG</strong>, <strong>BMP</strong>, or <strong>TIFF</strong>,
+and click <strong>Save</strong>. (Do not worry about overwriting; you
+can cancel after viewing).</li>
+<li>In the <strong>Save Configuration</strong> dialog box that appears,
+locate the <strong>Bit Depth</strong> section on the left.</li>
+<li>Review the available options:
+<ul>
+<li><strong>Auto-detect:</strong> Automatically assesses the lowest bit
+depth needed to render the current canvas without quality loss.</li>
+<li><strong>32-bit:</strong> 8 bits per channel plus transparency
+(RGBA).</li>
+<li><strong>24-bit:</strong> 8 bits per channel without transparency
+(RGB).</li>
+<li><strong>8-bit:</strong> Indexed color palette (256 colors).</li>
+</ul></li>
+<li>Click <strong>Cancel</strong> to close the dialog without modifying
+your file.</li>
+</ol>
+<hr />
+<h3
+id="method-2-check-the-original-image-color-depth-via-windows-explorer">Method
+2: Check the Original Image Color Depth via Windows Explorer</h3>
+<p>Because Paint.NET automatically converts images into its 32-bit
+workspace, the most accurate way to check an existing file's original
+bit depth without conversion is through Windows:</p>
+<ol type="1">
+<li>Navigate to the image file on your computer.</li>
+<li>Right-click the file and select <strong>Properties</strong>.</li>
+<li>Select the <strong>Details</strong> tab.</li>
+<li>Scroll down to the <strong>Image</strong> section.</li>
+<li>Locate the <strong>Bit depth</strong> entry:
+<ul>
+<li><strong>24</strong> indicates standard 8 bits per channel
+(RGB).</li>
+<li><strong>32</strong> indicates 8 bits per channel with an
+alpha/transparency channel (RGBA).</li>
+<li><strong>8</strong>, <strong>4</strong>, or <strong>1</strong>
+indicates indexed or monochrome color palettes.</li>
+</ul></li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/how-to-check-image-color-depth-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

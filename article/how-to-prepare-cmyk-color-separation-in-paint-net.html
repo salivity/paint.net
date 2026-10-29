@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Prepare CMYK Color Separation in Paint.NET - paint.net</title>
+    <meta name="description" content="Paint.NET natively operates strictly within the RGB color space and lacks out-of-the-box support for CMYK editing and export. However, you can successfully prepare your graphics for professional commercial printing by utilizing third-party channel-separat">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/how-to-prepare-cmyk-color-separation-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Prepare CMYK Color Separation in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/how-to-prepare-cmyk-color-separation-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Paint.NET natively operates strictly within the RGB color space and lacks out-of-the-box support for CMYK editing and export. However, you can successfully prepare your graphics for professional commercial printing by utilizing third-party channel-separat" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-prepare-cmyk-color-separation-in-paintnet">How to Prepare
+CMYK Color Separation in Paint.NET</h1>
+<p>Paint.NET natively operates strictly within the RGB color space and
+lacks out-of-the-box support for CMYK editing and export. However, you
+can successfully prepare your graphics for professional commercial
+printing by utilizing third-party channel-separation plugins, adjusting
+print resolution, and employing external color-profile conversion tools.
+This guide explains how to configure your project, split channels, and
+export print-ready assets using Paint.NET.</p>
+<h3 id="understand-paintnets-color-limitations">Understand Paint.NET's
+Color Limitations</h3>
+<p>Because Paint.NET does not feature a native CMYK mode, you cannot
+directly edit or save true 32-bit CMYK files (such as CMYK TIFF or PDF)
+natively. Highly saturated RGB colors often fall outside the printable
+CMYK color gamut. To avoid unexpected color shifting, manually tone down
+vibrant neon blues, greens, and reds using <strong>Adjustments &gt; Hue
+/ Saturation</strong> or <strong>Adjustments &gt; Curves</strong> before
+separating plates.</p>
+<h3 id="step-1-set-the-print-resolution-dpi">Step 1: Set the Print
+Resolution (DPI)</h3>
+<p>Commercial printing typically requires a standard resolution of 300
+DPI (dots per inch) to prevent pixelation.</p>
+<ol type="1">
+<li>Open your design in Paint.NET.</li>
+<li>Navigate to <strong>Image &gt; Resize</strong>.</li>
+<li>Under the <strong>Resolution</strong> field, enter
+<code>300.00</code> and select <strong>pixels/inch</strong>.</li>
+<li>Ensure <strong>Resample</strong> is checked with the algorithm set
+to <strong>Best Quality</strong> if scaling, or uncheck it if you are
+simply defining physical print dimensions without altering pixel
+dimensions.</li>
+<li>Click <strong>OK</strong>.</li>
+</ol>
+<h3 id="step-2-install-cmyk-separation-plugins">Step 2: Install CMYK
+Separation Plugins</h3>
+<p>To view and separate colors into their respective Cyan, Magenta,
+Yellow, and Black components, install community plugins from the
+official Paint.NET forums:</p>
+<ol type="1">
+<li>Download a plugin such as the <strong>CMYK Separation</strong> or
+<strong>Color Space Converter</strong> effect (often found in popular
+effect packs like Ed Harvey Effects).</li>
+<li>Extract the <code>.dll</code> file into your Paint.NET plugins
+folder (typically located at
+<code>C:\Program Files\paint.net\Effects</code>).</li>
+<li>Restart Paint.NET.</li>
+</ol>
+<h3 id="step-3-generate-individual-cmyk-plates">Step 3: Generate
+Individual CMYK Plates</h3>
+<p>For processes like screen printing, you need individual grayscale
+films or plates for each ink color:</p>
+<ol type="1">
+<li>Flatten your working document or merge all visible layers into a
+single master layer.</li>
+<li>Duplicate this layer four times, naming each layer:
+<strong>Cyan</strong>, <strong>Magenta</strong>,
+<strong>Yellow</strong>, and <strong>Black</strong>.</li>
+<li>Select the <strong>Cyan</strong> layer, open your installed
+separation plugin from the <strong>Effects</strong> menu, and isolate
+the Cyan channel to generate a grayscale representation of that ink
+density.</li>
+<li>Repeat this extraction process for the <strong>Magenta</strong>,
+<strong>Yellow</strong>, and <strong>Black</strong> layers using their
+respective channel options.</li>
+<li>Hide all layers except the one you need to print, then save each
+plate individually as an uncompressed format such as PNG or TIFF via
+<strong>File &gt; Save As</strong>.</li>
+</ol>
+<h3
+id="step-4-final-conversion-for-standard-offset-or-digital-print">Step
+4: Final Conversion for Standard Offset or Digital Print</h3>
+<p>If your commercial print shop requires a single CMYK PDF or TIFF file
+rather than separated plates:</p>
+<ol type="1">
+<li>Save your completed graphic in Paint.NET as a flattened,
+high-resolution 300 DPI <strong>PNG</strong> or <strong>TIFF</strong>
+file in RGB.</li>
+<li>Open the image in a free color-management tool such as
+<strong>Krita</strong>, <strong>Scribus</strong>, or
+<strong>ImageMagick</strong>.</li>
+<li>Assign the target commercial ICC profile provided by your printer
+(such as US Web Coated SWOP v2 or GRACoL) and convert the image from RGB
+to CMYK.</li>
+<li>Export the final artwork as a print-ready PDF/X or CMYK TIFF.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/how-to-prepare-cmyk-color-separation-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>
