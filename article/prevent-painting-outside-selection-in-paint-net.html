@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prevent Painting Outside Selection in Paint.NET - paint.net</title>
+    <meta name="description" content="In Paint.NET, restricting your brush strokes to a specific region is accomplished using the software&#39;s built-in selection tools, which function as active masks. When any selection is active, Paint.NET automatically locks all painting, drawing, and editing">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/prevent-painting-outside-selection-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Prevent Painting Outside Selection in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/prevent-painting-outside-selection-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="In Paint.NET, restricting your brush strokes to a specific region is accomplished using the software&#39;s built-in selection tools, which function as active masks. When any selection is active, Paint.NET automatically locks all painting, drawing, and editing" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="prevent-painting-outside-selection-in-paintnet">Prevent Painting
+Outside Selection in Paint.NET</h1>
+<p>In Paint.NET, restricting your brush strokes to a specific region is
+accomplished using the software's built-in selection tools, which
+function as active masks. When any selection is active, Paint.NET
+automatically locks all painting, drawing, and editing operations
+exclusively inside the highlighted boundary, completely preventing
+accidental marks on the rest of the canvas.</p>
+<h3 id="step-1-create-an-active-selection">Step 1: Create an Active
+Selection</h3>
+<p>Choose a selection tool from the Tools palette based on the shape of
+the area you want to paint:</p>
+<ul>
+<li><strong>Rectangle Select (<code>S</code>)</strong> or
+<strong>Ellipse Select (<code>S</code>)</strong> for basic geometric
+bounds.</li>
+<li><strong>Lasso Select (<code>S</code>)</strong> for freehand, custom
+boundaries.</li>
+<li><strong>Magic Wand (<code>S</code>)</strong> to automatically select
+a shape, color field, or outline already on your canvas.</li>
+</ul>
+<p>Click and drag (or click an area with the Magic Wand) to outline the
+region. A border of animated dashed lines—often called "marching
+ants"—will surround the active zone.</p>
+<h3 id="step-2-paint-within-the-boundary">Step 2: Paint Within the
+Boundary</h3>
+<p>Once the dashed boundary appears, select the <strong>Paintbrush
+(<code>B</code>)</strong>, <strong>Pencil (<code>P</code>)</strong>, or
+any other drawing tool. Paint across the canvas freely. Any brush stroke
+extending beyond the perimeter will be clipped instantly; no pixels
+outside the selection can be altered while the selection is engaged.</p>
+<h3 id="step-3-useful-shortcuts-for-selection-control">Step 3: Useful
+Shortcuts for Selection Control</h3>
+<ul>
+<li><strong>Invert Selection (<code>Ctrl + I</code>):</strong> If you
+need to protect an object while painting the background around it,
+select the object first and press <code>Ctrl + I</code>. This flips the
+protected and editable regions.</li>
+<li><strong>Add or Subtract Regions:</strong> Hold <code>Ctrl</code>
+while making a new selection to add to the existing boundary, or hold
+<code>Alt</code> to subtract areas from it.</li>
+<li><strong>Deselect (<code>Ctrl + D</code>):</strong> Once you have
+finished painting inside your boundary, press <code>Ctrl + D</code> to
+release the mask and restore normal editing to the entire canvas.</li>
+</ul>
+<h3 id="best-practice-combine-selections-with-layers">Best Practice:
+Combine Selections with Layers</h3>
+<p>To provide maximum protection against accidental modifications,
+always create a new layer (<code>Ctrl + Shift + N</code>) before
+painting within your selection. This keeps your fresh brush strokes
+completely isolated from underlying artwork, allowing you to blend,
+adjust opacity, or erase without damaging the underlying image.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/prevent-painting-outside-selection-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

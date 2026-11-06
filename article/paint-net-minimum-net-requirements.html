@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint.NET Minimum .NET Requirements - paint.net</title>
+    <meta name="description" content="This article outlines the runtime dependencies for running Paint.NET, explaining the application&#39;s transition from the legacy .NET Framework to modern .NET. It details the exact versions required for the latest releases, how the runtime is delivered to us">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/paint-net-minimum-net-requirements">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Paint.NET Minimum .NET Requirements - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/paint-net-minimum-net-requirements" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This article outlines the runtime dependencies for running Paint.NET, explaining the application&#39;s transition from the legacy .NET Framework to modern .NET. It details the exact versions required for the latest releases, how the runtime is delivered to us" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="paintnet-minimum-net-requirements">Paint.NET Minimum .NET
+Requirements</h1>
+<p>This article outlines the runtime dependencies for running Paint.NET,
+explaining the application's transition from the legacy .NET Framework
+to modern .NET. It details the exact versions required for the latest
+releases, how the runtime is delivered to users, and the requirements
+for legacy versions.</p>
+<h3 id="modern-paintnet-uses-modern-net">Modern Paint.NET Uses Modern
+.NET</h3>
+<p>Modern Paint.NET releases no longer use the legacy Microsoft .NET
+Framework. Beginning with Paint.NET 5.0, the software migrated entirely
+to modern .NET (formerly .NET Core). Therefore, modern versions have no
+dependency on the legacy .NET Framework.</p>
+<p>The runtime requirements for current versions are:</p>
+<ul>
+<li><strong>Paint.NET 5.1 and newer:</strong> Requires <strong>.NET
+8</strong> (specifically the .NET Desktop Runtime).</li>
+<li><strong>Paint.NET 5.0 through 5.0.13:</strong> Requires <strong>.NET
+7</strong>.</li>
+</ul>
+<p>Modern releases exclusively support 64-bit operating systems (x64 and
+ARM64) running Windows 10 (version 1809 or newer) or Windows 11. Support
+for 32-bit (x86) architectures has been removed.</p>
+<h3 id="installation-and-runtime-delivery">Installation and Runtime
+Delivery</h3>
+<p>For standard users, manually downloading and installing the runtime
+is usually unnecessary. The official Paint.NET installer comes
+self-contained or automatically deploys the matching Microsoft .NET
+Desktop Runtime during the installation process. Manual installation of
+the .NET Desktop Runtime is typically only required when running
+portable or custom enterprise deployments.</p>
+<h3 id="final-releases-on-legacy-net-framework">Final Releases on Legacy
+.NET Framework</h3>
+<p>Users restricted to older hardware or legacy operating systems must
+use older iterations of the software:</p>
+<ul>
+<li><strong>Paint.NET 4.3.x:</strong> Required <strong>.NET Framework
+4.7.2</strong> (with support for .NET Framework 4.8). This was the final
+series built on the classic .NET Framework.</li>
+<li><strong>Paint.NET 4.0 to 4.2.x:</strong> Required <strong>.NET
+Framework 4.5</strong> or higher.</li>
+</ul>
+<p>For the latest features, security updates, and performance
+optimizations, the current 5.x release branch powered by modern .NET is
+required.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/paint-net-minimum-net-requirements';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint.NET History and Scratch Disk Space Explained - paint.net</title>
+    <meta name="description" content="Paint.NET manages its undo and redo capabilities through the History window by offloading canvas states to temporary scratch disk space instead of relying solely on system RAM. This mechanism allows users to perform complex image editing sessions without">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/paint-net-history-and-scratch-disk-space-explained">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Paint.NET History and Scratch Disk Space Explained - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/paint-net-history-and-scratch-disk-space-explained" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Paint.NET manages its undo and redo capabilities through the History window by offloading canvas states to temporary scratch disk space instead of relying solely on system RAM. This mechanism allows users to perform complex image editing sessions without" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="paintnet-history-and-scratch-disk-space-explained">Paint.NET
+History and Scratch Disk Space Explained</h1>
+<p>Paint.NET manages its undo and redo capabilities through the History
+window by offloading canvas states to temporary scratch disk space
+instead of relying solely on system RAM. This mechanism allows users to
+perform complex image editing sessions without exhausting physical
+memory, though it causes temporary disk usage to scale with every action
+taken. Understanding how this system works helps prevent unexpected
+low-disk-space warnings and ensures optimal software performance.</p>
+<h3 id="how-the-history-window-utilizes-the-scratch-disk">How the
+History Window Utilizes the Scratch Disk</h3>
+<p>Every time you modify an image in Paint.NET—whether by drawing a
+stroke, applying a blur, or adding a new layer—the program logs an entry
+into the History window. To allow you to step backward or forward
+through these edits, the software must remember the state of the canvas
+at each step.</p>
+<p>Instead of storing every previous state in your computer's RAM,
+Paint.NET commits these snapshots to the scratch disk. The scratch disk
+is a designated directory on your local drive (typically the Windows
+<code>%TEMP%</code> folder) where temporary files are generated and
+stored during an active session.</p>
+<h3 id="ram-preservation-vs-disk-footprint">RAM Preservation vs. Disk
+Footprint</h3>
+<p>Storing full-resolution image data for dozens of undo steps in RAM
+would quickly lead to out-of-memory errors, particularly when working
+with multi-layered, high-DPI graphics. Paint.NET addresses this by
+saving compressed, tile-based snapshots of the changed areas to the
+scratch drive.</p>
+<ul>
+<li><strong>Targeted Saving:</strong> Paint.NET only writes the specific
+portions of the canvas that were altered by a tool, which minimizes the
+file size written to the disk.</li>
+<li><strong>Rapid Memory Offloading:</strong> RAM is reserved primarily
+for the active canvas display and ongoing computations, while idle
+historical states remain cached on the disk.</li>
+</ul>
+<h3 id="factors-that-increase-scratch-disk-usage">Factors That Increase
+Scratch Disk Usage</h3>
+<p>The amount of scratch disk space consumed during an editing session
+depends directly on several factors:</p>
+<ul>
+<li><strong>Canvas Resolution and Dimensions:</strong> Larger pixel
+dimensions mean each altered state requires more data to be written to
+disk.</li>
+<li><strong>Layer Count:</strong> Manipulations that affect multiple
+layers or merge layers generate substantial snapshot data.</li>
+<li><strong>Frequency of Edits:</strong> Extensive sessions with dozens
+of small brush strokes or adjustments generate a corresponding history
+file on the disk for each action.</li>
+<li><strong>Full-Canvas Filters:</strong> Applying global adjustments
+(such as color corrections, blurs, or distortions) alters the entire
+image, forcing Paint.NET to write the entire canvas state to the scratch
+disk for that single step.</li>
+</ul>
+<h3 id="managing-and-clearing-scratch-disk-space">Managing and Clearing
+Scratch Disk Space</h3>
+<p>Unlike some other creative suites, Paint.NET does not provide an
+explicit "Purge History" command inside the user interface. However,
+scratch disk usage is automatically managed in the following ways:</p>
+<ul>
+<li><strong>Closing Images:</strong> Closing an open document purges all
+of its associated history files from the scratch disk immediately.</li>
+<li><strong>Exiting the Application:</strong> Closing Paint.NET deletes
+the temporary session files created in the temp directory.</li>
+<li><strong>Drive Selection:</strong> Because scratch operations involve
+constant read/write actions, installing Paint.NET and maintaining the
+Windows paging/temp files on a fast Solid State Drive (SSD)
+significantly reduces latency when undoing or redoing actions.</li>
+</ul>
+<p>If your primary drive runs low on storage during an intensive
+session, Paint.NET may display an error indicating it cannot save the
+history state. Ensuring that your host drive has adequate free space is
+essential for uninterrupted editing.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/paint-net-history-and-scratch-disk-space-explained';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

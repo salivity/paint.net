@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Text Layers Without Losing Quality in Paint.NET - paint.net</title>
+    <meta name="description" content="Merging text layers with raster layers in Paint.NET often results in blurry or jagged typography because the program rasterizes text into pixels the moment it is committed. To prevent loss of clarity, you must work at the correct resolution, optimize anti">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/merge-text-layers-without-losing-quality-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Merge Text Layers Without Losing Quality in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/merge-text-layers-without-losing-quality-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Merging text layers with raster layers in Paint.NET often results in blurry or jagged typography because the program rasterizes text into pixels the moment it is committed. To prevent loss of clarity, you must work at the correct resolution, optimize anti" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="merge-text-layers-without-losing-quality-in-paintnet">Merge Text
+Layers Without Losing Quality in Paint.NET</h1>
+<p>Merging text layers with raster layers in Paint.NET often results in
+blurry or jagged typography because the program rasterizes text into
+pixels the moment it is committed. To prevent loss of clarity, you must
+work at the correct resolution, optimize anti-aliasing settings before
+committing the text, avoid post-merge scaling, and merge using the
+correct layer order. Following a disciplined workflow ensures your
+typography remains sharp and legible against any background.</p>
+<h3 id="1-work-at-a-higher-resolution">1. Work at a Higher
+Resolution</h3>
+<p>Paint.NET is a raster-based editor, meaning text is made of pixels
+rather than scalable vectors. Small canvas sizes will inherently cause
+text to look pixelated when merged.</p>
+<ul>
+<li>Create your canvas at twice the intended final output size (e.g.,
+3840x2160 instead of 1920x1080), or use at least 300 DPI for print
+work.</li>
+<li>Downscaling a finished image later retains sharp edges, whereas
+merging at low resolutions permanently locks in low pixel density.</li>
+</ul>
+<h3 id="2-configure-text-settings-before-deselecting">2. Configure Text
+Settings Before Deselecting</h3>
+<p>Once you deselect the active text box in Paint.NET, the text is
+permanently converted into standard pixels and can no longer be edited
+as vector typography.</p>
+<ul>
+<li>Select the <strong>Text Tool</strong> (<code>T</code>).</li>
+<li>Ensure <strong>Anti-aliasing</strong> is set to
+<strong>Enabled</strong> (represented by the smooth diagonal line icon
+in the top toolbar) to eliminate harsh, jagged pixel edges.</li>
+<li>Set the font size to the exact size you need. Never type small text
+and use the "Move Selected Pixels" tool to stretch it, as scaling
+rasterized text causes immediate blurring and distortion.</li>
+</ul>
+<h3 id="3-keep-text-on-an-independent-layer">3. Keep Text on an
+Independent Layer</h3>
+<ul>
+<li>Always create a dedicated new layer (<code>Ctrl + Shift + N</code>)
+above your background or artwork before typing.</li>
+<li>Verify that the text layer's <strong>Opacity</strong> is set to
+<strong>255</strong> and its <strong>Blend Mode</strong> is set to
+<strong>Normal</strong> in the Layer Properties dialog
+(<code>F4</code>). Altered opacity or blending modes prior to merging
+can introduce unwanted color fringing or transparency bleed.</li>
+</ul>
+<h3 id="4-merge-down-correctly">4. Merge Down Correctly</h3>
+<p>Once the raster background and text are finalized:</p>
+<ol type="1">
+<li>Open the <strong>Layers</strong> window (<code>F7</code>).</li>
+<li>Click on the text layer to ensure it is the active layer.</li>
+<li>Verify that the text layer sits directly above the raster layer you
+wish to combine it with.</li>
+<li>Click the <strong>Merge Layer Down</strong> button at the bottom of
+the Layers window (or press <code>Ctrl + M</code>).</li>
+</ol>
+<h3 id="5-avoid-post-merge-transformations">5. Avoid Post-Merge
+Transformations</h3>
+<p>Once the layers are merged, do not use the Move tool, rotate tools,
+or canvas resize functions on that specific merged layer. Any rotation
+or fractional pixel shift applied after merging forces Paint.NET to
+resample the pixels, which softens the crisp edges of the merged
+typography.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/merge-text-layers-without-losing-quality-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

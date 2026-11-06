@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Aliasing on Drawing Tools in Paint.NET - paint.net</title>
+    <meta name="description" content="In Paint.NET, the anti-aliasing toggle controls how edge pixels are rendered when using drawing tools like the Paintbrush, Line/Curve, and Shapes. This article explains the technical function of anti-aliasing, the difference between having the feature ena">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/anti-aliasing-on-drawing-tools-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Anti-Aliasing on Drawing Tools in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/anti-aliasing-on-drawing-tools-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="In Paint.NET, the anti-aliasing toggle controls how edge pixels are rendered when using drawing tools like the Paintbrush, Line/Curve, and Shapes. This article explains the technical function of anti-aliasing, the difference between having the feature ena" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="anti-aliasing-on-drawing-tools-in-paintnet">Anti-Aliasing on
+Drawing Tools in Paint.NET</h1>
+<p>In Paint.NET, the anti-aliasing toggle controls how edge pixels are
+rendered when using drawing tools like the Paintbrush, Line/Curve, and
+Shapes. This article explains the technical function of anti-aliasing,
+the difference between having the feature enabled or disabled, and the
+specific scenarios where each setting is most effective for your
+workflow.</p>
+<p>Anti-aliasing is a digital rendering technique designed to minimize
+the jagged, staircase-like distortion known as "aliasing" that appears
+on curved and diagonal lines. Because computer displays are grids of
+square pixels, drawing a non-horizontal or non-vertical line naturally
+produces uneven edges. Anti-aliasing corrects this visual artifact by
+adding semi-transparent pixels of intermediate shades along the
+boundaries, blending the foreground color with the background to trick
+the human eye into seeing a continuous, smooth edge.</p>
+<p>When the anti-aliasing toggle is enabled in the Paint.NET toolbar,
+tools produce soft, natural-looking strokes. This setting is optimal for
+general graphic design, digital painting, photo retouching, and standard
+illustration where smooth gradients and realistic transitions are
+desired.</p>
+<p>When the toggle is disabled, drawing tools operate in a binary,
+pixelated state. Every pixel drawn is 100% opaque, resulting in sharp,
+jagged edges with zero color blending or transparency. This mode is
+essential for specific use cases:</p>
+<ul>
+<li><strong>Pixel Art and Sprite Design:</strong> Creators working on
+retro graphics or low-resolution sprites require precise pixel placement
+without unwanted blur or automatic color blending.</li>
+<li><strong>Precise Color Filling:</strong> The Paint Bucket tool and
+Magic Wand rely on clean color boundaries. Anti-aliased edges introduce
+fringe colors that can cause fill gaps or require adjusted tolerance
+levels, whereas non-anti-aliased edges allow clean, instant selections
+and fills.</li>
+<li><strong>Masking and Cutouts:</strong> Hard edges prevent the
+semi-transparent halos that often occur when moving or layering cut-out
+elements onto different backgrounds.</li>
+</ul>
+<p>The anti-aliasing toggle is located in the upper tool options bar
+whenever an applicable drawing or shape tool is active, appearing as an
+icon showing a jagged line next to a smooth line. Switching between
+enabled and disabled lets you instantly dictate whether precision or
+visual smoothness takes priority for your project.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/anti-aliasing-on-drawing-tools-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint.NET JPEG Metadata: What Happens to EXIF Data? - paint.net</title>
+    <meta name="description" content="When you edit and save a JPEG image in Paint.NET, the program generally preserves the existing EXIF (Exchangeable Image File Format) metadata, but it also modifies or discards specific data fields depending on how you handle the file. This guide explains">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/paint-net-jpeg-metadata-what-happens-to-exif-data">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Paint.NET JPEG Metadata: What Happens to EXIF Data? - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/paint-net-jpeg-metadata-what-happens-to-exif-data" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="When you edit and save a JPEG image in Paint.NET, the program generally preserves the existing EXIF (Exchangeable Image File Format) metadata, but it also modifies or discards specific data fields depending on how you handle the file. This guide explains" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="paintnet-jpeg-metadata-what-happens-to-exif-data">Paint.NET JPEG
+Metadata: What Happens to EXIF Data?</h1>
+<p>When you edit and save a JPEG image in Paint.NET, the program
+generally preserves the existing EXIF (Exchangeable Image File Format)
+metadata, but it also modifies or discards specific data fields
+depending on how you handle the file. This guide explains how Paint.NET
+treats metadata during the JPEG saving process, which tags are
+automatically updated, and the situations where EXIF data can be
+completely lost.</p>
+<h3 id="default-preservation-of-exif-tags">Default Preservation of EXIF
+Tags</h3>
+<p>When you open an existing JPEG file containing metadata and save it
+using either <strong>Save</strong> (<code>Ctrl+S</code>) or <strong>Save
+As</strong> (<code>Ctrl+Shift+S</code>) in the JPEG format, Paint.NET
+retains the vast majority of the original EXIF block. Critical camera
+and capture details—such as shutter speed, aperture, ISO, focal length,
+camera make and model, date created, and GPS coordinates—are copied
+directly into the newly saved file.</p>
+<h3 id="tags-that-paintnet-modifies">Tags That Paint.NET Modifies</h3>
+<p>While the bulk of the metadata remains untouched, Paint.NET
+automatically updates or normalizes certain tags to maintain visual and
+technical consistency:</p>
+<ul>
+<li><strong>Orientation Tag:</strong> Digital cameras often write an
+orientation flag (e.g., indicating the camera was held vertically)
+rather than rotating the raw pixel data. When you open an image,
+Paint.NET reads this tag and physically rotates the pixel canvas so the
+image appears right-side up. When you save the file, Paint.NET resets
+the EXIF orientation tag to "Top-Left" (Normal/1) to prevent other image
+viewers from double-rotating the already corrected pixel data.</li>
+<li><strong>Software Tag:</strong> Paint.NET writes its application name
+and current version number into the EXIF "Software" tag to record the
+tool last used to modify the image.</li>
+<li><strong>Date Modified:</strong> Standard file system timestamps and
+specific EXIF modification timestamps are updated to the current date
+and time of the save operation.</li>
+</ul>
+<h3 id="scenarios-where-metadata-is-completely-lost">Scenarios Where
+Metadata Is Completely Lost</h3>
+<p>Paint.NET does not retain EXIF data in all editing scenarios.
+Metadata will be stripped under the following conditions:</p>
+<ul>
+<li><strong>Copying and Pasting into a New File:</strong> If you copy an
+image or its layers and paste them into a newly created canvas
+(<code>File &gt; New</code>), the metadata is discarded. Paint.NET
+treats a new canvas as a completely fresh document with no inherited
+EXIF attributes.</li>
+<li><strong>Converting File Formats:</strong> If you save a JPEG as a
+file type that does not support the same metadata standards (or where
+Paint.NET's file format encoder does not support passing EXIF tags), the
+data is removed.</li>
+<li><strong>Exporting Flattened Layers from Scratch:</strong> Creating a
+composition from multiple imported layers on an untitled canvas will
+result in an exported JPEG without the original source images' EXIF
+records.</li>
+</ul>
+<h3 id="stripping-metadata-intentionally">Stripping Metadata
+Intentionally</h3>
+<p>Paint.NET does not include a native toggle in its standard JPEG
+configuration dialog to selectively strip metadata for privacy. If you
+need to remove sensitive information—such as embedded GPS location
+coordinates—before sharing an image, you must either copy the canvas
+into a new document before saving, use a dedicated metadata removal
+tool, or install a community-developed file-type plugin that provides a
+metadata-stripping option.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/paint-net-jpeg-metadata-what-happens-to-exif-data';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>
