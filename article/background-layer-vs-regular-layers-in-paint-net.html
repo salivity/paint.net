@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Layer vs Regular Layers in Paint.NET - paint.net</title>
+    <meta name="description" content="In Paint.NET, understanding the difference between the Background layer and regular layers is fundamental to mastering non-destructive image editing. This guide explains the specific roles of the default Background layer compared to standard transparent l">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/background-layer-vs-regular-layers-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Background Layer vs Regular Layers in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/background-layer-vs-regular-layers-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="In Paint.NET, understanding the difference between the Background layer and regular layers is fundamental to mastering non-destructive image editing. This guide explains the specific roles of the default Background layer compared to standard transparent l" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="background-layer-vs-regular-layers-in-paintnet">Background Layer
+vs Regular Layers in Paint.NET</h1>
+<p>In Paint.NET, understanding the difference between the Background
+layer and regular layers is fundamental to mastering non-destructive
+image editing. This guide explains the specific roles of the default
+Background layer compared to standard transparent layers, how they
+interact within the layer stack, and how to utilize both to streamline
+your design workflow.</p>
+<h3 id="the-role-of-the-background-layer">The Role of the Background
+Layer</h3>
+<p>When you open an existing image or create a new document in
+Paint.NET, the program automatically generates a bottom layer labeled
+"Background."</p>
+<ul>
+<li><strong>Default Opacity:</strong> If you create a new canvas, the
+Background layer is automatically filled with a solid, opaque color
+(usually white). If you open an existing file like a JPEG or PNG, this
+layer holds the original source image.</li>
+<li><strong>Canvas Foundation:</strong> It serves as the base of your
+project. Any transparent areas on layers stacked above will show through
+to whatever exists on the Background layer.</li>
+<li><strong>No Inherent Lock:</strong> Unlike programs such as Adobe
+Photoshop, Paint.NET does not permanently lock the Background layer. You
+can rename it, hide it, duplicate it, reorder it, or delete it entirely
+without needing to convert it into a standard layer first.</li>
+</ul>
+<h3 id="the-role-of-regular-layers">The Role of Regular Layers</h3>
+<p>Regular layers are additional levels stacked on top of the Background
+layer, created by clicking the "Add New Layer" button in the Layers
+window or pressing <code>Ctrl + Shift + N</code>.</p>
+<ul>
+<li><strong>Default Transparency:</strong> Unlike the Background layer,
+newly created regular layers are 100% transparent. They appear as a
+gray-and-white checkerboard pattern when isolated, meaning they contain
+no pixels until you draw, paste, or paint on them.</li>
+<li><strong>Element Isolation:</strong> Regular layers allow you to
+isolate distinct components of your composition—such as text, individual
+graphics, shading, or photo adjustments. Modifying, erasing, or
+filtering content on a regular layer will not alter the pixels on any
+other layer.</li>
+<li><strong>Blending and Opacity Controls:</strong> Each regular layer
+features independent opacity sliders and blending modes (such as
+Multiply, Overlay, or Add), allowing you to create complex lighting and
+color effects above the background content.</li>
+</ul>
+<h3 id="key-functional-differences">Key Functional Differences</h3>
+<ol type="1">
+<li><strong>Initial State:</strong> The Background layer is initialized
+with solid pixels (either the canvas background color or imported
+artwork), whereas regular layers are completely blank and
+transparent.</li>
+<li><strong>Stack Placement:</strong> The Background layer naturally
+resides at the very bottom of the Layers window (Z-index of 0). Regular
+layers are positioned above it, covering the background based on their
+individual opacity and pixel placement.</li>
+<li><strong>Export Impact:</strong> If you intend to export an image
+with transparency (such as a transparent PNG), the solid Background
+layer must either be hidden, cleared, or deleted. Leaving the default
+white Background layer visible will result in a solid white backdrop in
+the final exported file.</li>
+</ol>
+<h3 id="best-practices">Best Practices</h3>
+<p>To maintain a clean and non-destructive workflow, avoid drawing
+directly onto the Background layer. Keep your raw photo or solid
+backdrop on the Background layer, and immediately create regular layers
+for line art, text, and color adjustments. If you need to edit the
+original photo directly, duplicate the Background layer first to
+preserve the original image as a backup.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/background-layer-vs-regular-layers-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

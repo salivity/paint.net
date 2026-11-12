@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Ensure Correct Color Profiles in Paint.NET - paint.net</title>
+    <meta name="description" content="Color shifts between editing and exporting in Paint.NET typically occur because the application fundamentally operates within the standard sRGB color space while handling external color profiles through specific metadata rules. This guide explains how col">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/how-to-ensure-correct-color-profiles-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Ensure Correct Color Profiles in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/how-to-ensure-correct-color-profiles-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Color shifts between editing and exporting in Paint.NET typically occur because the application fundamentally operates within the standard sRGB color space while handling external color profiles through specific metadata rules. This guide explains how col" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-ensure-correct-color-profiles-in-paintnet">How to Ensure
+Correct Color Profiles in Paint.NET</h1>
+<p>Color shifts between editing and exporting in Paint.NET typically
+occur because the application fundamentally operates within the standard
+sRGB color space while handling external color profiles through specific
+metadata rules. This guide explains how color profiles function in
+Paint.NET, how to preserve embedded International Color Consortium (ICC)
+profiles during export, and the exact steps to guarantee that your
+exported images render consistently across different browsers, image
+viewers, and operating systems.</p>
+<h3 id="1-update-to-the-latest-version-of-paintnet">1. Update to the
+Latest Version of Paint.NET</h3>
+<p>Color management changed significantly starting with Paint.NET
+version 5.0. Earlier versions stripped or ignored color profiles
+entirely, frequently causing desaturated or overly saturated exports.
+Ensure you are running Paint.NET 5.0 or later, as modern versions
+utilize Windows Imaging Component (WIC) and Direct2D to preserve color
+profile metadata during file operations.</p>
+<h3 id="2-work-within-the-srgb-color-space">2. Work Within the sRGB
+Color Space</h3>
+<p>Paint.NET does not offer advanced soft-proofing or custom working
+spaces like Adobe RGB or ProPhoto RGB. It renders and composites all
+layers using the standard sRGB color space.</p>
+<ul>
+<li>If you import an image with a wide gamut (such as Display P3 or
+Adobe RGB), convert the image to sRGB in an external utility or
+color-managed viewer before importing, or be aware that Paint.NET will
+map colors to sRGB.</li>
+<li>Working with native sRGB source files prevents unexpected clipping
+of high-saturation tones when saving.</li>
+</ul>
+<h3 id="3-choose-a-file-format-that-supports-color-profiles">3. Choose a
+File Format That Supports Color Profiles</h3>
+<p>Not all file formats support embedded ICC profiles. When saving your
+work, select a format capable of retaining color metadata:</p>
+<ul>
+<li><strong>Supported formats:</strong> JPEG, PNG, TIFF, WebP, and
+AVIF.</li>
+<li><strong>Unsupported formats:</strong> BMP and standard 8-bit GIF
+(which will discard all ICC data and rely entirely on the viewer's
+default interpretation).</li>
+</ul>
+<h3 id="4-enable-metadata-preservation-on-save">4. Enable Metadata
+Preservation on Save</h3>
+<p>Paint.NET stores ICC color profiles inside the image's metadata
+chunk. Disabling metadata during the export process strips the color
+profile and forces viewing software to guess the color space.</p>
+<ol type="1">
+<li>Go to <strong>File &gt; Save As...</strong></li>
+<li>Choose your destination, name the file, and select a supported
+format (such as <strong>PNG</strong> or <strong>JPEG</strong>). Click
+<strong>Save</strong>.</li>
+<li>In the format settings configuration dialog that appears:
+<ul>
+<li>Look for the <strong>Save metadata</strong> or <strong>Include
+metadata</strong> option.</li>
+<li>Ensure this checkbox is <strong>checked</strong>. If this option is
+unchecked to reduce file size, the embedded ICC profile is permanently
+deleted from the export.</li>
+</ul></li>
+<li>Click <strong>OK</strong> to complete the export.</li>
+</ol>
+<h3 id="5-verify-the-export-in-a-color-managed-viewer">5. Verify the
+Export in a Color-Managed Viewer</h3>
+<p>Operating system defaults can lead to false assumptions about color
+accuracy. Windows Photos, legacy Windows Photo Viewer, and modern web
+browsers handle untagged images differently:</p>
+<ul>
+<li>Open the exported file in a color-managed web browser (such as
+Google Chrome, Mozilla Firefox, or Microsoft Edge).</li>
+<li>Compare the exported image side-by-side with your Paint.NET
+canvas.</li>
+<li>If the image appears identical in the browser to how it looked
+inside Paint.NET, the color rendering pipeline is correctly
+established.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/how-to-ensure-correct-color-profiles-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

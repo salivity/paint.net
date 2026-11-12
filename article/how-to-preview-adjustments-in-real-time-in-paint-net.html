@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Preview Adjustments in Real-Time in Paint.NET - paint.net</title>
+    <meta name="description" content="Paint.NET natively supports real-time previews for image adjustments, allowing you to view visual changes on your canvas instantly before applying them permanently. This guide outlines how real-time previews work in Paint.NET, how to ensure your canvas vi">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/how-to-preview-adjustments-in-real-time-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Preview Adjustments in Real-Time in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/how-to-preview-adjustments-in-real-time-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Paint.NET natively supports real-time previews for image adjustments, allowing you to view visual changes on your canvas instantly before applying them permanently. This guide outlines how real-time previews work in Paint.NET, how to ensure your canvas vi" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-preview-adjustments-in-real-time-in-paintnet">How to
+Preview Adjustments in Real-Time in Paint.NET</h1>
+<p>Paint.NET natively supports real-time previews for image adjustments,
+allowing you to view visual changes on your canvas instantly before
+applying them permanently. This guide outlines how real-time previews
+work in Paint.NET, how to ensure your canvas view is optimized to see
+these live updates, and how to troubleshoot common issues where previews
+might not appear.</p>
+<h3 id="how-real-time-previews-work-in-paintnet">How Real-Time Previews
+Work in Paint.NET</h3>
+<p>In Paint.NET, adjustments and effects do not require a separate
+"Preview" checkbox. Real-time rendering is built directly into the
+software's engine. When you open any adjustment tool, the software
+renders the changes directly onto the active layer in the main canvas
+window as you modify sliders and settings.</p>
+<h3 id="steps-to-view-real-time-adjustments">Steps to View Real-Time
+Adjustments</h3>
+<ol type="1">
+<li><strong>Select the Target Layer:</strong> Ensure the correct layer
+is highlighted in the <strong>Layers</strong> window (press
+<strong>F7</strong> if the window is hidden). Adjustments only preview
+and apply to the currently selected layer.</li>
+<li><strong>Clear or Set Selections:</strong> If a selection is active,
+adjustments will only preview inside the selected bounding area. To
+preview changes across the entire image, press <strong>Ctrl + D</strong>
+to deselect any active areas.</li>
+<li><strong>Open an Adjustment Tool:</strong> Navigate to the top menu
+bar and click <strong>Adjustments</strong>, then choose a tool such as
+<strong>Brightness / Contrast</strong>, <strong>Hue /
+Saturation</strong>, or <strong>Curves</strong>.</li>
+<li><strong>Position the Dialog Window:</strong> By default, adjustment
+dialogs appear in the center of the screen, which may obscure your
+subject. Click and drag the title bar of the adjustment window to move
+it aside so your image is clearly visible.</li>
+<li><strong>Adjust the Controls:</strong> Move the sliders, enter
+numerical values, or adjust curves. The canvas behind the dialog will
+update dynamically in real time to reflect your changes.</li>
+<li><strong>Commit or Discard:</strong> Click <strong>OK</strong> (or
+press <strong>Enter</strong>) to finalize the adjustment. Click
+<strong>Cancel</strong> (or press <strong>Esc</strong>) to instantly
+revert the canvas back to its original state.</li>
+</ol>
+<h3 id="tips-for-optimal-preview-performance">Tips for Optimal Preview
+Performance</h3>
+<ul>
+<li><strong>Zoom to Fit:</strong> Press <strong>Ctrl + B</strong> to
+zoom the canvas to fit the window, ensuring the entire composition
+remains visible alongside open dialog boxes.</li>
+<li><strong>Hardware Acceleration:</strong> Paint.NET uses GPU
+acceleration to render effects smoothly in real time. If previews feel
+sluggish, go to <strong>Settings</strong> (the gear icon in the
+top-right corner) &gt; <strong>Graphics</strong> and verify that
+<strong>Hardware acceleration</strong> is enabled.</li>
+<li><strong>Large File Delays:</strong> On very high-resolution images,
+real-time rendering might experience a brief fraction-of-a-second delay
+while the processor calculates the pixel values across large
+layers.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/how-to-preview-adjustments-in-real-time-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

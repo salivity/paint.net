@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Create Sprite Animations in Paint.NET - paint.net</title>
+    <meta name="description" content="Creating multi-frame sprites in Paint.NET requires treating individual layers as animation frames and utilizing smart layering techniques to manage motion. While Paint.NET is primarily a static image editor, you can build a seamless animation pipeline by">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/how-to-create-sprite-animations-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Create Sprite Animations in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/how-to-create-sprite-animations-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Creating multi-frame sprites in Paint.NET requires treating individual layers as animation frames and utilizing smart layering techniques to manage motion. While Paint.NET is primarily a static image editor, you can build a seamless animation pipeline by" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-create-sprite-animations-in-paintnet">How to Create
+Sprite Animations in Paint.NET</h1>
+<p>Creating multi-frame sprites in Paint.NET requires treating
+individual layers as animation frames and utilizing smart layering
+techniques to manage motion. While Paint.NET is primarily a static image
+editor, you can build a seamless animation pipeline by properly
+configuring your canvas, using layers for manual onion-skinning, and
+relying on plugins or sheet-packing techniques to preview and export
+your final sprite.</p>
+<h3 id="1-canvas-setup">1. Canvas Setup</h3>
+<p>Start by establishing the dimensions of a single frame. For pixel art
+and classic 2D sprites, common resolutions are 16x16, 32x32, or 64x64
+pixels.</p>
+<ul>
+<li>Create a new document (<code>Ctrl + N</code>) with your exact frame
+dimensions.</li>
+<li>Go to <strong>View</strong> and enable <strong>Grid</strong> to see
+pixel boundaries when zoomed in.</li>
+<li>Select the <strong>Pencil</strong> tool for raw pixel placement, or
+configure tools with <strong>Antialiasing disabled</strong> to prevent
+unwanted edge blurring.</li>
+</ul>
+<h3 id="2-organizing-layers-as-frames">2. Organizing Layers as
+Frames</h3>
+<p>Each frame of your animation should exist on its own dedicated
+layer.</p>
+<ul>
+<li>Name your layers sequentially from the bottom up (e.g.,
+<code>Frame_01</code>, <code>Frame_02</code>, <code>Frame_03</code>).
+Paint.NET reads bottom layers as the background and upper layers as the
+foreground.</li>
+<li>Keep a static background on a locked, dedicated bottom layer if your
+animation shares consistent reference points or an environment.</li>
+<li>When working on character cycles (such as walk, run, or idle
+cycles), create a rough silhouette layer to map out key poses (extremes
+and contacts) before drawing line art and coloring.</li>
+</ul>
+<h3 id="3-simulating-onion-skinning">3. Simulating Onion Skinning</h3>
+<p>Paint.NET lacks a native onion-skinning feature, but you can
+replicate it manually using layer properties:</p>
+<ol type="1">
+<li>Draw your first keyframe on <code>Frame_01</code>.</li>
+<li>Duplicate the layer (<code>Ctrl + Shift + D</code>) and rename the
+duplicate to <code>Frame_02</code>.</li>
+<li>Press <code>F4</code> to open <strong>Layer Properties</strong> on
+<code>Frame_01</code> and lower its opacity to roughly 30–50%.</li>
+<li>Draw the next movement increment on <code>Frame_02</code>, using the
+faint image of <code>Frame_01</code> beneath it as a guide.</li>
+<li>Repeat this process for subsequent frames, hiding earlier frames as
+needed to reduce visual clutter.</li>
+<li>Once drawing is complete, select each layer, press <code>F4</code>,
+and restore the opacity back to 255 (100%).</li>
+</ol>
+<h3 id="4-testing-and-previewing">4. Testing and Previewing</h3>
+<p>To verify your frame timing and movement fluidity:</p>
+<ul>
+<li><strong>Manual scrub:</strong> Rapidly click the checkmarks next to
+each layer in the <strong>Layers</strong> window to toggle visibility
+sequentially.</li>
+<li><strong>Animation Plugins:</strong> Install community-created
+plugins like the <em>Animated Image (AGIF)</em> file type plugin. This
+adds native support for loading and saving <code>.gif</code> or
+<code>.apng</code> files directly from layers, allowing you to preview
+frame delays and looping directly within Paint.NET.</li>
+</ul>
+<h3 id="5-exporting-the-sprite">5. Exporting the Sprite</h3>
+<p>Depending on your project's target platform, use one of two export
+workflows:</p>
+<ul>
+<li><strong>Animated GIF/APNG:</strong> If you have the AGIF plugin
+installed, choose <strong>File &gt; Save As</strong>, select the
+animated format, and configure your frame delay (e.g., 100ms for 10
+FPS). The plugin compiles visible layers into an animated file
+automatically.</li>
+<li><strong>Sprite Sheet Generation:</strong> For game development
+(e.g., Unity, Godot), sprites are usually preferred as a single grid
+texture. Calculate your total width (frame width multiplied by the
+number of frames), go to <strong>Image &gt; Canvas Size</strong>, anchor
+the canvas to the left, and expand the width. Move each layer
+horizontally to its respective grid slot, merge all layers down into one
+(<code>Ctrl + M</code>), and save as a standard <code>.png</code>.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/how-to-create-sprite-animations-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Smooth Jagged Edges in Paint.NET - paint.net</title>
+    <meta name="description" content="Scaling up low-resolution graphics in Paint.NET frequently leads to aliasing, creating harsh, &quot;stair-stepped&quot; pixel edges. This guide explains how to prevent pixelation during the resizing process and how to smooth existing jagged edges using Paint.NET&#39;s">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/how-to-smooth-jagged-edges-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Smooth Jagged Edges in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/how-to-smooth-jagged-edges-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Scaling up low-resolution graphics in Paint.NET frequently leads to aliasing, creating harsh, &quot;stair-stepped&quot; pixel edges. This guide explains how to prevent pixelation during the resizing process and how to smooth existing jagged edges using Paint.NET&#39;s" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-smooth-jagged-edges-in-paintnet">How to Smooth Jagged
+Edges in Paint.NET</h1>
+<p>Scaling up low-resolution graphics in Paint.NET frequently leads to
+aliasing, creating harsh, "stair-stepped" pixel edges. This guide
+explains how to prevent pixelation during the resizing process and how
+to smooth existing jagged edges using Paint.NET's built-in resampling
+methods, blur filters, selection tools, and dedicated anti-aliasing
+plugins.</p>
+<h2 id="1-choose-the-correct-resampling-algorithm">1. Choose the Correct
+Resampling Algorithm</h2>
+<p>If you are currently scaling the image, you can prevent jagged edges
+before they appear:</p>
+<ol type="1">
+<li>Open your image and go to <strong>Image</strong> &gt;
+<strong>Resize</strong> (or press <code>Ctrl + R</code>).</li>
+<li>Locate the <strong>Resampling</strong> dropdown menu.</li>
+<li>Switch the algorithm from <strong>Nearest Neighbor</strong> (which
+preserves hard, jagged pixels) to <strong>Bicubic</strong> or
+<strong>Fant</strong>.</li>
+<li>Click <strong>OK</strong>. Both Bicubic and Fant automatically
+interpolate adjacent pixels to create softer, smoother transitions.</li>
+</ol>
+<h2 id="2-apply-a-gaussian-blur-and-contrast-pass">2. Apply a Gaussian
+Blur and Contrast Pass</h2>
+<p>If the graphic is already scaled and has hard, jagged borders, you
+can soften the transition using a quick blur-and-sharpen technique:</p>
+<ol type="1">
+<li>Isolate the graphic on a transparent layer.</li>
+<li>Navigate to <strong>Effects</strong> &gt; <strong>Blurs</strong>
+&gt; <strong>Gaussian Blur</strong>.</li>
+<li>Set the <strong>Radius</strong> slider to a low value, typically
+between <code>1</code> and <code>3</code> pixels, just enough to soften
+the jagged pixels without losing the overall shape. Click
+<strong>OK</strong>.</li>
+<li>Go to <strong>Adjustments</strong> &gt; <strong>Brightness /
+Contrast</strong>.</li>
+<li>Increase the <strong>Contrast</strong> slider to tighten the blurred
+edge, effectively creating a clean, anti-aliased contour.</li>
+</ol>
+<h2 id="3-use-the-median-noise-filter">3. Use the Median Noise
+Filter</h2>
+<p>The Median filter rounds off sharp pixel corners while preserving
+large color blocks, making it ideal for flat-color graphics, logos, and
+pixel art:</p>
+<ol type="1">
+<li>Select the layer containing your jagged graphic.</li>
+<li>Go to <strong>Effects</strong> &gt; <strong>Noise</strong> &gt;
+<strong>Median</strong>.</li>
+<li>Set the <strong>Radius</strong> to <code>1</code> or <code>2</code>
+pixels and adjust the <strong>Percentile</strong> slider (default is
+50%).</li>
+<li>Preview the canvas to ensure the jagged corners are rounded off
+without distorting smaller details, then click <strong>OK</strong>.</li>
+</ol>
+<h2 id="4-smooth-edges-using-selection-feathering">4. Smooth Edges Using
+Selection Feathering</h2>
+<p>If your subject has jagged edges against a transparent or solid
+background, smoothing the selection boundary produces a natural
+contour:</p>
+<ol type="1">
+<li>Select the <strong>Magic Wand</strong> tool (<code>S</code>) and
+ensure the <strong>Anti-aliased selection</strong> button in the top
+toolbar is toggled on.</li>
+<li>Click outside the graphic to select the background, or click the
+graphic itself.</li>
+<li>Invert the selection if necessary (<code>Ctrl + I</code>).</li>
+<li>Go to <strong>Effects</strong> &gt; <strong>Selection</strong> &gt;
+<strong>Feather</strong> (available in the popular BoltBait plugin pack
+for Paint.NET). A radius of <code>1</code> or <code>2</code> pixels will
+automatically blend the perimeter into transparency.</li>
+</ol>
+<h2 id="5-use-the-aas-assistant-plugin">5. Use the AA's Assistant
+Plugin</h2>
+<p>For graphics with transparent backgrounds, the dedicated <strong>AA's
+Assistant</strong> effect (included in the BoltBait plugin pack) is the
+most efficient solution:</p>
+<ol type="1">
+<li>Ensure the graphic is cut out onto a transparent layer.</li>
+<li>Navigate to <strong>Effects</strong> &gt; <strong>Object</strong>
+&gt; <strong>AA's Assistant</strong>.</li>
+<li>Adjust the <strong>Sharpness</strong> and <strong>Offset</strong>
+sliders until the pixelated borders smooth out into a clean edge.</li>
+<li>Click <strong>OK</strong> to apply the anti-aliasing directly to the
+boundaries.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/how-to-smooth-jagged-edges-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

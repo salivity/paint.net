@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Layer Mask Plugin for Paint.NET - paint.net</title>
+    <meta name="description" content="While Paint.NET is a powerful image editing program, it lacks native, non-destructive layer masks out of the box, requiring users to rely on third-party plugins for this capability. This article covers the primary plugin that delivers advanced layer maski">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/advanced-layer-mask-plugin-for-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Advanced Layer Mask Plugin for Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/advanced-layer-mask-plugin-for-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="While Paint.NET is a powerful image editing program, it lacks native, non-destructive layer masks out of the box, requiring users to rely on third-party plugins for this capability. This article covers the primary plugin that delivers advanced layer maski" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="advanced-layer-mask-plugin-for-paintnet">Advanced Layer Mask
+Plugin for Paint.NET</h1>
+<p>While Paint.NET is a powerful image editing program, it lacks native,
+non-destructive layer masks out of the box, requiring users to rely on
+third-party plugins for this capability. This article covers the primary
+plugin that delivers advanced layer masking functionality to
+Paint.NET—the <strong>Alpha Mask</strong> plugin—explaining what it is,
+how to install it, and how to use it to blend and mask layers
+effectively.</p>
+<h3 id="the-alpha-mask-plugin">The Alpha Mask Plugin</h3>
+<p>The definitive tool for advanced layer masking in Paint.NET is the
+<strong>Alpha Mask</strong> plugin (originally created by community
+member <em>illnab1024</em> and updated by subsequent developers). This
+plugin enables you to mask layers using either an image file saved to
+your drive, a secondary layer, or an image copied directly to your
+clipboard.</p>
+<h3 id="how-to-install-the-plugin">How to Install the Plugin</h3>
+<ol type="1">
+<li>Download the <code>AlphaMask.dll</code> file from the official
+Paint.NET community forums.</li>
+<li>Close Paint.NET if it is currently running.</li>
+<li>Locate your Paint.NET installation directory (typically found at
+<code>C:\Program Files\paint.net</code>).</li>
+<li>Open the <code>Effects</code> folder inside the installation
+directory.</li>
+<li>Paste <code>AlphaMask.dll</code> into the <code>Effects</code>
+folder (administrator permissions may be required).</li>
+<li>Relaunch Paint.NET. The tool will appear under the <strong>Effects
+&gt; Object</strong> or <strong>Effects &gt; Alpha Mask</strong>
+menu.</li>
+</ol>
+<h3 id="how-to-use-layer-masks-with-the-plugin">How to Use Layer Masks
+with the Plugin</h3>
+<p>The Alpha Mask plugin determines transparency based on luminance:
+pure white areas remain fully visible, pure black areas become fully
+transparent, and shades of gray create varying levels of
+semi-transparency.</p>
+<ol type="1">
+<li><strong>Prepare the Mask:</strong> Create a grayscale image
+representing your mask. You can generate this on a separate layer or in
+a separate file.</li>
+<li><strong>Copy the Mask:</strong> Select the mask area and copy it to
+your clipboard (Ctrl + C).</li>
+<li><strong>Select the Target Layer:</strong> Switch to the layer
+containing the image you want to mask.</li>
+<li><strong>Run the Plugin:</strong> Go to <strong>Effects</strong> and
+select <strong>Alpha Mask</strong>.</li>
+<li><strong>Configure Settings:</strong>
+<ul>
+<li>Check <strong>Mask from Clipboard</strong> to apply the mask you
+just copied.</li>
+<li>Check <strong>Invert Mask</strong> if you want to reverse the
+transparent and opaque areas.</li>
+<li>Adjust <strong>Mix Alpha</strong> depending on whether you want to
+replace the layer's existing alpha channel or blend with it.</li>
+</ul></li>
+<li><strong>Apply:</strong> Click <strong>OK</strong> to render the mask
+directly onto the target layer.</li>
+</ol>
+<h3 id="alternative-tool-boltbaits-paste-alpha">Alternative Tool:
+BoltBait’s "Paste Alpha"</h3>
+<p>For users seeking an integrated suite of tools, <strong>BoltBait’s
+Plugin Pack</strong> includes a dedicated effect called <strong>Paste
+Alpha</strong>. This effect performs a similar masking operation by
+taking whatever image is on your clipboard and applying its luminance or
+alpha values directly to the active layer's transparency channel, making
+it a reliable alternative for quick masking tasks.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/advanced-layer-mask-plugin-for-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

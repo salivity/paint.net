@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint.NET Levels: Input and Output Sliders Explained - paint.net</title>
+    <meta name="description" content="The Levels adjustment in Paint.NET is a powerful tool for correcting color balance, contrast, and exposure by manipulating the tonal range of an image. This guide explains the exact functions of both the Input and Output sliders in the Levels window, deta">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/paint-net-levels-input-and-output-sliders-explained">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Paint.NET Levels: Input and Output Sliders Explained - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/paint-net-levels-input-and-output-sliders-explained" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="The Levels adjustment in Paint.NET is a powerful tool for correcting color balance, contrast, and exposure by manipulating the tonal range of an image. This guide explains the exact functions of both the Input and Output sliders in the Levels window, deta" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="paintnet-levels-input-and-output-sliders-explained">Paint.NET
+Levels: Input and Output Sliders Explained</h1>
+<p>The Levels adjustment in Paint.NET is a powerful tool for correcting
+color balance, contrast, and exposure by manipulating the tonal range of
+an image. This guide explains the exact functions of both the Input and
+Output sliders in the Levels window, detailing how each control alters
+pixel values and affects your final composition.</p>
+<h3 id="understanding-the-tonal-scale">Understanding the Tonal
+Scale</h3>
+<p>Paint.NET measures brightness values on a scale from 0 to 255. A
+value of 0 represents pure black, while 255 represents pure white.
+Values in between represent varying shades of gray or color brightness.
+The Levels dialog allows you to remap these values using two primary
+controls: the Input sliders and the Output sliders.</p>
+<h3 id="the-input-sliders-adjusting-contrast-and-clipping">The Input
+Sliders: Adjusting Contrast and Clipping</h3>
+<p>The Input section is typically used to increase contrast, correct
+under- or over-exposed images, and adjust midtone brightness. It
+features three controls:</p>
+<ul>
+<li><strong>Black Point Slider (Bottom/Left):</strong> Sets the
+threshold for what is considered pure black. Moving this slider up
+(increasing the value from 0) forces all pixels at or below that value
+to become pure black (0). This darkens the shadows and deepens the dark
+tones of the image.</li>
+<li><strong>Midtone Slider (Center):</strong> Often referred to as
+Gamma, this slider adjusts the distribution of midtones without changing
+the absolute black or white points. Moving it changes whether the
+midtones lean closer to shadows or highlights, brightening or darkening
+the overall image while preserving the extremes.</li>
+<li><strong>White Point Slider (Top/Right):</strong> Sets the threshold
+for what is considered pure white. Moving this slider down (decreasing
+the value from 255) forces all pixels at or above that value to become
+pure white (255). This brightens highlights and brings out detail in
+brighter areas.</li>
+</ul>
+<p>By moving the black and white Input sliders closer together, you
+stretch the image's dynamic range across a narrower set of original
+data, increasing overall contrast.</p>
+<h3 id="the-output-sliders-compressing-dynamic-range">The Output
+Sliders: Compressing Dynamic Range</h3>
+<p>The Output section limits the maximum and minimum brightness values
+that can appear in the image. Rather than expanding or shifting tones,
+it compresses the dynamic range:</p>
+<ul>
+<li><strong>Black Point Slider (Bottom/Left):</strong> Sets the darkest
+value the image is allowed to display. If you raise this value from 0 to
+50, pure black is eliminated; the darkest pixels in the image will now
+only be a dark gray. This creates a faded, matte, or vintage look by
+lifting the shadows.</li>
+<li><strong>White Point Slider (Top/Right):</strong> Sets the brightest
+value the image is allowed to display. If you lower this value from 255
+to 200, pure white is eliminated; the brightest pixels will now be
+capped at a light gray. This dims the highlights and reduces glare.</li>
+</ul>
+<p>Moving the Output sliders closer together reduces contrast and
+flattens the image, as it restricts the available tonal spectrum between
+the chosen minimum and maximum thresholds.</p>
+<h3 id="summary-of-differences">Summary of Differences</h3>
+<ul>
+<li><strong>Input Sliders</strong> map a specific range of original
+pixels to full black and full white, expanding contrast and allowing you
+to set clipping points.</li>
+<li><strong>Output Sliders</strong> restrict the absolute boundaries of
+black and white, reducing contrast and capping how dark or bright the
+image is permitted to be.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/paint-net-levels-input-and-output-sliders-explained';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Custom Minecraft and Skyrim Textures in Paint.NET - paint.net</title>
+    <meta name="description" content="Custom game textures allow you to overhaul the visual style of games like Minecraft and The Elder Scrolls V: Skyrim to match your personal creative vision. This guide explains how to use Paint.NET, a free and capable image editor, to build, edit, and expo">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/create-custom-minecraft-and-skyrim-textures-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Create Custom Minecraft and Skyrim Textures in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/create-custom-minecraft-and-skyrim-textures-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Custom game textures allow you to overhaul the visual style of games like Minecraft and The Elder Scrolls V: Skyrim to match your personal creative vision. This guide explains how to use Paint.NET, a free and capable image editor, to build, edit, and expo" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="create-custom-minecraft-and-skyrim-textures-in-paintnet">Create
+Custom Minecraft and Skyrim Textures in Paint.NET</h1>
+<p>Custom game textures allow you to overhaul the visual style of games
+like Minecraft and The Elder Scrolls V: Skyrim to match your personal
+creative vision. This guide explains how to use Paint.NET, a free and
+capable image editor, to build, edit, and export texture files for both
+games. You will learn the technical requirements for each engine, how to
+work within resolution constraints, and the proper file formats needed
+to ensure your custom assets load properly in-game.</p>
+<h3 id="understanding-core-texture-rules">Understanding Core Texture
+Rules</h3>
+<p>Regardless of the target game, real-time rendering engines rely on
+specific formatting rules:</p>
+<ul>
+<li><strong>The Power of Two:</strong> Dimensions must follow binary
+scaling (e.g., 16x16, 32x32, 512x512, 1024x1024, 2048x2048).
+Non-standard dimensions can cause rendering glitches or engine
+crashes.</li>
+<li><strong>Layers:</strong> Always separate your base colors, shading,
+and highlights onto distinct layers within Paint.NET. This preserves raw
+data and simplifies revisions.</li>
+<li><strong>Transparency:</strong> Both games utilize transparency, but
+handle it differently. Minecraft relies on true alpha channels in
+standard image formats, while Skyrim frequently uses alpha channels
+within specialized DirectDraw Surface (DDS) textures.</li>
+</ul>
+<hr />
+<h3 id="designing-custom-minecraft-textures">Designing Custom Minecraft
+Textures</h3>
+<p>Minecraft utilizes straightforward, uncompressed PNG files arranged
+in a resource pack directory structure.</p>
+<h4 id="1-canvas-setup">1. Canvas Setup</h4>
+<ul>
+<li>Open Paint.NET and press <code>Ctrl + N</code>.</li>
+<li>Set the width and height to <code>16x16</code> pixels for vanilla
+style, or <code>32x32</code> / <code>64x64</code> for high-definition
+packs.</li>
+<li>Under <strong>View</strong>, enable <strong>Grid</strong> and zoom
+in close (usually 800% to 1600%) to see individual pixels clearly.</li>
+</ul>
+<h4 id="2-drawing-and-shading">2. Drawing and Shading</h4>
+<ul>
+<li>Select the <strong>Pencil tool</strong> for precise pixel placement
+with hard edges. Avoid the standard Paintbrush tool on low resolutions,
+as anti-aliasing causes blurry edges.</li>
+<li>Establish a local color palette. Create a base silhouette, add a
+mid-tone layer, and use the <strong>Color Picker</strong> to select
+slightly darker or lighter variations for manual shading.</li>
+<li>For semi-transparent items (like stained glass or potions), adjust
+the <strong>Opacity</strong> slider in the <strong>Layer
+Properties</strong> window (<code>F4</code>).</li>
+</ul>
+<h4 id="3-exporting">3. Exporting</h4>
+<ul>
+<li>Navigate to <strong>File &gt; Save As</strong>.</li>
+<li>Select **PNG (*.png)** as the file format.</li>
+<li>Place the file in the appropriate directory of your resource pack
+(e.g., <code>assets/minecraft/textures/block/</code> or
+<code>item/</code>).</li>
+</ul>
+<hr />
+<h3 id="designing-custom-skyrim-textures">Designing Custom Skyrim
+Textures</h3>
+<p>Skyrim requires more complex texture maps saved in the DirectDraw
+Surface (<code>.dds</code>) format to calculate depth, reflection, and
+detail on 3D meshes.</p>
+<h4 id="1-canvas-setup-and-templates">1. Canvas Setup and Templates</h4>
+<ul>
+<li>Extract the vanilla <code>.dds</code> file you want to modify using
+a BSA extraction tool, or import a 3D model's UV template.</li>
+<li>Open the <code>.dds</code> directly in Paint.NET (supported natively
+in modern versions).</li>
+<li>Set dimensions appropriate for modern hardware:
+<code>1024x1024</code> for small clutter or weapons, and
+<code>2048x2048</code> or <code>4096x4096</code> for armor,
+architecture, and landscapes.</li>
+</ul>
+<h4 id="2-developing-texture-passes">2. Developing Texture Passes</h4>
+<p>Skyrim relies on multiple textures working together:</p>
+<ul>
+<li><strong>Diffuse Map (<code>_d.dds</code>):</strong> The primary
+color map. Use photos, painted details, and grunge overlays. Set overlay
+layers to <strong>Multiply</strong> or <strong>Overlay</strong> blend
+modes to blend dirt and wear over base materials.</li>
+<li><strong>Normal Map (<code>_n.dds</code>):</strong> Simulates 3D
+surface depth. To generate this in Paint.NET:
+<ol type="1">
+<li>Duplicate your finished diffuse layer.</li>
+<li>Desaturate it via <strong>Adjustments &gt; Black and
+White</strong>.</li>
+<li>Run a normal map generation plugin (or heighten contrasts manually
+to distinguish high and low points).</li>
+<li>Ensure the alpha channel of the normal map contains the
+<strong>specular map</strong> (which controls glossiness and
+reflectivity in the Creation Engine).</li>
+</ol></li>
+</ul>
+<h4 id="3-exporting-to-dds">3. Exporting to DDS</h4>
+<ul>
+<li>Navigate to <strong>File &gt; Save As</strong> and select
+**DirectDraw Surface (*.dds)**.</li>
+<li>In the configuration dialog, choose the correct compression format:
+<ul>
+<li><strong>BC7 (Linear)</strong> or <strong>DXT1</strong>: Best for
+standard diffuse maps (<code>_d</code>) without complex alpha
+channels.</li>
+<li><strong>BC7</strong> or <strong>DXT5</strong>: Required for maps
+containing smooth alpha transitions, such as normal/specular maps
+(<code>_n</code>) or transparent foliage.</li>
+</ul></li>
+<li>Check <strong>Generate Mip Maps</strong> to ensure lower-resolution
+versions are created automatically for rendering at a distance,
+preventing performance drops and visual artifacts.</li>
+<li>Save the file to your mod's directory:
+<code>Data/Textures/[Category]/</code>.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/create-custom-minecraft-and-skyrim-textures-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

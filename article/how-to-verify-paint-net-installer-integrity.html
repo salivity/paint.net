@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Verify Paint.NET Installer Integrity - paint.net</title>
+    <meta name="description" content="Verifying the integrity of your Paint.NET installation files ensures that the software you downloaded is authentic, uncorrupted, and free from malicious tampering. This article explains how to validate your Paint.NET download using two primary methods: ch">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/how-to-verify-paint-net-installer-integrity">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Verify Paint.NET Installer Integrity - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/how-to-verify-paint-net-installer-integrity" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Verifying the integrity of your Paint.NET installation files ensures that the software you downloaded is authentic, uncorrupted, and free from malicious tampering. This article explains how to validate your Paint.NET download using two primary methods: ch" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-verify-paintnet-installer-integrity">How to Verify
+Paint.NET Installer Integrity</h1>
+<p>Verifying the integrity of your Paint.NET installation files ensures
+that the software you downloaded is authentic, uncorrupted, and free
+from malicious tampering. This article explains how to validate your
+Paint.NET download using two primary methods: checking the built-in
+digital signature and comparing cryptographic SHA-256 checksums using
+native Windows tools.</p>
+<h3 id="method-1-check-the-digital-signature">Method 1: Check the
+Digital Signature</h3>
+<p>The quickest and most reliable way to confirm the authenticity of the
+Paint.NET installer on Windows is to inspect its digital signature.</p>
+<ol type="1">
+<li>Locate the downloaded Paint.NET setup file (e.g.,
+<code>paint.net.X.X.X.install.anycpu.web.exe</code>). If you downloaded
+a <code>.zip</code> archive, extract it first.</li>
+<li>Right-click the executable file and select
+<strong>Properties</strong>.</li>
+<li>Click on the <strong>Digital Signatures</strong> tab. If this tab is
+missing, the file is not signed and should not be run.</li>
+<li>In the signature list, look for the signer name: <strong>dotPDN
+LLC</strong> (or Rick Brewster, the creator of Paint.NET).</li>
+<li>Select the signature and click <strong>Details</strong>.</li>
+<li>Ensure the Digital Signature Information box explicitly states:
+<em>"This digital signature is OK."</em></li>
+</ol>
+<h3 id="method-2-verify-the-sha-256-hash">Method 2: Verify the SHA-256
+Hash</h3>
+<p>If you want to ensure the file was not corrupted during transit,
+compare its cryptographic hash against the official hash provided on the
+official Paint.NET GitHub release page or release announcements.</p>
+<h4 id="using-windows-powershell">Using Windows PowerShell:</h4>
+<ol type="1">
+<li><p>Open PowerShell by pressing <code>Win + X</code> and selecting
+<strong>Windows PowerShell</strong> or
+<strong>Terminal</strong>.</p></li>
+<li><p>Run the following command, replacing the path with the actual
+location of your downloaded file:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Get-FileHash <span class="op">-</span>Algorithm SHA256 <span class="st">&quot;C:\Users\YourUsername\Downloads\paint.net.installer.exe&quot;</span></span></code></pre></div></li>
+<li><p>Press <strong>Enter</strong>.</p></li>
+</ol>
+<h4 id="using-windows-command-prompt">Using Windows Command Prompt:</h4>
+<ol type="1">
+<li><p>Open Command Prompt by typing <code>cmd</code> in the Windows
+search bar and pressing <strong>Enter</strong>.</p></li>
+<li><p>Run the following command:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode cmd"><code class="sourceCode dosbat"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>certutil <span class="at">-hashfile</span> <span class="st">&quot;C:\Users\YourUsername\Downloads\paint.net.installer.exe&quot;</span> SHA256</span></code></pre></div></li>
+</ol>
+<h3 id="comparing-the-results">Comparing the Results</h3>
+<p>Compare the resulting alphanumeric hash string from your terminal
+with the SHA-256 hash published by the developers on their official
+release notes:</p>
+<ul>
+<li><strong>If the hashes match:</strong> The file is complete,
+authentic, and safe to execute.</li>
+<li><strong>If the hashes do not match:</strong> The file may be
+damaged, truncated, or tampered with. Delete the file immediately and
+re-download it exclusively from the official Paint.NET website or GitHub
+repository.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/how-to-verify-paint-net-installer-integrity';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

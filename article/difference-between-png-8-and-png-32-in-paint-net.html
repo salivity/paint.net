@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference Between PNG-8 and PNG-32 in Paint.NET - paint.net</title>
+    <meta name="description" content="When saving an image as a PNG in Paint.NET, choosing between PNG-8 and PNG-32 determines the balance between visual fidelity and file size. PNG-8 uses an indexed color palette limited to a maximum of 256 colors, creating exceptionally small files at the c">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/difference-between-png-8-and-png-32-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Difference Between PNG-8 and PNG-32 in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/difference-between-png-8-and-png-32-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="When saving an image as a PNG in Paint.NET, choosing between PNG-8 and PNG-32 determines the balance between visual fidelity and file size. PNG-8 uses an indexed color palette limited to a maximum of 256 colors, creating exceptionally small files at the c" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="difference-between-png-8-and-png-32-in-paintnet">Difference
+Between PNG-8 and PNG-32 in Paint.NET</h1>
+<p>When saving an image as a PNG in Paint.NET, choosing between PNG-8
+and PNG-32 determines the balance between visual fidelity and file size.
+PNG-8 uses an indexed color palette limited to a maximum of 256 colors,
+creating exceptionally small files at the cost of color depth and
+transparency nuance. In contrast, PNG-32 supports full 24-bit RGB color
+alongside an 8-bit alpha channel, allowing for over 16 million colors
+and smooth, semi-transparent gradients, but resulting in significantly
+larger file sizes.</p>
+<h3 id="color-depth-and-palette">Color Depth and Palette</h3>
+<p>The primary technical difference lies in how each format stores color
+data:</p>
+<ul>
+<li><strong>PNG-8 (8-bit):</strong> Uses indexed color. Paint.NET
+analyzes the image and reduces it to a custom palette of up to 256
+colors. For complex images, Paint.NET applies dithering to simulate
+missing shades, which can create a speckled or banded appearance in
+smooth gradients and detailed photographs.</li>
+<li><strong>PNG-32 (32-bit):</strong> Uses true color. It allocates 8
+bits each to the Red, Green, and Blue channels (24 bits total),
+producing up to 16.7 million colors. The remaining 8 bits are reserved
+for the Alpha channel. There is no color quantization or banding,
+ensuring exact color reproduction.</li>
+</ul>
+<h3 id="transparency-capabilities">Transparency Capabilities</h3>
+<p>Transparency handling varies dramatically between the two
+formats:</p>
+<ul>
+<li><strong>PNG-8:</strong> Only supports binary (1-bit) transparency by
+default. A pixel is either 100% visible or 100% transparent. Paint.NET
+cannot render smooth, translucent effects in standard PNG-8 exports,
+often leaving jagged edges (aliasing) around curved cutouts or faint
+halos when placed on different backgrounds.</li>
+<li><strong>PNG-32:</strong> Provides full alpha transparency across 256
+levels (from 0 to 255). This allows for partial opacity, soft drop
+shadows, feathered edges, and glass-like translucent effects that blend
+seamlessly across any colored background.</li>
+</ul>
+<h3 id="file-size-and-performance">File Size and Performance</h3>
+<p>Because PNG-8 references an indexed palette rather than storing
+individual RGBA values for every single pixel, its file size is
+drastically smaller—often 50% to 70% smaller than a PNG-32 equivalent.
+This makes PNG-8 faster to load and ideal for bandwidth-sensitive
+environments.</p>
+<p>PNG-32 preserves uncompressed pixel color definitions combined with
+full alpha masking, which substantially increases the storage
+footprint.</p>
+<h3 id="when-to-choose-png-8">When to Choose PNG-8</h3>
+<p>Select PNG-8 in Paint.NET when optimizing for low bandwidth and your
+graphic features:</p>
+<ul>
+<li>Simple illustrations, logos, or icons with flat colors.</li>
+<li>Pixel art and retro graphics with restricted color counts.</li>
+<li>Graphics without smooth shadows or semi-transparent elements.</li>
+</ul>
+<h3 id="when-to-choose-png-32">When to Choose PNG-32</h3>
+<p>Select PNG-32 in Paint.NET when visual quality is the priority and
+your image requires:</p>
+<ul>
+<li>Smooth gradients, complex lighting, or continuous-tone photographic
+elements.</li>
+<li>Soft shadows, glows, or variable opacity.</li>
+<li>UI elements, overlays, and website assets that must blend naturally
+onto varied backgrounds.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/difference-between-png-8-and-png-32-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

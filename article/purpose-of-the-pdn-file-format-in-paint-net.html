@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purpose of the PDN File Format in Paint.NET - paint.net</title>
+    <meta name="description" content="This article explains the purpose and functionality of the .PDN file format specification in Paint.NET. It covers how the format acts as the software&#39;s native project container, why it is critical for non-destructive editing, the specific data it preserve">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/purpose-of-the-pdn-file-format-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Purpose of the PDN File Format in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/purpose-of-the-pdn-file-format-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This article explains the purpose and functionality of the .PDN file format specification in Paint.NET. It covers how the format acts as the software&#39;s native project container, why it is critical for non-destructive editing, the specific data it preserve" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="purpose-of-the-pdn-file-format-in-paintnet">Purpose of the PDN
+File Format in Paint.NET</h1>
+<p>This article explains the purpose and functionality of the .PDN file
+format specification in Paint.NET. It covers how the format acts as the
+software's native project container, why it is critical for
+non-destructive editing, the specific data it preserves compared to
+standard raster formats, and how it fits into a typical digital image
+workflow.</p>
+<p>The .PDN file format is the proprietary, native file format of
+Paint.NET, an open-source-rooted image and photo editing program for
+Windows. Its primary purpose is to serve as a working project file that
+preserves the complete editing state of a canvas, allowing users to
+pause, save, and resume complex graphic design projects without losing
+critical layer information.</p>
+<p>Unlike standard raster formats such as JPEG, PNG, or BMP—which
+flatten all visual elements into a single composite bitmap—the .PDN
+specification encapsulates multiple distinct image layers. For each
+layer, the format records its raw pixel data, opacity level, visibility
+status, and blending mode (such as Multiply, Add, or Overlay). By
+retaining these discrete layers, Paint.NET enables non-destructive
+editing, allowing creators to reposition elements, adjust transparency,
+or apply filters to isolated objects at any point in the future.</p>
+<p>Another core purpose of the .PDN specification is lossless data
+preservation. When saving an image as a JPEG, lossy compression
+permanently discards fine image details to reduce file size. The .PDN
+format uses lossless compression algorithms (primarily Deflate/Gzip
+compression over structured binary data) to store pixel arrays. This
+ensures that opening, editing, and resaving a project multiple times
+introduces zero compression artifacts or image degradation.</p>
+<p>The format also retains essential canvas-level metadata, including
+custom document dimensions, resolution (DPI), and color profiles. While
+it is not designed for direct web publication, social media sharing, or
+broad cross-application compatibility, it functions equivalently to
+Adobe Photoshop's .PSD format.</p>
+<p>In a standard workflow, the .PDN format is used exclusively during
+the creation and revision stages of an image. Once a project is
+finalized, users export the canvas to flattened distribution formats
+like PNG or JPEG, while keeping the original .PDN file as a master copy
+for any future modifications.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/purpose-of-the-pdn-file-format-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

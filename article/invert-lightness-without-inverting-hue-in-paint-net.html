@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invert Lightness Without Inverting Hue in Paint.NET - paint.net</title>
+    <meta name="description" content="Inverting lightness without inverting hue in Paint.NET reverses the tonal values of an image while preserving its original color identities. Unlike a standard color inversion that shifts every color to its complement across the color wheel, this process t">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/invert-lightness-without-inverting-hue-in-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Invert Lightness Without Inverting Hue in Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/invert-lightness-without-inverting-hue-in-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Inverting lightness without inverting hue in Paint.NET reverses the tonal values of an image while preserving its original color identities. Unlike a standard color inversion that shifts every color to its complement across the color wheel, this process t" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="invert-lightness-without-inverting-hue-in-paintnet">Invert
+Lightness Without Inverting Hue in Paint.NET</h1>
+<p>Inverting lightness without inverting hue in Paint.NET reverses the
+tonal values of an image while preserving its original color identities.
+Unlike a standard color inversion that shifts every color to its
+complement across the color wheel, this process turns bright highlights
+into deep shadows and dark shadows into bright tints while keeping the
+underlying color family intact. The following breakdown explains the
+visual result of this adjustment, how it differs from a standard
+negative, and how to perform it directly in Paint.NET.</p>
+<h3 id="the-visual-effect-of-lightness-inversion">The Visual Effect of
+Lightness Inversion</h3>
+<p>When lightness (or luminosity) is inverted independently of hue, the
+tonal map of the image flips completely:</p>
+<ul>
+<li><strong>Shadows Become Highlights:</strong> Deep, dark colors become
+bright, pastel versions of the same color. For example, a dark navy blue
+shifts to a soft sky blue, and a deep forest green becomes a light mint
+green.</li>
+<li><strong>Highlights Become Shadows:</strong> Bright, vibrant colors
+turn into rich, shaded tones. A pale peach turns into a deep brown,
+while a bright lemon yellow becomes a dark olive or mustard tone.</li>
+<li><strong>Neutrals Flip:</strong> Pure white becomes pure black, and
+pure black becomes pure white, while exact middle gray remains
+unchanged.</li>
+<li><strong>Hue Constancy:</strong> A red object remains distinctly red
+rather than turning into cyan, which is what occurs during a full color
+inversion.</li>
+</ul>
+<h3 id="lightness-inversion-vs-standard-inversion">Lightness Inversion
+vs. Standard Inversion</h3>
+<p>A standard inversion in Paint.NET (accessible via
+<code>Ctrl + Shift + I</code>) operates on the RGB channels:</p>
+<p><span class="math display">\[\text{New Red} = 255 - \text{Original
+Red}\]</span> <span class="math display">\[\text{New Green} = 255 -
+\text{Original Green}\]</span> <span class="math display">\[\text{New
+Blue} = 255 - \text{Original Blue}\]</span></p>
+<p>Because all three color channels flip simultaneously, both the
+perceived brightness and the hue are reversed, producing a traditional
+photographic negative where every color transforms into its exact
+complementary opposite.</p>
+<p>In contrast, isolating lightness manipulates the image in an HSL
+(Hue, Saturation, Lightness) or Luminance color space. The hue angle
+(<span class="math inline">\(\theta\)</span>) and saturation percentage
+(<span class="math inline">\(S\)</span>) remain constant, while the
+lightness value (<span class="math inline">\(L\)</span>) is
+mirrored:</p>
+<p><span class="math display">\[L_{\text{new}} = 100\% -
+L_{\text{original}}\]</span></p>
+<p>This maintains the atmospheric mood and color harmony of the original
+composition while drastically altering its contrast, exposure, and
+depth.</p>
+<h3 id="how-to-invert-lightness-in-paintnet">How to Invert Lightness in
+Paint.NET</h3>
+<p>Paint.NET does not feature a single-click "Invert Lightness" button
+by default, but the effect can be achieved using the native
+<strong>Curves</strong> adjustment:</p>
+<ol type="1">
+<li>Open your image in Paint.NET.</li>
+<li>Navigate to <strong>Adjustments</strong> in the top menu and select
+<strong>Curves</strong> (or press <code>Ctrl + Shift + M</code>).</li>
+<li>In the Curves dialog, change the transfer mode dropdown from
+<strong>RGB</strong> to <strong>Luminosity</strong>.</li>
+<li>Click and drag the bottom-left control point (representing shadows
+at coordinate 0,0) all the way to the top-left (0, 255).</li>
+<li>Click and drag the top-right control point (representing highlights
+at coordinate 255, 255) down to the bottom-right (255, 0).</li>
+<li>Click <strong>OK</strong> to apply the change.</li>
+</ol>
+<p>By slanting the Luminosity diagonal line downward from top-left to
+bottom-right, you command Paint.NET to remap high luminance input values
+to low luminance output values without altering the chromatic balance of
+the RGB channels.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/invert-lightness-without-inverting-hue-in-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

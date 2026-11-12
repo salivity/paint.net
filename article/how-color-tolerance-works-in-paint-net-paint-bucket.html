@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Color Tolerance Works in Paint.NET Paint Bucket - paint.net</title>
+    <meta name="description" content="In Paint.NET, the Paint Bucket tool uses a color tolerance setting to determine how aggressively it replaces adjacent pixels with your chosen fill color. By adjusting the tolerance percentage slider in the toolbar, you control the acceptable difference be">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/how-color-tolerance-works-in-paint-net-paint-bucket">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How Color Tolerance Works in Paint.NET Paint Bucket - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/how-color-tolerance-works-in-paint-net-paint-bucket" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="In Paint.NET, the Paint Bucket tool uses a color tolerance setting to determine how aggressively it replaces adjacent pixels with your chosen fill color. By adjusting the tolerance percentage slider in the toolbar, you control the acceptable difference be" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-color-tolerance-works-in-paintnet-paint-bucket">How Color
+Tolerance Works in Paint.NET Paint Bucket</h1>
+<p>In Paint.NET, the Paint Bucket tool uses a color tolerance setting to
+determine how aggressively it replaces adjacent pixels with your chosen
+fill color. By adjusting the tolerance percentage slider in the toolbar,
+you control the acceptable difference between the base color of the
+clicked pixel and the colors of the surrounding pixels. Understanding
+how this threshold works allows you to cleanly fill regions, handle
+anti-aliased edges, and eliminate unwanted color fringing without
+affecting unrelated parts of your image.</p>
+<h3 id="the-mechanics-of-color-tolerance">The Mechanics of Color
+Tolerance</h3>
+<p>When you click a pixel with the Paint Bucket tool, Paint.NET records
+that pixel’s exact Red, Green, Blue, and Alpha (RGBA) values as the
+target. The software then checks neighboring pixels to see if their
+color values fall within an acceptable mathematical distance from that
+base target.</p>
+<p>Tolerance is measured on a scale from 0% to 100%:</p>
+<ul>
+<li><strong>0% Tolerance:</strong> The tool requires an absolute match.
+Only pixels sharing the exact same RGBA value as the clicked pixel are
+filled. This is ideal for clean, uncompressed pixel art, but it leaves
+jagged, unfilled edges around anti-aliased lines.</li>
+<li><strong>Low Tolerance (1%–30%):</strong> The tool allows minor
+variations in shade. This range is optimal for filling areas with slight
+compression noise or faint gradients while preventing the color from
+bleeding past hard borders.</li>
+<li><strong>Default Tolerance (Around 50%):</strong> Paint.NET defaults
+to 50%, which accommodates standard anti-aliasing and soft edges created
+by brushes or pencils. It fills the main body of a shape and blends into
+the semi-transparent edge pixels.</li>
+<li><strong>High Tolerance (70%–99%):</strong> The tool accepts
+drastically different colors. This is useful when attempting to fill
+textured surfaces, sketches, or heavily artifacted JPEG images, though
+it increases the risk of bleeding into adjacent shapes.</li>
+<li><strong>100% Tolerance:</strong> Color differences are completely
+ignored. The bucket fills every pixel within the active selection or
+boundary, treating all colors identically.</li>
+</ul>
+<h3 id="interaction-with-flood-modes">Interaction with Flood Modes</h3>
+<p>The effect of the tolerance setting is directly shaped by the tool's
+<strong>Flood Mode</strong>:</p>
+<ul>
+<li><strong>Contiguous Mode:</strong> The tool evaluates tolerance
+starting from the clicked pixel and spreads outward only to connected
+pixels that meet the criteria. If an edge exceeds the tolerance
+threshold, the fill stops, containing the color within that
+boundary.</li>
+<li><strong>Global Mode:</strong> The tool evaluates every pixel on the
+active layer or selection simultaneously, regardless of whether they
+touch. Any pixel across the canvas that falls within the tolerance range
+of the sampled color is replaced.</li>
+</ul>
+<h3 id="real-time-adjustment">Real-Time Adjustment</h3>
+<p>A key feature of Paint.NET is the ability to adjust tolerance after
+applying a fill. After clicking with the Paint Bucket, dragging the
+tolerance slider left or right instantly updates the active fill on the
+canvas. This allows you to visually fine-tune the exact threshold
+required to capture anti-aliased borders without spilling over into
+surrounding artwork.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/how-color-tolerance-works-in-paint-net-paint-bucket';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

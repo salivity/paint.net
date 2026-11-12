@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Publish Plugins on the Paint.NET Forum - paint.net</title>
+    <meta name="description" content="Distributing plugins within the Paint.NET community forum is a structured process centered around the dedicated plugin publishing section. Developers compile their custom effects or file-type handlers into dynamic link libraries (.dll), create a standardi">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/how-to-publish-plugins-on-the-paint-net-forum">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Publish Plugins on the Paint.NET Forum - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/how-to-publish-plugins-on-the-paint-net-forum" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Distributing plugins within the Paint.NET community forum is a structured process centered around the dedicated plugin publishing section. Developers compile their custom effects or file-type handlers into dynamic link libraries (.dll), create a standardi" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-publish-plugins-on-the-paintnet-forum">How to Publish
+Plugins on the Paint.NET Forum</h1>
+<p>Distributing plugins within the Paint.NET community forum is a
+structured process centered around the dedicated plugin publishing
+section. Developers compile their custom effects or file-type handlers
+into dynamic link libraries (.dll), create a standardized release
+thread, attach the required files or link to verified repositories, and
+maintain their tools through community feedback and updates.</p>
+<h3 id="navigating-to-the-plugin-publishing-section">Navigating to the
+Plugin Publishing Section</h3>
+<p>The official Paint.NET forum maintains a strict organization for
+modifications. Developers must navigate to the "Plugins - Publishing
+ONLY" board (often referred to as Plugin Publishing World). This
+specific board is reserved exclusively for releasing new plugins and
+updates, ensuring that users can easily locate tools without sorting
+through general troubleshooting or feature request threads.</p>
+<h3 id="preparing-the-distribution-package">Preparing the Distribution
+Package</h3>
+<p>Before creating a thread, developers must package their plugin
+correctly:</p>
+<ul>
+<li><strong>The Plugin File:</strong> Most Paint.NET plugins are
+compiled into <code>.dll</code> files. Developers typically place the
+<code>.dll</code> into a standard <code>.zip</code> archive to prevent
+browser download warnings and reduce file size.</li>
+<li><strong>Installers:</strong> For larger suites or "plugin packs,"
+developers occasionally provide an executable installer
+(<code>.exe</code>) to automate placing the files into the Paint.NET
+<code>Effects</code> or <code>FileTypes</code> directory, though
+standalone <code>.zip</code> files remain the preferred standard for
+security-conscious users.</li>
+<li><strong>Documentation:</strong> A simple <code>readme.txt</code> is
+often bundled inside the archive, detailing manual installation
+instructions and version history.</li>
+</ul>
+<h3 id="formatting-the-forum-thread">Formatting the Forum Thread</h3>
+<p>The release thread serves as the primary storefront and documentation
+hub for the plugin. A standard release post includes:</p>
+<ul>
+<li><strong>Descriptive Title:</strong> Developers format thread titles
+clearly, often prefixing the name with tags to indicate whether the
+plugin is an Effect, FileType, or Adjustment, along with the current
+version number.</li>
+<li><strong>Feature Overview:</strong> A clear summary explains what the
+plugin does, which sub-menu it appears under (e.g.,
+<code>Effects -&gt; Stylize</code>), and any prerequisite software
+required, such as specific .NET runtimes.</li>
+<li><strong>Visual Demonstrations:</strong> Authors provide
+before-and-after samples or screenshots of the plugin's configuration
+dialog so users can see the tool in action.</li>
+<li><strong>Installation Instructions:</strong> A concise guide
+directing users to extract the <code>.dll</code> into
+<code>C:\Program Files\paint.net\Effects</code> (or the equivalent
+user-level directory for the Microsoft Store edition).</li>
+</ul>
+<h3 id="hosting-and-file-delivery">Hosting and File Delivery</h3>
+<p>Developers deliver the files using two main methods:</p>
+<ul>
+<li><strong>Direct Forum Attachments:</strong> For small, standalone
+<code>.dll</code> or <code>.zip</code> files, developers upload the file
+directly to the forum post using the attachment tool. This ensures the
+file remains accessible as long as the forum exists.</li>
+<li><strong>External Hosting via GitHub:</strong> For open-source
+plugins or larger projects, developers often host the source code on
+platforms like GitHub and direct forum members to the GitHub "Releases"
+page. Linking to unvetted third-party file-sharing sites with intrusive
+ads is strictly prohibited by forum rules.</li>
+</ul>
+<h3 id="updates-and-maintenance">Updates and Maintenance</h3>
+<p>The Paint.NET forum allows authors to edit their original post
+indefinitely. When releasing bug fixes or updates for newer Paint.NET
+versions, developers edit the initial post, upload the new archive,
+update the version number in the title, and publish a new reply within
+the thread to alert subscribed users of the changes. Users utilize the
+same thread to report bugs, provide compatibility feedback, and request
+features.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/how-to-publish-plugins-on-the-paint-net-forum';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

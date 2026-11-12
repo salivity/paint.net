@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Paint.NET Automatic Updates Work - paint.net</title>
+    <meta name="description" content="The classic desktop version of Paint.NET, downloaded directly from the official website, features a built-in update mechanism designed to keep the application secure and up to date without requiring manual re-downloads. This article explains how Paint.NET">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/how-paint-net-automatic-updates-work">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How Paint.NET Automatic Updates Work - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/how-paint-net-automatic-updates-work" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="The classic desktop version of Paint.NET, downloaded directly from the official website, features a built-in update mechanism designed to keep the application secure and up to date without requiring manual re-downloads. This article explains how Paint.NET" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-paintnet-automatic-updates-work">How Paint.NET Automatic
+Updates Work</h1>
+<p>The classic desktop version of Paint.NET, downloaded directly from
+the official website, features a built-in update mechanism designed to
+keep the application secure and up to date without requiring manual
+re-downloads. This article explains how Paint.NET checks for new
+releases, downloads installation packages in the background, prompts the
+user, and allows customization of update preferences.</p>
+<h3 id="the-background-update-check">The Background Update Check</h3>
+<p>Paint.NET periodically checks for updates in the background whenever
+the application is launched and an active internet connection is
+detected. It queries the Paint.NET update server to compare the
+currently installed version number against the latest available release
+manifest. This process runs silently and does not interrupt your
+workflow or degrade system performance.</p>
+<h3 id="download-and-notification">Download and Notification</h3>
+<p>When a newer stable version is detected, Paint.NET automatically
+downloads the update package in the background. Once the download is
+complete and verified, a prompt or notification appears within the title
+bar or as a dialog box notifying you that an update is ready to
+install.</p>
+<p>Unlike the Microsoft Store edition, which updates entirely behind the
+scenes via the Windows Store infrastructure, the classic version
+requires user permission to initiate the installation phase.</p>
+<h3 id="the-installation-process">The Installation Process</h3>
+<p>Clicking the update prompt initiates the installation sequence:</p>
+<ol type="1">
+<li><strong>Application Closure:</strong> Paint.NET prompts you to save
+any unsaved work, as the program must close to overwrite core executable
+and library files.</li>
+<li><strong>Elevated Privileges:</strong> A User Account Control (UAC)
+prompt will appear requesting administrator permissions so the updater
+executable can modify files in the installation directory.</li>
+<li><strong>Execution:</strong> The updater replaces the outdated
+program files, updates registered file types if necessary, and optimizes
+assemblies.</li>
+<li><strong>Restart:</strong> Once the update completes, Paint.NET can
+automatically relaunch, allowing you to resume working immediately on
+the latest version.</li>
+</ol>
+<h3 id="managing-update-settings">Managing Update Settings</h3>
+<p>You have full control over how Paint.NET handles updates through the
+in-app settings:</p>
+<ul>
+<li><strong>Accessing Settings:</strong> Click the gear icon in the
+top-right corner of the main Paint.NET window and navigate to the
+<strong>Updates</strong> tab.</li>
+<li><strong>Automatic Checking:</strong> You can toggle the
+"Automatically check for updates" option on or off. Disabling this stops
+background queries, requiring you to click "Check Now" manually.</li>
+<li><strong>Pre-release Versions:</strong> An optional setting allows
+you to opt into beta and pre-release builds if you want early access to
+new features and fixes before their general release.</li>
+</ul></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/how-paint-net-automatic-updates-work';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

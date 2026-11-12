@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Batch Rename and Convert Files for Paint.NET - paint.net</title>
+    <meta name="description" content="While Paint.NET is an efficient image editor, it does not include native batch processing features. Preparing your images beforehand ensures seamless editing. This guide explains how to batch rename files using native Windows features and Microsoft PowerT">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/how-to-batch-rename-and-convert-files-for-paint-net">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Batch Rename and Convert Files for Paint.NET - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/how-to-batch-rename-and-convert-files-for-paint-net" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="While Paint.NET is an efficient image editor, it does not include native batch processing features. Preparing your images beforehand ensures seamless editing. This guide explains how to batch rename files using native Windows features and Microsoft PowerT" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="how-to-batch-rename-and-convert-files-for-paintnet">How to Batch
+Rename and Convert Files for Paint.NET</h1>
+<p>While Paint.NET is an efficient image editor, it does not include
+native batch processing features. Preparing your images beforehand
+ensures seamless editing. This guide explains how to batch rename files
+using native Windows features and Microsoft PowerToys, as well as how to
+batch convert image formats using free dedicated utilities like
+IrfanView and XnConvert before importing them into Paint.NET.</p>
+<h2 id="batch-renaming-files">Batch Renaming Files</h2>
+<h3 id="method-1-using-windows-file-explorer-basic">Method 1: Using
+Windows File Explorer (Basic)</h3>
+<p>For simple sequential renaming, Windows has a built-in feature:</p>
+<ol type="1">
+<li>Select all the files you want to rename in File Explorer.</li>
+<li>Press <strong>F2</strong> (or right-click the first file and select
+<strong>Rename</strong>).</li>
+<li>Type the desired base name (e.g., <code>Project_Image</code>) and
+press <strong>Enter</strong>.</li>
+<li>Windows will automatically append sequential numbers to the rest of
+the files: <code>Project_Image (1)</code>,
+<code>Project_Image (2)</code>, etc.</li>
+</ol>
+<h3 id="method-2-using-microsoft-powertoys-powerrename-advanced">Method
+2: Using Microsoft PowerToys PowerRename (Advanced)</h3>
+<p>For search-and-replace, regular expressions, or custom
+enumerations:</p>
+<ol type="1">
+<li>Install and launch <strong>Microsoft PowerToys</strong>.</li>
+<li>Select your images in File Explorer, right-click, and choose
+<strong>PowerRename</strong>.</li>
+<li>Use the search-and-replace fields to modify names, change casing, or
+add date/counter extensions.</li>
+<li>Preview the changes in the right-hand pane and click
+<strong>Apply</strong>.</li>
+</ol>
+<hr />
+<h2 id="batch-converting-files">Batch Converting Files</h2>
+<p>Paint.NET natively supports common formats like PNG, JPEG, BMP, GIF,
+TIFF, and DDS, but does not batch convert files. Use external software
+to convert raw or unsupported formats prior to editing.</p>
+<h3 id="method-1-using-xnconvert">Method 1: Using XnConvert</h3>
+<p>XnConvert is a free, powerful tool for converting multiple images
+simultaneously.</p>
+<ol type="1">
+<li>Download and open <strong>XnConvert</strong>.</li>
+<li>Under the <strong>Input</strong> tab, drag and drop the files or
+folders you need to convert.</li>
+<li>(Optional) Go to the <strong>Actions</strong> tab if you also need
+to resize or adjust color levels in bulk.</li>
+<li>Under the <strong>Output</strong> tab, choose your target format
+(such as <strong>PNG</strong> for lossless quality or
+<strong>JPEG</strong> for smaller file size) and select the destination
+folder.</li>
+<li>Click <strong>Convert</strong> in the bottom-right corner.</li>
+</ol>
+<h3 id="method-2-using-irfanview">Method 2: Using IrfanView</h3>
+<p>IrfanView provides combined batch renaming and conversion in a single
+workflow.</p>
+<ol type="1">
+<li>Open <strong>IrfanView</strong> and press <strong>B</strong> to open
+the Batch Conversion/Rename dialog.</li>
+<li>Select your desired <strong>Output format</strong> from the dropdown
+menu.</li>
+<li>In the "Batch mode" section, select <strong>Batch
+conversion</strong>, <strong>Batch rename</strong>, or <strong>Batch
+conversion - Rename result files</strong>.</li>
+<li>Set your output directory.</li>
+<li>Browse and select your source images, then click
+<strong>Add</strong> or <strong>Add all</strong>.</li>
+<li>Click <strong>Start Batch</strong> to process the files.</li>
+</ol>
+<hr />
+<h2 id="opening-the-processed-files-in-paintnet">Opening the Processed
+Files in Paint.NET</h2>
+<p>Once your files are renamed and converted into a supported
+format:</p>
+<ol type="1">
+<li>Open <strong>Paint.NET</strong>.</li>
+<li>Select all the processed files in File Explorer.</li>
+<li>Drag and drop them directly onto the Paint.NET window.</li>
+<li>The files will open as individual tabs along the top bar, ready for
+editing.</li>
+</ol></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/how-to-batch-rename-and-convert-files-for-paint-net';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

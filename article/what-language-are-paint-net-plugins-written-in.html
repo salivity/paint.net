@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Language Are Paint.NET Plugins Written In? - paint.net</title>
+    <meta name="description" content="Most Paint.NET plugins are written in C#, the primary programming language of Microsoft’s .NET ecosystem. Because Paint.NET itself is developed using C# and runs on the modern .NET runtime, writing plugins in the same language provides direct, seamless in">
+    <link rel="canonical" href="https://salivity.github.io/paint.net/article/what-language-are-paint-net-plugins-written-in">
+    <link rel="search" type="application/opensearchdescription+xml" title="paint.net" href="/paint.net/opensearch.xml">
+    <link rel="icon" href="/paint.net/favicon.ico">
+    <link rel="stylesheet" href="/paint.net/css/style.css">
+    <link media="print" rel="stylesheet" href="/paint.net/css/print.css">
+    <script src="/paint.net/js/fuse.min.js"></script>
+    <script src="/paint.net/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="What Language Are Paint.NET Plugins Written In? - paint.net" />
+    <meta property="og:url" content="https://salivity.github.io/paint.net/article/what-language-are-paint-net-plugins-written-in" />
+    <meta property="og:image" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/paint.net/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Most Paint.NET plugins are written in C#, the primary programming language of Microsoft’s .NET ecosystem. Because Paint.NET itself is developed using C# and runs on the modern .NET runtime, writing plugins in the same language provides direct, seamless in" />
+    <link rel="manifest" href="/paint.net/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/paint.net/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>paint.net</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/paint.net/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    <div class="article-layout">
+        <aside id="profile-sidebar" class="profile-column" aria-label="Author Profile"></aside>
+        <div class="article-main-column">
+            <article><h1 id="what-language-are-paintnet-plugins-written-in">What Language Are
+Paint.NET Plugins Written In?</h1>
+<p>Most Paint.NET plugins are written in C#, the primary programming
+language of Microsoft’s .NET ecosystem. Because Paint.NET itself is
+developed using C# and runs on the modern .NET runtime, writing plugins
+in the same language provides direct, seamless integration with the host
+application’s APIs. This article details why C# is the standard choice
+for Paint.NET plugin development, the tools used to create them, and the
+alternative .NET-compatible languages available.</p>
+<h2 id="why-c-is-the-standard-for-paintnet-plugins">Why C# is the
+Standard for Paint.NET Plugins</h2>
+<p>Paint.NET was built from the ground up as a .NET application. As a
+result, its architecture natively interfaces with managed code compiled
+for the Common Language Runtime (CLR).</p>
+<h3 id="1-native-api-integration">1. Native API Integration</h3>
+<p>Paint.NET exposes its internal interfaces, base classes, and
+rendering pipelines through managed .NET assemblies. When developing an
+Effect or FileType plugin, developers inherit directly from Paint.NET
+classes like <code>PropertyBasedEffect</code> or <code>FileType</code>.
+Because these classes are authored in C#, writing plugins in C#
+eliminates language friction, marshaling overhead, and compatibility
+issues.</p>
+<h3 id="2-codelab-support">2. CodeLab Support</h3>
+<p>A significant portion of the Paint.NET plugin development community
+relies on <strong>CodeLab</strong>, a popular in-program plugin editor
+designed specifically for Paint.NET. CodeLab allows developers to write,
+test, and compile effects directly inside the application. CodeLab
+exclusively utilizes C# syntax, automatically generating the necessary
+boilerplate code and compiling the output into a functional
+<code>.dll</code> file.</p>
+<h3 id="3-community-and-documentation">3. Community and
+Documentation</h3>
+<p>The vast majority of existing open-source plugins, tutorials, and API
+documentation provided by the Paint.NET forum community are written in
+C#. Developers starting out find significantly more code samples and
+troubleshooting support for C# than for any other language.</p>
+<h2 id="plugin-architecture-and-compilation">Plugin Architecture and
+Compilation</h2>
+<p>Paint.NET plugins are distributed as dynamic link libraries
+(<code>.dll</code> files). When an author writes a plugin in C#, the
+source code is compiled by the Roslyn compiler into Common Intermediate
+Language (CIL).</p>
+<p>When Paint.NET starts, it scans its <code>Effects</code> and
+<code>FileTypes</code> folders, using .NET reflection to inspect local
+<code>.dll</code> files. If an assembly implements the required
+Paint.NET plugin interfaces, the application dynamically loads it and
+makes the tool or effect available in the user interface.</p>
+<h2 id="can-other-languages-be-used">Can Other Languages Be Used?</h2>
+<p>While C# is the overwhelming standard, developers are not strictly
+limited to it. Because Paint.NET executes managed .NET code, any
+programming language capable of compiling into Common Intermediate
+Language (CIL) can technically be used to create plugins. These
+alternatives include:</p>
+<ul>
+<li><strong>Visual Basic .NET (VB.NET):</strong> Fully supported by the
+.NET runtime, allowing developers to consume Paint.NET APIs using Visual
+Basic syntax.</li>
+<li><strong>F#:</strong> Can be used to write functional
+image-processing algorithms compiled into compatible assemblies.</li>
+<li><strong>C++/CLI:</strong> Allows developers to combine native C++
+algorithms with managed .NET wrappers, though this approach is
+significantly more complex and rarely utilized.</li>
+</ul>
+<p>Despite these options, alternative languages represent a negligible
+fraction of the plugin ecosystem due to lack of template support and the
+absence of integration with rapid development tools like CodeLab. For
+anyone seeking to build or modify Paint.NET plugins, C# remains the
+industry-standard choice.</p></article>
+        <div id='disqus_thread'></div>
+        <script>
+
+            var disqus_config = function () {
+                this.page.url =         'https://salivity.github.io/paint.net/article/what-language-are-paint-net-plugins-written-in';  
+                //this.page.identifier =  PAGE_IDENTIFIER; 
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://salivity-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+        </div>
+    </div>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="https://smvc.dev/contact">Contact</a></li>
+                <li><a href="/paint.net/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/paint.net/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>
